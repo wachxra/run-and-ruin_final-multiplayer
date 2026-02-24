@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &964690614822553035
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8564624204660318650, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4890607107067777441, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1118875334
+      objectReference: {fileID: 0}
+    - target: {fileID: -4890607107067777441, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4890607107067777441, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 3536117837
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009560459904135812, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_Name
+      value: RespawningCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110631388759090191, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3009560459904135812, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 931999124912135069}
+  m_SourcePrefab: {fileID: 100100000, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+--- !u!1 &2641183379336427343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3009560459904135812, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+  m_PrefabInstance: {fileID: 964690614822553035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &931999124912135069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641183379336427343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f3d46ac0d4c454ab4e826feca4a21d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  spriteRenderer: {fileID: 3843503910339371711}
+--- !u!212 &3843503910339371711 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: -5173057684878088332, guid: 1abdeb6a4b9cccd44bd0a6b318ce8a7e, type: 3}
+  m_PrefabInstance: {fileID: 964690614822553035}
+  m_PrefabAsset: {fileID: 0}
