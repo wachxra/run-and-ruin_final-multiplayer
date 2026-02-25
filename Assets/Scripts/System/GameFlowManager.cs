@@ -41,8 +41,19 @@ public class GameFlowManager : NetworkBehaviour
     public NetworkVariable<int> currentRound =
         new NetworkVariable<int>(1);
 
+    public NetworkVariable<int> countdownValue =
+    new NetworkVariable<int>(0);
+
     public NetworkVariable<GamePhase> phase =
         new NetworkVariable<GamePhase>(GamePhase.Round1);
+
+    [Header("Character Prefabs")]
+    public GameObject[] runnerPrefabs;
+    public GameObject[] tricksterPrefabs;
+
+    [Header("Spawn Points")]
+    public Transform runnerSpawnPoint;
+    public Transform tricksterSpawnPoint;
 
     public override void OnNetworkSpawn()
     {
@@ -59,17 +70,21 @@ public class GameFlowManager : NetworkBehaviour
 
         isRoleDecided.Value = false;
 
-        phase.Value = currentRound.Value == 1
-            ? GamePhase.Round1
-            : GamePhase.Round2;
-
         yield return new WaitForSeconds(1f);
 
         AssignRoles();
 
-        yield return new WaitForSeconds(1f);
+        isRoleDecided.Value = true;
 
-        StartCoroutine(StartCountdown());
+        yield return StartCoroutine(Countdown(5));
+
+        SpawnRunner();
+
+        yield return StartCoroutine(Countdown(3));
+
+        phase.Value = currentRound.Value == 1
+            ? GamePhase.Round1
+            : GamePhase.Round2;
     }
 
     void AssignRoles()
@@ -112,13 +127,15 @@ public class GameFlowManager : NetworkBehaviour
         isRoleDecided.Value = true;
     }
 
-    IEnumerator StartCountdown()
+    IEnumerator Countdown(int seconds)
     {
-        if (!IsServer) yield break;
+        for (int i = seconds; i > 0; i--)
+        {
+            countdownValue.Value = i;
+            yield return new WaitForSeconds(1f);
+        }
 
-        yield return new WaitForSeconds(3f);
-
-        SpawnRunner();
+        countdownValue.Value = 0;
     }
 
     void SpawnRunner()
@@ -130,19 +147,22 @@ public class GameFlowManager : NetworkBehaviour
             var player =
                 client.PlayerObject.GetComponent<NetworkPlayer>();
 
-            if (player.currentRole.Value == CharacterRole.Runner)
-            {
-                var spawner =
-                    FindFirstObjectByType<RunnerSpawner>();
+            if (player.currentRole.Value != CharacterRole.Runner)
+                continue;
 
-                if (spawner != null)
-                {
-                    spawner.SpawnRunnerFor(
-                        player.OwnerClientId,
-                        player.selectedRunnerIndex.Value
-                    );
-                }
-            }
+            int index = player.selectedRunnerIndex.Value;
+
+            if (index < 0 || index >= runnerPrefabs.Length)
+                continue;
+
+            var character = Instantiate(
+                runnerPrefabs[index],
+                runnerSpawnPoint.position,
+                Quaternion.identity
+            );
+
+            character.GetComponent<NetworkObject>()
+                     .SpawnAsPlayerObject(client.ClientId);
         }
     }
 

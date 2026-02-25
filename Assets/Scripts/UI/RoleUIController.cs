@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Netcode;
 using System.Collections;
 
@@ -22,16 +22,16 @@ public class RoleUIController : MonoBehaviour
 
         ulong myId = NetworkManager.Singleton.LocalClientId;
 
-        if (myId ==
-            GameFlowManager.Instance.firstRunnerClientId.Value)
-        {
-            runnerUI.SetActive(true);
-            tricksterUI.SetActive(false);
-        }
-        else
-        {
-            runnerUI.SetActive(false);
-            tricksterUI.SetActive(true);
-        }
+        bool isRunner =
+            myId == GameFlowManager.Instance.firstRunnerClientId.Value;
+
+        runnerUI.SetActive(isRunner);
+        tricksterUI.SetActive(!isRunner);
+
+        while (GameFlowManager.Instance.countdownValue.Value > 0)
+            yield return null;
+
+        runnerUI.SetActive(false);
+        tricksterUI.SetActive(false);
     }
 }

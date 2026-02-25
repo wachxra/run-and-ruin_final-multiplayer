@@ -750,6 +750,15 @@ MonoBehaviour:
     m_InternalValue: 1
   phase:
     m_InternalValue: 0
+  runnerPrefabs:
+  - {fileID: 7470674958653226765, guid: baa1dd9ac2b9fbe44b365eeefb71eace, type: 3}
+  - {fileID: 7470674958653226765, guid: 2a22576db5be7644898014b67400ac84, type: 3}
+  - {fileID: 7470674958653226765, guid: 6c321b73bed434745b2d64453d059481, type: 3}
+  - {fileID: 7470674958653226765, guid: c0fd887deee6b6546a727cec912c02d6, type: 3}
+  - {fileID: 7470674958653226765, guid: a53b7a5b2ff2a064193bc12e9e2d09d0, type: 3}
+  tricksterPrefabs: []
+  runnerSpawnPoint: {fileID: 2082475985}
+  tricksterSpawnPoint: {fileID: 0}
 --- !u!114 &999871099
 MonoBehaviour:
   m_ObjectHideFlags: 0
