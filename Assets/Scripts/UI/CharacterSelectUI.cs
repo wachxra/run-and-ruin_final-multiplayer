@@ -8,11 +8,9 @@ public class CharacterSelectUI : MonoBehaviour
 {
     [Header("Runner")]
     public Toggle[] runnerToggles;
-    public GameObject[] runnerPrefabs;
 
     [Header("Trickster")]
     public Toggle[] tricksterToggles;
-    public GameObject[] tricksterPrefabs;
 
     [Header("Buttons")]
     public Button okButton;
@@ -57,10 +55,6 @@ public class CharacterSelectUI : MonoBehaviour
         {
             int index = i;
 
-            var label = runnerToggles[i].GetComponentInChildren<TMP_Text>();
-            if (label != null)
-                label.text = runnerPrefabs[i].name;
-
             runnerToggles[i].onValueChanged.AddListener((isOn) =>
             {
                 if (isOn)
@@ -71,10 +65,6 @@ public class CharacterSelectUI : MonoBehaviour
         for (int i = 0; i < tricksterToggles.Length; i++)
         {
             int index = i;
-
-            var label = tricksterToggles[i].GetComponentInChildren<TMP_Text>();
-            if (label != null)
-                label.text = tricksterPrefabs[i].name;
 
             tricksterToggles[i].onValueChanged.AddListener((isOn) =>
             {

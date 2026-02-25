@@ -1,4 +1,4 @@
-using Unity.Netcode;
+/*using Unity.Netcode;
 using UnityEngine;
 
 public class TricksterController : NetworkBehaviour
@@ -22,4 +22,4 @@ public class TricksterController : NetworkBehaviour
             tricksterUI.SetActive(false);
         }
     }
-}
+}*/

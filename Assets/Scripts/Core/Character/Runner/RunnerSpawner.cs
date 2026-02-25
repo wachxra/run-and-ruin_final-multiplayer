@@ -1,4 +1,4 @@
-using Unity.Netcode;
+/*using Unity.Netcode;
 using UnityEngine;
 
 public class RunnerSpawner : NetworkBehaviour
@@ -18,4 +18,4 @@ public class RunnerSpawner : NetworkBehaviour
         obj.GetComponent<NetworkObject>()
             .SpawnAsPlayerObject(clientId);
     }
-}
+}*/

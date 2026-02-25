@@ -42,18 +42,19 @@ public class GameFlowManager : NetworkBehaviour
         new NetworkVariable<int>(1);
 
     public NetworkVariable<int> countdownValue =
-    new NetworkVariable<int>(0);
+        new NetworkVariable<int>(0);
 
     public NetworkVariable<GamePhase> phase =
         new NetworkVariable<GamePhase>(GamePhase.Round1);
 
     [Header("Character Prefabs")]
     public GameObject[] runnerPrefabs;
-    public GameObject[] tricksterPrefabs;
+
+    [Header("Trickster UI Panels")]
+    public GameObject[] tricksterUIPanels;
 
     [Header("Spawn Points")]
     public Transform runnerSpawnPoint;
-    public Transform tricksterSpawnPoint;
 
     public override void OnNetworkSpawn()
     {
@@ -79,6 +80,8 @@ public class GameFlowManager : NetworkBehaviour
         yield return StartCoroutine(Countdown(5));
 
         SpawnRunner();
+
+        SetupTricksterUI();
 
         yield return StartCoroutine(Countdown(3));
 
@@ -163,6 +166,40 @@ public class GameFlowManager : NetworkBehaviour
 
             character.GetComponent<NetworkObject>()
                      .SpawnAsPlayerObject(client.ClientId);
+        }
+    }
+
+
+    void SetupTricksterUI()
+    {
+        if (!IsServer) return;
+
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+        {
+            var player =
+                client.PlayerObject.GetComponent<NetworkPlayer>();
+
+            if (player.currentRole.Value != CharacterRole.Trickster)
+                continue;
+
+            int index = player.selectedTricksterIndex.Value;
+
+            if (index < 0 || index >= tricksterUIPanels.Length)
+                continue;
+
+            ShowTricksterUIClientRpc(index, client.ClientId);
+        }
+    }
+
+    [ClientRpc]
+    void ShowTricksterUIClientRpc(int index, ulong targetClientId)
+    {
+        if (NetworkManager.Singleton.LocalClientId != targetClientId)
+            return;
+
+        for (int i = 0; i < tricksterUIPanels.Length; i++)
+        {
+            tricksterUIPanels[i].SetActive(i == index);
         }
     }
 
