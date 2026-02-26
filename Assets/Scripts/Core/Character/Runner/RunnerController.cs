@@ -85,7 +85,7 @@ public class RunnerController : NetworkBehaviour
                 startPosition.z
             );
 
-            elapsed += Time.deltaTime;
+            elapsed += Time.deltaTime * actionSpeedMultiplier;
             yield return null;
         }
 
@@ -119,7 +119,12 @@ public class RunnerController : NetworkBehaviour
             startPosition.z
         );
 
-        yield return new WaitForSeconds(slideDuration);
+        float timer = 0f;
+        while (timer < slideDuration)
+        {
+            timer += Time.deltaTime * actionSpeedMultiplier;
+            yield return null;
+        }
 
         transform.position = startPosition;
         isSliding = false;
@@ -143,5 +148,58 @@ public class RunnerController : NetworkBehaviour
 
         StartCoroutine(SlideRoutine());
         SlideClientRpc();
+    }
+
+    private SpriteRenderer sprite;
+    private bool isSlowed = false;
+    private float actionSpeedMultiplier = 1f;
+
+    private void OnEnable()
+    {
+        sprite = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    public void ApplySlow(float duration)
+    {
+        if (!IsServer) return;
+        if (isSlowed) return;
+
+        StartCoroutine(SlowRoutine(duration));
+    }
+
+    IEnumerator SlowRoutine(float duration)
+    {
+        isSlowed = true;
+
+        actionSpeedMultiplier = 0.5f;
+
+        ApplySlowVisualClientRpc(true);
+
+        yield return new WaitForSeconds(duration);
+
+        actionSpeedMultiplier = 1f;
+
+        ApplySlowVisualClientRpc(false);
+
+        isSlowed = false;
+    }
+
+    [ClientRpc]
+    void ApplySlowVisualClientRpc(bool state)
+    {
+        if (sprite == null) return;
+
+        if (state)
+        {
+            sprite.color = Color.black;
+            if (animator != null)
+                animator.speed = 0.5f;
+        }
+        else
+        {
+            sprite.color = Color.white;
+            if (animator != null)
+                animator.speed = 1f;
+        }
     }
 }

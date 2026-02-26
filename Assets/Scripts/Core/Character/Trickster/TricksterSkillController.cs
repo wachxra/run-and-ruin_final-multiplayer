@@ -33,6 +33,7 @@ public class TricksterSkillController : NetworkBehaviour
 
                 if (skillIndex == 1)
                 {
+                    runner.ApplySlow(3f);
                     Debug.Log("Trickster used Slow");
                 }
                 else if (skillIndex == 2)
