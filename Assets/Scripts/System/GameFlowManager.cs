@@ -71,7 +71,15 @@ public class GameFlowManager : NetworkBehaviour
 
         isRoleDecided.Value = false;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitUntil(() =>
+        {
+            foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+            {
+                if (client.PlayerObject == null)
+                    return false;
+            }
+            return true;
+        });
 
         AssignRoles();
 
@@ -118,16 +126,25 @@ public class GameFlowManager : NetworkBehaviour
 
         foreach (var client in clients)
         {
-            var player =
-                client.PlayerObject.GetComponent<NetworkPlayer>();
+            if (client.PlayerObject == null)
+            {
+                Debug.LogWarning($"PlayerObject not ready for client {client.ClientId}");
+                continue;
+            }
+
+            var player = client.PlayerObject.GetComponent<NetworkPlayer>();
+
+            if (player == null)
+            {
+                Debug.LogWarning($"NetworkPlayer missing on client {client.ClientId}");
+                continue;
+            }
 
             if (client.ClientId == firstRunnerClientId.Value)
                 player.currentRole.Value = CharacterRole.Runner;
             else
                 player.currentRole.Value = CharacterRole.Trickster;
         }
-
-        isRoleDecided.Value = true;
     }
 
     IEnumerator Countdown(int seconds)
@@ -164,11 +181,13 @@ public class GameFlowManager : NetworkBehaviour
                 Quaternion.identity
             );
 
-            character.GetComponent<NetworkObject>()
-                     .SpawnAsPlayerObject(client.ClientId);
+            var netObj = character.GetComponent<NetworkObject>();
+
+            netObj.Spawn();
+
+            character.transform.SetParent(client.PlayerObject.transform);
         }
     }
-
 
     void SetupTricksterUI()
     {
@@ -203,6 +222,33 @@ public class GameFlowManager : NetworkBehaviour
         }
     }
 
+    void ResetGameState()
+    {
+        if (!IsServer) return;
+
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+        {
+            var playerObj = client.PlayerObject;
+
+            if (playerObj == null) continue;
+
+            var runner = playerObj.GetComponentInChildren<RunnerController>();
+
+            if (runner != null)
+            {
+                var netObj = runner.GetComponent<NetworkObject>();
+
+                if (netObj != null && netObj.IsSpawned)
+                    netObj.Despawn();
+            }
+        }
+
+        isRoleDecided.Value = false;
+        countdownValue.Value = 0;
+
+        HideAllTricksterUIClientRpc();
+    }
+
     public void EndRound()
     {
         if (!IsServer) return;
@@ -212,11 +258,39 @@ public class GameFlowManager : NetworkBehaviour
         if (currentRound.Value == 1)
         {
             currentRound.Value = 2;
-            StartCoroutine(StartRound());
+            StartCoroutine(StartNextRoundWithReset());
         }
         else
         {
             phase.Value = GamePhase.GameOver;
+            ShowGameOverClientRpc();
+        }
+    }
+
+    IEnumerator StartNextRoundWithReset()
+    {
+        yield return new WaitForSeconds(2f);
+
+        ResetGameState();
+
+        yield return new WaitForSeconds(0.5f);
+
+        StartCoroutine(StartRound());
+    }
+
+    [ClientRpc]
+    void ShowGameOverClientRpc()
+    {
+        Debug.Log("Game Over");
+    }
+
+    [ClientRpc]
+    void HideAllTricksterUIClientRpc()
+    {
+        foreach (var panel in tricksterUIPanels)
+        {
+            if (panel != null)
+                panel.SetActive(false);
         }
     }
 }

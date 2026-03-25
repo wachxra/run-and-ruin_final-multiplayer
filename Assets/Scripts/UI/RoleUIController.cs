@@ -7,31 +7,46 @@ public class RoleUIController : MonoBehaviour
     public GameObject runnerUI;
     public GameObject tricksterUI;
 
+    private NetworkPlayer myPlayer;
+    private bool uiShownThisRound = false;
+
     void Start()
     {
-        StartCoroutine(SetupUI());
+        StartCoroutine(UIFlowLoop());
     }
 
-    IEnumerator SetupUI()
+    IEnumerator UIFlowLoop()
     {
-        while (GameFlowManager.Instance == null)
-            yield return null;
+        while (true)
+        {
+            yield return new WaitUntil(() => GameFlowManager.Instance != null);
 
-        while (!GameFlowManager.Instance.isRoleDecided.Value)
-            yield return null;
+            yield return new WaitUntil(() =>
+            {
+                myPlayer = NetworkManager.Singleton.SpawnManager
+                    .GetPlayerNetworkObject(NetworkManager.Singleton.LocalClientId)?
+                    .GetComponent<NetworkPlayer>();
+                return myPlayer != null;
+            });
 
-        ulong myId = NetworkManager.Singleton.LocalClientId;
+            yield return new WaitUntil(() => GameFlowManager.Instance.isRoleDecided.Value);
 
-        bool isRunner =
-            myId == GameFlowManager.Instance.firstRunnerClientId.Value;
+            if (!uiShownThisRound)
+            {
+                runnerUI.SetActive(myPlayer.currentRole.Value == CharacterRole.Runner);
+                tricksterUI.SetActive(myPlayer.currentRole.Value == CharacterRole.Trickster);
 
-        runnerUI.SetActive(isRunner);
-        tricksterUI.SetActive(!isRunner);
+                uiShownThisRound = true;
 
-        while (GameFlowManager.Instance.countdownValue.Value > 0)
-            yield return null;
+                yield return new WaitUntil(() => GameFlowManager.Instance.countdownValue.Value == 0);
 
-        runnerUI.SetActive(false);
-        tricksterUI.SetActive(false);
+                runnerUI.SetActive(false);
+                tricksterUI.SetActive(false);
+            }
+
+            yield return new WaitUntil(() => GameFlowManager.Instance.phase.Value == GamePhase.RoundEnd);
+
+            uiShownThisRound = false;
+        }
     }
 }

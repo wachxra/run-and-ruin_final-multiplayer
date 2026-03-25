@@ -217,6 +217,8 @@ public class RunnerController : NetworkBehaviour
     {
         if (!IsServer) return;
 
+        if (NetworkObject == null || !NetworkObject.IsSpawned) return;
+
         currentHP -= dmg;
 
         Debug.Log("Runner HP: " + currentHP);
@@ -233,6 +235,9 @@ public class RunnerController : NetworkBehaviour
 
         GameFlowManager.Instance.EndRound();
 
-        GetComponent<NetworkObject>().Despawn();
+        if (NetworkObject != null && NetworkObject.IsSpawned)
+        {
+            NetworkObject.Despawn();
+        }
     }
 }

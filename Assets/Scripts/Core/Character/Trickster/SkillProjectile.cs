@@ -31,6 +31,9 @@ public class SkillProjectile : NetworkBehaviour
 
         if (runner != null)
         {
+            if (runner.NetworkObject == null || !runner.NetworkObject.IsSpawned)
+                return;
+
             hasHit = true;
 
             runner.TakeDamage(damage);
