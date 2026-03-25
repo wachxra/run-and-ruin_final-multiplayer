@@ -202,4 +202,37 @@ public class RunnerController : NetworkBehaviour
                 animator.speed = 1f;
         }
     }
+
+    [Header("Health")]
+    public int maxHP = 5;
+    private int currentHP;
+
+    public override void OnNetworkSpawn()
+    {
+        if (IsServer)
+            currentHP = maxHP;
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        if (!IsServer) return;
+
+        currentHP -= dmg;
+
+        Debug.Log("Runner HP: " + currentHP);
+
+        if (currentHP <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Runner Died");
+
+        GameFlowManager.Instance.EndRound();
+
+        GetComponent<NetworkObject>().Despawn();
+    }
 }

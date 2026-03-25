@@ -1,8 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Netcode;
 
 public class TricksterSkillController : NetworkBehaviour
 {
+    public GameObject projectilePrefab;
+    public Transform[] firePoints;
+    
     void Update()
     {
         if (!IsOwner) return;
@@ -33,20 +36,33 @@ public class TricksterSkillController : NetworkBehaviour
 
                 if (skillIndex == 1)
                 {
-                    runner.ApplySlow(3f);
-                    Debug.Log("Trickster used Slow");
+                    SpawnProjectile(0);
+                    /*runner.ApplySlow(3f);
+                    Debug.Log("Trickster used Slow");*/
                 }
                 else if (skillIndex == 2)
                 {
-                    runner.ForceJump();
-                    Debug.Log("Trickster forced Jump");
+                    SpawnProjectile(1);
+                    /*runner.ForceJump();
+                    Debug.Log("Trickster forced Jump");*/
                 }
                 else if (skillIndex == 3)
                 {
-                    runner.ForceSlide();
-                    Debug.Log("Trickster forced Slide");
+                    SpawnProjectile(2);
+                    /*runner.ForceSlide();
+                    Debug.Log("Trickster forced Slide");*/
                 }
             }
         }
+    }
+
+    void SpawnProjectile(int lane)
+    {
+        if (!IsServer) return;
+
+        var spawnPoint = firePoints[lane];
+
+        var obj = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
+        obj.GetComponent<NetworkObject>().Spawn();
     }
 }
