@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1224261294
+  GlobalObjectIdHash: 4289030185
   InScenePlacedSourceGlobalObjectIdHash: 4289030185
   DeferredDespawnTick: 0
   Ownership: 1
@@ -120,6 +120,7 @@ MonoBehaviour:
     m_InternalValue: 0
   currentRole:
     m_InternalValue: 0
+  skillDatabase: {fileID: 11400000, guid: ded34abfde4a0e24d85bcd24db5634da, type: 2}
 --- !u!114 &8764614516907414128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +139,7 @@ MonoBehaviour:
   - {fileID: 4227171730365196575}
   - {fileID: 17829204850095064}
   - {fileID: 7604014169384264962}
+  skill: {fileID: 0}
 --- !u!1 &4281421959153673157
 GameObject:
   m_ObjectHideFlags: 0

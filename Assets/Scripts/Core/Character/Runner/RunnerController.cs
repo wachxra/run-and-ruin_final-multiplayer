@@ -19,6 +19,14 @@ public class RunnerController : NetworkBehaviour
     public float slideOffset = 0.5f;
     public float slideDuration = 0.5f;
 
+    [Header("Skill")]
+    public CharacterSkillSO skill;
+    private float lastSkillTime = -999f;
+    private bool hasShield = false;
+    private bool isInvisible = false;
+
+    private SkillUIController skillUI;
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -50,6 +58,95 @@ public class RunnerController : NetworkBehaviour
             if (!isSliding && !isJumping)
                 SlideServerRpc();
         }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            TryUseSkillServerRpc();
+        }
+    }
+
+    [ServerRpc]
+    void TryUseSkillServerRpc()
+    {
+        if (skill == null) return;
+        if (Time.time - lastSkillTime < skill.cooldown) return;
+
+        lastSkillTime = Time.time;
+        ActivateSkill();
+    }
+
+    void ActivateSkill()
+    {
+        switch (skill.skillType)
+        {
+            case SkillType.StopTime:
+                StartCoroutine(StopTimeRoutine());
+                break;
+
+            case SkillType.ScreenBlock:
+                BlockRandomLaneClientRpc();
+                break;
+
+            case SkillType.Reflect:
+                hasShield = true;
+                StartCoroutine(ReflectRoutine());
+                break;
+
+            case SkillType.Shield:
+                hasShield = true;
+                StartCoroutine(ShieldRoutine());
+                break;
+
+            case SkillType.Invisible:
+                StartCoroutine(InvisibleRoutine());
+                break;
+        }
+    }
+
+    IEnumerator StopTimeRoutine()
+    {
+        ApplySlowVisualClientRpc(true);
+        yield return new WaitForSeconds(skill.duration);
+        ApplySlowVisualClientRpc(false);
+    }
+
+    IEnumerator ReflectRoutine()
+    {
+        yield return new WaitForSeconds(skill.duration);
+        hasShield = false;
+    }
+
+    IEnumerator ShieldRoutine()
+    {
+        yield return new WaitForSeconds(10f);
+        hasShield = false;
+    }
+
+    IEnumerator InvisibleRoutine()
+    {
+        isInvisible = true;
+        SetInvisibleClientRpc(true);
+
+        yield return new WaitForSeconds(skill.duration);
+
+        isInvisible = false;
+        SetInvisibleClientRpc(false);
+    }
+
+    [ClientRpc]
+    void SetInvisibleClientRpc(bool state)
+    {
+        if (sprite == null) return;
+
+        Color c = sprite.color;
+        c.a = state ? 0.3f : 1f;
+        sprite.color = c;
+    }
+
+    [ClientRpc]
+    void BlockRandomLaneClientRpc()
+    {
+        Debug.Log("Block Random Lane!");
     }
 
     [ServerRpc]
@@ -225,6 +322,16 @@ public class RunnerController : NetworkBehaviour
             if (RunnerHUD.Instance != null)
                 RunnerHUD.Instance.ShowHUD(true);
         }
+
+        if (IsOwner)
+        {
+            skillUI = FindFirstObjectByType<SkillUIController>();
+
+            if (skillUI != null && skill != null)
+            {
+                skillUI.SetSkill(skill);
+            }
+        }
     }
 
     void OnHPChanged(int oldHP, int newHP)
@@ -239,12 +346,16 @@ public class RunnerController : NetworkBehaviour
     {
         if (!IsServer) return;
 
+        if (hasShield)
+        {
+            hasShield = false;
+            return;
+        }
+
         if (NetworkObject == null || !NetworkObject.IsSpawned) return;
 
         currentHP.Value -= dmg;
         if (currentHP.Value < 0) currentHP.Value = 0;
-
-        Debug.Log("Runner HP: " + currentHP.Value);
 
         if (currentHP.Value <= 0)
         {
@@ -254,8 +365,6 @@ public class RunnerController : NetworkBehaviour
 
     void Die()
     {
-        Debug.Log("Runner Died");
-
         GameFlowManager.Instance.RecordRunnerTime(OwnerClientId);
         GameFlowManager.Instance.EndRound();
 

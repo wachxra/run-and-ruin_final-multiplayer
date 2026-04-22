@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485accb686830244589badf190e24eac, type: 3}
+  m_Name: SkillDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSkillDatabase
+  runnerSkills:
+  - {fileID: 11400000, guid: a5498673008728548b505b41d22d3965, type: 2}
+  - {fileID: 11400000, guid: 8bc43c648eae3974ea9b8e6148658b8c, type: 2}
+  - {fileID: 11400000, guid: 5481cb11220465d46a11d1fc6a21aec0, type: 2}
+  - {fileID: 11400000, guid: c1a24b0b5a27e3349b8bbb6eadcc9495, type: 2}
+  - {fileID: 11400000, guid: 1a6cdfaab3e276444a4d891f6158cf49, type: 2}
+  tricksterSkills:
+  - {fileID: 11400000, guid: 32814197d2e0c794293a069be97b64c7, type: 2}
+  - {fileID: 11400000, guid: e1f82e5f241341d41ae105c30ffdeccc, type: 2}
+  - {fileID: 11400000, guid: 5001ff947a5a7e84c91d1e6dd0c7a77c, type: 2}
+  - {fileID: 11400000, guid: 31d90653ed728a740a522d10b38eeba3, type: 2}
+  - {fileID: 11400000, guid: 198548ef10ae0cc4c8454e8b102fdb23, type: 2}

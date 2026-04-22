@@ -22,6 +22,9 @@ public class NetworkPlayer : NetworkBehaviour
     public NetworkVariable<CharacterRole> currentRole =
         new NetworkVariable<CharacterRole>();
 
+    [Header("Skill Database")]
+    public CharacterSkillDatabase skillDatabase;
+
     public override void OnNetworkSpawn()
     {
         if (IsOwner)
@@ -41,12 +44,16 @@ public class NetworkPlayer : NetworkBehaviour
     public void SetRunnerServerRpc(int index)
     {
         selectedRunnerIndex.Value = index;
+
+        AssignRunnerSkill();
     }
 
     [ServerRpc]
     public void SetTricksterServerRpc(int index)
     {
         selectedTricksterIndex.Value = index;
+
+        AssignTricksterSkill();
     }
 
     [ServerRpc]
@@ -58,5 +65,39 @@ public class NetworkPlayer : NetworkBehaviour
         isReady.Value = true;
 
         CharacterSelectManager.Instance.CheckAllReady();
+    }
+
+    void AssignRunnerSkill()
+    {
+        if (skillDatabase == null) return;
+
+        int index = selectedRunnerIndex.Value;
+
+        if (index < 0 || index >= skillDatabase.runnerSkills.Length) return;
+
+        var skill = skillDatabase.runnerSkills[index];
+
+        var runner = GetComponentInChildren<RunnerController>();
+        if (runner != null)
+        {
+            runner.skill = skill;
+        }
+    }
+
+    void AssignTricksterSkill()
+    {
+        if (skillDatabase == null) return;
+
+        int index = selectedTricksterIndex.Value;
+
+        if (index < 0 || index >= skillDatabase.tricksterSkills.Length) return;
+
+        var skill = skillDatabase.tricksterSkills[index];
+
+        var trickster = GetComponent<TricksterSkillController>();
+        if (trickster != null)
+        {
+            trickster.skill = skill;
+        }
     }
 }
