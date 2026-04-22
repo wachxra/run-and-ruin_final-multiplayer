@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Netcode;
 using System.Collections;
 
@@ -204,13 +204,21 @@ public class RunnerController : NetworkBehaviour
     }
 
     [Header("Health")]
-    public int maxHP = 5;
+    public int maxHP = 3;
     private int currentHP;
 
     public override void OnNetworkSpawn()
     {
         if (IsServer)
             currentHP = maxHP;
+
+        if (IsOwner)
+        {
+            if (RunnerHUD.Instance != null)
+            RunnerHUD.Instance.ShowHUD(true);
+
+            UpdateHUDClientRpc(currentHP, maxHP);
+        }
     }
 
     public void TakeDamage(int dmg)
@@ -220,6 +228,9 @@ public class RunnerController : NetworkBehaviour
         if (NetworkObject == null || !NetworkObject.IsSpawned) return;
 
         currentHP -= dmg;
+        if (currentHP < 0) currentHP = 0;
+
+        UpdateHUDClientRpc(currentHP, maxHP);
 
         Debug.Log("Runner HP: " + currentHP);
 
@@ -229,9 +240,20 @@ public class RunnerController : NetworkBehaviour
         }
     }
 
+    [ClientRpc]
+    void UpdateHUDClientRpc(int current, int max)
+    {
+        if (!IsOwner) return;
+
+        if (RunnerHUD.Instance != null)
+            RunnerHUD.Instance.SetHearts(current, max);
+    }
+
     void Die()
     {
         Debug.Log("Runner Died");
+
+        GameFlowManager.Instance.RecordRunnerTime(OwnerClientId);
 
         GameFlowManager.Instance.EndRound();
 

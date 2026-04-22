@@ -244,7 +244,7 @@ MonoBehaviour:
   jumpDuration: 1.2
   slideOffset: 1
   slideDuration: 1.5
-  maxHP: 5
+  maxHP: 3
 --- !u!95 &-9056241545464615705
 Animator:
   serializedVersion: 7

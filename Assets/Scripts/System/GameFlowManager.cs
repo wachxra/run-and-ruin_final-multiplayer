@@ -56,12 +56,78 @@ public class GameFlowManager : NetworkBehaviour
     [Header("Spawn Points")]
     public Transform runnerSpawnPoint;
 
+    [Header("Game Over UI")]
+    public GameObject gameOverPanel;
+    public TMPro.TextMeshProUGUI resultText;
+
+    public NetworkVariable<float> networkTimer =
+        new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
+    public NetworkVariable<float> runner1TimeNet = new NetworkVariable<float>();
+    public NetworkVariable<float> runner2TimeNet = new NetworkVariable<float>();
+
+    private float roundTimer = 0f;
+    private bool isTiming = false;
+
+    private float runner1Time = 0f;
+    private float runner2Time = 0f;
+
+    IEnumerator RoundTimer()
+    {
+        roundTimer = 0f;
+        isTiming = true;
+
+        while (isTiming)
+        {
+            roundTimer += Time.deltaTime;
+            networkTimer.Value = roundTimer;
+            yield return null;
+        }
+    }
+
+    public void RecordRunnerTime(ulong clientId)
+    {
+        if (!IsServer) return;
+
+        if (currentRound.Value == 1)
+            runner1TimeNet.Value = roundTimer;
+        else
+            runner2TimeNet.Value = roundTimer;
+
+        isTiming = false;
+    }
+
     public override void OnNetworkSpawn()
     {
         if (IsServer)
         {
             currentRound.Value = 1;
             StartCoroutine(StartRound());
+        }
+
+        runner1TimeNet.OnValueChanged += OnTimeChanged;
+        runner2TimeNet.OnValueChanged += OnTimeChanged;
+    }
+
+    void OnTimeChanged(float oldVal, float newVal)
+    {
+        if (gameOverPanel != null && gameOverPanel.activeSelf)
+        {
+            UpdateResultUI();
+        }
+    }
+
+    void UpdateResultUI()
+    {
+        string winner = GetWinnerName();
+
+        if (resultText != null)
+        {
+            resultText.text =
+                "Game Over\n" +
+                "Winner: " + winner + "\n\n" +
+                "Round 1: " + runner1TimeNet.Value.ToString("F2") + "s\n" +
+                "Round 2: " + runner2TimeNet.Value.ToString("F2") + "s";
         }
     }
 
@@ -96,6 +162,8 @@ public class GameFlowManager : NetworkBehaviour
         phase.Value = currentRound.Value == 1
             ? GamePhase.Round1
             : GamePhase.Round2;
+
+        StartCoroutine(RoundTimer());
     }
 
     void AssignRoles()
@@ -281,7 +349,35 @@ public class GameFlowManager : NetworkBehaviour
     [ClientRpc]
     void ShowGameOverClientRpc()
     {
-        Debug.Log("Game Over");
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
+        UpdateResultUI();
+    }
+
+    string GetWinnerName()
+    {
+        ulong winnerId = firstRunnerClientId.Value;
+
+        if (runner2TimeNet.Value > runner1TimeNet.Value)
+        {
+            foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+            {
+                if (client.ClientId != firstRunnerClientId.Value)
+                {
+                    winnerId = client.ClientId;
+                    break;
+                }
+            }
+        }
+
+        var playerObj = NetworkManager.Singleton.ConnectedClients[winnerId].PlayerObject;
+        var netPlayer = playerObj.GetComponent<NetworkPlayer>();
+
+        if (netPlayer != null)
+            return netPlayer.playerName.Value.ToString();
+
+        return "Unknown";
     }
 
     [ClientRpc]

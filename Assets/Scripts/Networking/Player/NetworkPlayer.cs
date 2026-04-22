@@ -1,5 +1,6 @@
 using Unity.Collections;
 using Unity.Netcode;
+using UnityEngine;
 
 public class NetworkPlayer : NetworkBehaviour
 {
@@ -20,6 +21,21 @@ public class NetworkPlayer : NetworkBehaviour
 
     public NetworkVariable<CharacterRole> currentRole =
         new NetworkVariable<CharacterRole>();
+
+    public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
+        {
+            string name = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Player");
+            SetNameServerRpc(name);
+        }
+    }
+
+    [ServerRpc]
+    void SetNameServerRpc(string name)
+    {
+        playerName.Value = name;
+    }
 
     [ServerRpc]
     public void SetRunnerServerRpc(int index)
