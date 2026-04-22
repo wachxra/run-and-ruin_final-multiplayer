@@ -205,19 +205,33 @@ public class RunnerController : NetworkBehaviour
 
     [Header("Health")]
     public int maxHP = 3;
-    private int currentHP;
+
+    public NetworkVariable<int> currentHP =
+        new NetworkVariable<int>(0,
+            NetworkVariableReadPermission.Everyone,
+            NetworkVariableWritePermission.Server);
 
     public override void OnNetworkSpawn()
     {
         if (IsServer)
-            currentHP = maxHP;
+            currentHP.Value = maxHP;
+
+        currentHP.OnValueChanged += OnHPChanged;
+
+        OnHPChanged(0, currentHP.Value);
 
         if (IsOwner)
         {
             if (RunnerHUD.Instance != null)
-            RunnerHUD.Instance.ShowHUD(true);
+                RunnerHUD.Instance.ShowHUD(true);
+        }
+    }
 
-            UpdateHUDClientRpc(currentHP, maxHP);
+    void OnHPChanged(int oldHP, int newHP)
+    {
+        if (RunnerHUD.Instance != null)
+        {
+            RunnerHUD.Instance.SetHearts(newHP, maxHP);
         }
     }
 
@@ -227,26 +241,15 @@ public class RunnerController : NetworkBehaviour
 
         if (NetworkObject == null || !NetworkObject.IsSpawned) return;
 
-        currentHP -= dmg;
-        if (currentHP < 0) currentHP = 0;
+        currentHP.Value -= dmg;
+        if (currentHP.Value < 0) currentHP.Value = 0;
 
-        UpdateHUDClientRpc(currentHP, maxHP);
+        Debug.Log("Runner HP: " + currentHP.Value);
 
-        Debug.Log("Runner HP: " + currentHP);
-
-        if (currentHP <= 0)
+        if (currentHP.Value <= 0)
         {
             Die();
         }
-    }
-
-    [ClientRpc]
-    void UpdateHUDClientRpc(int current, int max)
-    {
-        if (!IsOwner) return;
-
-        if (RunnerHUD.Instance != null)
-            RunnerHUD.Instance.SetHearts(current, max);
     }
 
     void Die()
@@ -254,7 +257,6 @@ public class RunnerController : NetworkBehaviour
         Debug.Log("Runner Died");
 
         GameFlowManager.Instance.RecordRunnerTime(OwnerClientId);
-
         GameFlowManager.Instance.EndRound();
 
         if (NetworkObject != null && NetworkObject.IsSpawned)

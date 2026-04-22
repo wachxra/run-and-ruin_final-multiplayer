@@ -5,10 +5,14 @@ public class TricksterSkillController : NetworkBehaviour
 {
     public GameObject projectilePrefab;
     public Transform[] firePoints;
-    
+
     void Update()
     {
         if (!IsOwner) return;
+
+        var player = GetComponent<NetworkPlayer>();
+        if (player == null || player.currentRole.Value != CharacterRole.Trickster)
+            return;
 
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
             UseSkillServerRpc(1);
@@ -21,8 +25,18 @@ public class TricksterSkillController : NetworkBehaviour
     }
 
     [ServerRpc]
-    void UseSkillServerRpc(int skillIndex)
+    void UseSkillServerRpc(int skillIndex, ServerRpcParams rpcParams = default)
     {
+        ulong senderId = rpcParams.Receive.SenderClientId;
+
+        var senderPlayer = NetworkManager.Singleton
+            .ConnectedClients[senderId]
+            .PlayerObject
+            .GetComponent<NetworkPlayer>();
+
+        if (senderPlayer.currentRole.Value != CharacterRole.Trickster)
+            return;
+
         foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
         {
             var player = client.PlayerObject.GetComponent<NetworkPlayer>();
@@ -32,26 +46,14 @@ public class TricksterSkillController : NetworkBehaviour
                 var runner = client.PlayerObject
                     .GetComponentInChildren<RunnerController>();
 
-                if (runner == null) return;
+                if (runner == null) continue;
 
                 if (skillIndex == 1)
-                {
                     SpawnProjectile(0);
-                    /*runner.ApplySlow(3f);
-                    Debug.Log("Trickster used Slow");*/
-                }
                 else if (skillIndex == 2)
-                {
                     SpawnProjectile(1);
-                    /*runner.ForceJump();
-                    Debug.Log("Trickster forced Jump");*/
-                }
                 else if (skillIndex == 3)
-                {
                     SpawnProjectile(2);
-                    /*runner.ForceSlide();
-                    Debug.Log("Trickster forced Slide");*/
-                }
             }
         }
     }

@@ -251,7 +251,7 @@ public class GameFlowManager : NetworkBehaviour
 
             var netObj = character.GetComponent<NetworkObject>();
 
-            netObj.Spawn();
+            netObj.SpawnWithOwnership(client.ClientId);
 
             character.transform.SetParent(client.PlayerObject.transform);
         }
