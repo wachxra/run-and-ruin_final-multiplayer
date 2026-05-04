@@ -1,0 +1,2574 @@
+fileFormatVersion: 2
+guid: 9dcc28da725d3954a9e9b9948f5ab9ca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4615157833678591719
+    second: GoldPeaberry_0
+  - first:
+      213: -8493162113787052170
+    second: GoldPeaberry_1
+  - first:
+      213: 8877456144995544546
+    second: GoldPeaberry_2
+  - first:
+      213: -2447014209174155446
+    second: GoldPeaberry_3
+  - first:
+      213: 8298430554426119510
+    second: GoldPeaberry_4
+  - first:
+      213: 227963123374897484
+    second: GoldPeaberry_5
+  - first:
+      213: 5044450564391761238
+    second: GoldPeaberry_6
+  - first:
+      213: -6720051237472135249
+    second: GoldPeaberry_7
+  - first:
+      213: -817043169392111043
+    second: GoldPeaberry_8
+  - first:
+      213: -3807838301568027061
+    second: GoldPeaberry_9
+  - first:
+      213: -1233314835987651965
+    second: GoldPeaberry_10
+  - first:
+      213: 2039279184252343200
+    second: GoldPeaberry_11
+  - first:
+      213: 3077831515291664842
+    second: GoldPeaberry_12
+  - first:
+      213: 58074920374842744
+    second: GoldPeaberry_13
+  - first:
+      213: 3688074585467268931
+    second: GoldPeaberry_14
+  - first:
+      213: -6380331685675993740
+    second: GoldPeaberry_15
+  - first:
+      213: 3211348230175961708
+    second: GoldPeaberry_16
+  - first:
+      213: 4305209195975342160
+    second: GoldPeaberry_17
+  - first:
+      213: -2771250958188278222
+    second: GoldPeaberry_18
+  - first:
+      213: -2034517604679020721
+    second: GoldPeaberry_19
+  - first:
+      213: 3658513510531496069
+    second: GoldPeaberry_20
+  - first:
+      213: -9073131127843258966
+    second: GoldPeaberry_21
+  - first:
+      213: -2708780756793926046
+    second: GoldPeaberry_22
+  - first:
+      213: -6919557026196365693
+    second: GoldPeaberry_23
+  - first:
+      213: -6653376280303898647
+    second: GoldPeaberry_24
+  - first:
+      213: 2068068102462124164
+    second: GoldPeaberry_25
+  - first:
+      213: -3031999785152271697
+    second: GoldPeaberry_26
+  - first:
+      213: -762793589704795096
+    second: GoldPeaberry_27
+  - first:
+      213: 1448061115299011815
+    second: GoldPeaberry_28
+  - first:
+      213: 4041380891327188625
+    second: GoldPeaberry_29
+  - first:
+      213: -898033224772959317
+    second: GoldPeaberry_30
+  - first:
+      213: -5815435452423651080
+    second: GoldPeaberry_31
+  - first:
+      213: -3509457954390786968
+    second: GoldPeaberry_32
+  - first:
+      213: -5286531048514552814
+    second: GoldPeaberry_33
+  - first:
+      213: -2674020504356379673
+    second: GoldPeaberry_34
+  - first:
+      213: -5064316268570685601
+    second: GoldPeaberry_35
+  - first:
+      213: -8892850489206301865
+    second: GoldPeaberry_36
+  - first:
+      213: 4706848761406957646
+    second: GoldPeaberry_37
+  - first:
+      213: -1011492277756669004
+    second: GoldPeaberry_38
+  - first:
+      213: -4202685738399568700
+    second: GoldPeaberry_39
+  - first:
+      213: -3729699380942237913
+    second: GoldPeaberry_40
+  - first:
+      213: -7775416351048416265
+    second: GoldPeaberry_41
+  - first:
+      213: -7412150285443349143
+    second: GoldPeaberry_42
+  - first:
+      213: 4127284771619018810
+    second: GoldPeaberry_43
+  - first:
+      213: -9051976446086743860
+    second: GoldPeaberry_44
+  - first:
+      213: 6627224894699052402
+    second: GoldPeaberry_45
+  - first:
+      213: -8383574165779674370
+    second: GoldPeaberry_46
+  - first:
+      213: -6845724403531279089
+    second: GoldPeaberry_47
+  - first:
+      213: -5109582200860284717
+    second: GoldPeaberry_48
+  - first:
+      213: -7346676315825706804
+    second: GoldPeaberry_49
+  - first:
+      213: -3644626260408361754
+    second: GoldPeaberry_50
+  - first:
+      213: -2396991796169884679
+    second: GoldPeaberry_51
+  - first:
+      213: 7459030231627855179
+    second: GoldPeaberry_52
+  - first:
+      213: 1548521751099935332
+    second: GoldPeaberry_53
+  - first:
+      213: -3606285356391369839
+    second: GoldPeaberry_54
+  - first:
+      213: 3366011860920455774
+    second: GoldPeaberry_55
+  - first:
+      213: 1799727893722982261
+    second: GoldPeaberry_56
+  - first:
+      213: 4992524405246717547
+    second: GoldPeaberry_57
+  - first:
+      213: 2583713984054519799
+    second: GoldPeaberry_58
+  - first:
+      213: 9176457864888356802
+    second: GoldPeaberry_59
+  - first:
+      213: -4253344855813129153
+    second: GoldPeaberry_60
+  - first:
+      213: -8929284497009386391
+    second: GoldPeaberry_61
+  - first:
+      213: 7390406153194556618
+    second: GoldPeaberry_62
+  - first:
+      213: -1430563730272169
+    second: GoldPeaberry_63
+  - first:
+      213: 2766010384317433694
+    second: GoldPeaberry_64
+  - first:
+      213: -2989831662086412273
+    second: GoldPeaberry_65
+  - first:
+      213: 8214656104761520435
+    second: GoldPeaberry_66
+  - first:
+      213: -7128488144358210453
+    second: GoldPeaberry_67
+  - first:
+      213: -6027376950927620555
+    second: GoldPeaberry_68
+  - first:
+      213: -8867299349934943836
+    second: GoldPeaberry_69
+  - first:
+      213: 7355403634582094065
+    second: GoldPeaberry_70
+  - first:
+      213: 8755288284672705752
+    second: GoldPeaberry_71
+  - first:
+      213: -3497330170275287009
+    second: GoldPeaberry_72
+  - first:
+      213: -5938637001146099768
+    second: GoldPeaberry_73
+  - first:
+      213: 4921654376003118542
+    second: GoldPeaberry_74
+  - first:
+      213: -2036654703790233725
+    second: GoldPeaberry_75
+  - first:
+      213: 7644788037532792540
+    second: GoldPeaberry_76
+  - first:
+      213: -6175675782433600429
+    second: GoldPeaberry_77
+  - first:
+      213: 3628052249845720157
+    second: GoldPeaberry_78
+  - first:
+      213: -2810247911918605204
+    second: GoldPeaberry_79
+  - first:
+      213: 7828991519675783340
+    second: GoldPeaberry_80
+  - first:
+      213: -9180031190802902124
+    second: GoldPeaberry_81
+  - first:
+      213: -4749995750866074237
+    second: GoldPeaberry_82
+  - first:
+      213: -9221309174957101921
+    second: GoldPeaberry_83
+  - first:
+      213: -6301108977176649730
+    second: GoldPeaberry_84
+  - first:
+      213: -7948114170325413490
+    second: GoldPeaberry_85
+  - first:
+      213: 945989673994150374
+    second: GoldPeaberry_86
+  - first:
+      213: -1239978782694424954
+    second: GoldPeaberry_87
+  - first:
+      213: 2742784296798364939
+    second: GoldPeaberry_88
+  - first:
+      213: 4557516005192891868
+    second: GoldPeaberry_89
+  - first:
+      213: 6021746755295609069
+    second: GoldPeaberry_90
+  - first:
+      213: -9179368279403971236
+    second: GoldPeaberry_91
+  - first:
+      213: 1541243626932450305
+    second: GoldPeaberry_92
+  - first:
+      213: 8443674671653488078
+    second: GoldPeaberry_93
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GoldPeaberry_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 326
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 919e935076aa3ffb0800000000000000
+      internalID: -4615157833678591719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 326
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67fbae36e0a322a80800000000000000
+      internalID: -8493162113787052170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 326
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed619f345f033b70800000000000000
+      internalID: 8877456144995544546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 326
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f47d5aa857a0ed0800000000000000
+      internalID: -2447014209174155446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 326
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65511dd4f92f92370800000000000000
+      internalID: 8298430554426119510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_5
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 326
+        width: 18
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4936aeb043e92300800000000000000
+      internalID: 227963123374897484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_6
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 326
+        width: 18
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 655f699cf0d710640800000000000000
+      internalID: 5044450564391761238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_7
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 326
+        width: 14
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa79c0ef0059db2a0800000000000000
+      internalID: -6720051237472135249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_8
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 328
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32593af09749a4f0800000000000000
+      internalID: -817043169392111043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_9
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 330
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4639e05d37d72bc0800000000000000
+      internalID: -3807838301568027061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_10
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 330
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 382acb8e0b262eee0800000000000000
+      internalID: -1233314835987651965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 288
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3953f0d99fc4c10800000000000000
+      internalID: 2039279184252343200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_12
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 290
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac14673c477a6ba20800000000000000
+      internalID: 3077831515291664842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_13
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 290
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8753d4715d25ec000800000000000000
+      internalID: 58074920374842744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_14
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 290
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f2ce39b4cae2330800000000000000
+      internalID: 3688074585467268931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_15
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 290
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475fc16e2228477a0800000000000000
+      internalID: -6380331685675993740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_16
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 290
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62b7bd6330019c20800000000000000
+      internalID: 3211348230175961708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_17
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 290
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 058fad924fc2fbb30800000000000000
+      internalID: 4305209195975342160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_18
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 290
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e0abdafe98a89d0800000000000000
+      internalID: -2771250958188278222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_19
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 292
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4f04d39401f3c3e0800000000000000
+      internalID: -2034517604679020721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_20
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 292
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588723977a6a5c230800000000000000
+      internalID: 3658513510531496069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 254
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aadfc5c8f43c51280800000000000000
+      internalID: -9073131127843258966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_22
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 254
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26e52e0e04a786ad0800000000000000
+      internalID: -2708780756793926046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_23
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 254
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ed18acb8bc8ff90800000000000000
+      internalID: -6919557026196365693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_24
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 254
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9efe97f26857aa3a0800000000000000
+      internalID: -6653376280303898647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_25
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 254
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 480329a6bf043bc10800000000000000
+      internalID: 2068068102462124164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_26
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 254
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa20f6724c2ce5d0800000000000000
+      internalID: -3031999785152271697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_27
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 254
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c53b885430a65f0800000000000000
+      internalID: -762793589704795096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_28
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 254
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec147689eb881410800000000000000
+      internalID: 1448061115299011815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_29
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 220
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ecb9d228ed51830800000000000000
+      internalID: 4041380891327188625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_30
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 220
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3c8e04a8b8983f0800000000000000
+      internalID: -898033224772959317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_31
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 220
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f0431c744c6b4fa0800000000000000
+      internalID: -5815435452423651080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_32
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 220
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86c3e5a9596eb4fc0800000000000000
+      internalID: -3509457954390786968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_33
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 220
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c7737450872a6b0800000000000000
+      internalID: -5286531048514552814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_34
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 220
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e32ab3d488f3ead0800000000000000
+      internalID: -2674020504356379673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_35
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 220
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fcc958f2fe7b9b0800000000000000
+      internalID: -5064316268570685601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_36
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 220
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b133ea89f369480800000000000000
+      internalID: -8892850489206301865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_37
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 220
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e482623b206125140800000000000000
+      internalID: 4706848761406957646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_38
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 186
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b3534be12576f1f0800000000000000
+      internalID: -1011492277756669004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_39
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 186
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cce714769f0da5c0800000000000000
+      internalID: -4202685738399568700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_40
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 186
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f81ff7c227d3cc0800000000000000
+      internalID: -3729699380942237913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_41
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 186
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3cefe460c281490800000000000000
+      internalID: -7775416351048416265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_42
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 186
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965c65e2690c22990800000000000000
+      internalID: -7412150285443349143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_43
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 186
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a381b3be1af074930800000000000000
+      internalID: 4127284771619018810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_44
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 186
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8fbc7b16be06280800000000000000
+      internalID: -9051976446086743860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_45
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 186
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27d992fdde1a8fb50800000000000000
+      internalID: 6627224894699052402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_46
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 186
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa8f8cd6bf87ab80800000000000000
+      internalID: -8383574165779674370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_47
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 152
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f059b49dce91ff0a0800000000000000
+      internalID: -6845724403531279089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_48
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 152
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d8601f5f0e1719b0800000000000000
+      internalID: -5109582200860284717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_49
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 152
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8ee6ba0dc5b0a90800000000000000
+      internalID: -7346676315825706804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_50
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 152
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ec9c49e9bfab6dc0800000000000000
+      internalID: -3644626260408361754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_51
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 152
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fbb4c349ac2cbed0800000000000000
+      internalID: -2396991796169884679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_52
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 152
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45f31dd97cc38760800000000000000
+      internalID: 7459030231627855179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_53
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 152
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46a074504547d7510800000000000000
+      internalID: 1548521751099935332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_54
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 152
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19379954396e3fdc0800000000000000
+      internalID: -3606285356391369839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_55
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 152
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e525aef14f976be20800000000000000
+      internalID: 3366011860920455774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_56
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 118
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57768b5ebfae9f810800000000000000
+      internalID: 1799727893722982261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_57
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 118
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6ee23bbe72094540800000000000000
+      internalID: 4992524405246717547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_58
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 118
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f767cced223bd320800000000000000
+      internalID: 2583713984054519799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_59
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 118
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf82052fc3595f70800000000000000
+      internalID: 9176457864888356802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_60
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 118
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3cf50a836519f4c0800000000000000
+      internalID: -4253344855813129153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_61
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 118
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c5a513f0fc41480800000000000000
+      internalID: -8929284497009386391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_62
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 118
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: accc5038d3fff8660800000000000000
+      internalID: 7390406153194556618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_63
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 118
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750570de8eaeafff0800000000000000
+      internalID: -1430563730272169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_64
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 118
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5748422ac7d26620800000000000000
+      internalID: 2766010384317433694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_65
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 84
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08af13b1fbf186d0800000000000000
+      internalID: -2989831662086412273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_66
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 84
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 331fd444432500270800000000000000
+      internalID: 8214656104761520435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_67
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 84
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6402f11dc5821d90800000000000000
+      internalID: -7128488144358210453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_68
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 86
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5360598f8947a5ca0800000000000000
+      internalID: -6027376950927620555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_69
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 88
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a15312e83601f480800000000000000
+      internalID: -8867299349934943836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_70
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 90
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f002e292a4a31660800000000000000
+      internalID: 7355403634582094065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_71
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 90
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d44e02be48018970800000000000000
+      internalID: 8755288284672705752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_72
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 90
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f103c726dbcf67fc0800000000000000
+      internalID: -3497330170275287009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_73
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 90
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c712b89c19b59da0800000000000000
+      internalID: -5938637001146099768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_74
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 56
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5a9e4349a3d4440800000000000000
+      internalID: 4921654376003118542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_75
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 56
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 387647a66595cb3e0800000000000000
+      internalID: -2036654703790233725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_76
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 56
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd63c40673eb71a60800000000000000
+      internalID: 7644788037532792540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_77
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 56
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c001498979b4aa0800000000000000
+      internalID: -6175675782433600429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_78
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 56
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d546c9a8c4e695230800000000000000
+      internalID: 3628052249845720157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_79
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 56
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6cee47d96efff8d0800000000000000
+      internalID: -2810247911918605204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_80
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 56
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca812dfae4a26ac60800000000000000
+      internalID: 7828991519675783340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_81
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 56
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 493df25154af99080800000000000000
+      internalID: -9180031190802902124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_82
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 56
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3854309f700a41eb0800000000000000
+      internalID: -4749995750866074237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_83
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 28
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ca1a67924570080800000000000000
+      internalID: -9221309174957101921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_84
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 28
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff5c5c15c6fd88a0800000000000000
+      internalID: -6301108977176649730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_85
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 32
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e815183e540a2b190800000000000000
+      internalID: -7948114170325413490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_86
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 32
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1eb9fa894d02d00800000000000000
+      internalID: 945989673994150374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_87
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 32
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e3a78edd5bacee0800000000000000
+      internalID: -1239978782694424954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_88
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 34
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05af2a39c3501620800000000000000
+      internalID: 2742784296798364939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_89
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 36
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cddfda3f8ac8f3f30800000000000000
+      internalID: 4557516005192891868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_90
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 36
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de081c4f4ca819350800000000000000
+      internalID: 6021746755295609069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_91
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 36
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d33ab2f255c9080800000000000000
+      internalID: -9179368279403971236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_92
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 40
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 104b4afa9e8936510800000000000000
+      internalID: 1541243626932450305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldPeaberry_93
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 12
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec58eda9065fd2570800000000000000
+      internalID: 8443674671653488078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GoldPeaberry_0: -4615157833678591719
+      GoldPeaberry_1: -8493162113787052170
+      GoldPeaberry_10: -1233314835987651965
+      GoldPeaberry_11: 2039279184252343200
+      GoldPeaberry_12: 3077831515291664842
+      GoldPeaberry_13: 58074920374842744
+      GoldPeaberry_14: 3688074585467268931
+      GoldPeaberry_15: -6380331685675993740
+      GoldPeaberry_16: 3211348230175961708
+      GoldPeaberry_17: 4305209195975342160
+      GoldPeaberry_18: -2771250958188278222
+      GoldPeaberry_19: -2034517604679020721
+      GoldPeaberry_2: 8877456144995544546
+      GoldPeaberry_20: 3658513510531496069
+      GoldPeaberry_21: -9073131127843258966
+      GoldPeaberry_22: -2708780756793926046
+      GoldPeaberry_23: -6919557026196365693
+      GoldPeaberry_24: -6653376280303898647
+      GoldPeaberry_25: 2068068102462124164
+      GoldPeaberry_26: -3031999785152271697
+      GoldPeaberry_27: -762793589704795096
+      GoldPeaberry_28: 1448061115299011815
+      GoldPeaberry_29: 4041380891327188625
+      GoldPeaberry_3: -2447014209174155446
+      GoldPeaberry_30: -898033224772959317
+      GoldPeaberry_31: -5815435452423651080
+      GoldPeaberry_32: -3509457954390786968
+      GoldPeaberry_33: -5286531048514552814
+      GoldPeaberry_34: -2674020504356379673
+      GoldPeaberry_35: -5064316268570685601
+      GoldPeaberry_36: -8892850489206301865
+      GoldPeaberry_37: 4706848761406957646
+      GoldPeaberry_38: -1011492277756669004
+      GoldPeaberry_39: -4202685738399568700
+      GoldPeaberry_4: 8298430554426119510
+      GoldPeaberry_40: -3729699380942237913
+      GoldPeaberry_41: -7775416351048416265
+      GoldPeaberry_42: -7412150285443349143
+      GoldPeaberry_43: 4127284771619018810
+      GoldPeaberry_44: -9051976446086743860
+      GoldPeaberry_45: 6627224894699052402
+      GoldPeaberry_46: -8383574165779674370
+      GoldPeaberry_47: -6845724403531279089
+      GoldPeaberry_48: -5109582200860284717
+      GoldPeaberry_49: -7346676315825706804
+      GoldPeaberry_5: 227963123374897484
+      GoldPeaberry_50: -3644626260408361754
+      GoldPeaberry_51: -2396991796169884679
+      GoldPeaberry_52: 7459030231627855179
+      GoldPeaberry_53: 1548521751099935332
+      GoldPeaberry_54: -3606285356391369839
+      GoldPeaberry_55: 3366011860920455774
+      GoldPeaberry_56: 1799727893722982261
+      GoldPeaberry_57: 4992524405246717547
+      GoldPeaberry_58: 2583713984054519799
+      GoldPeaberry_59: 9176457864888356802
+      GoldPeaberry_6: 5044450564391761238
+      GoldPeaberry_60: -4253344855813129153
+      GoldPeaberry_61: -8929284497009386391
+      GoldPeaberry_62: 7390406153194556618
+      GoldPeaberry_63: -1430563730272169
+      GoldPeaberry_64: 2766010384317433694
+      GoldPeaberry_65: -2989831662086412273
+      GoldPeaberry_66: 8214656104761520435
+      GoldPeaberry_67: -7128488144358210453
+      GoldPeaberry_68: -6027376950927620555
+      GoldPeaberry_69: -8867299349934943836
+      GoldPeaberry_7: -6720051237472135249
+      GoldPeaberry_70: 7355403634582094065
+      GoldPeaberry_71: 8755288284672705752
+      GoldPeaberry_72: -3497330170275287009
+      GoldPeaberry_73: -5938637001146099768
+      GoldPeaberry_74: 4921654376003118542
+      GoldPeaberry_75: -2036654703790233725
+      GoldPeaberry_76: 7644788037532792540
+      GoldPeaberry_77: -6175675782433600429
+      GoldPeaberry_78: 3628052249845720157
+      GoldPeaberry_79: -2810247911918605204
+      GoldPeaberry_8: -817043169392111043
+      GoldPeaberry_80: 7828991519675783340
+      GoldPeaberry_81: -9180031190802902124
+      GoldPeaberry_82: -4749995750866074237
+      GoldPeaberry_83: -9221309174957101921
+      GoldPeaberry_84: -6301108977176649730
+      GoldPeaberry_85: -7948114170325413490
+      GoldPeaberry_86: 945989673994150374
+      GoldPeaberry_87: -1239978782694424954
+      GoldPeaberry_88: 2742784296798364939
+      GoldPeaberry_89: 4557516005192891868
+      GoldPeaberry_9: -3807838301568027061
+      GoldPeaberry_90: 6021746755295609069
+      GoldPeaberry_91: -9179368279403971236
+      GoldPeaberry_92: 1541243626932450305
+      GoldPeaberry_93: 8443674671653488078
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

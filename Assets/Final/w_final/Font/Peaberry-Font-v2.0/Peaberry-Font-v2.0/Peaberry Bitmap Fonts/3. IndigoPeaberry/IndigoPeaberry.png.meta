@@ -1,0 +1,2574 @@
+fileFormatVersion: 2
+guid: bf4a60a1d22eaae4fa8612099c4affff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 238724599795444278
+    second: IndigoPeaberry_0
+  - first:
+      213: 3085371788097693031
+    second: IndigoPeaberry_1
+  - first:
+      213: 5790732886851971492
+    second: IndigoPeaberry_2
+  - first:
+      213: 5201969702193034842
+    second: IndigoPeaberry_3
+  - first:
+      213: -4715414776193300543
+    second: IndigoPeaberry_4
+  - first:
+      213: -554143557388198866
+    second: IndigoPeaberry_5
+  - first:
+      213: 4097487591608879076
+    second: IndigoPeaberry_6
+  - first:
+      213: -5488321584162381553
+    second: IndigoPeaberry_7
+  - first:
+      213: 684861171649898696
+    second: IndigoPeaberry_8
+  - first:
+      213: 6210673114080784771
+    second: IndigoPeaberry_9
+  - first:
+      213: 1592992050536675900
+    second: IndigoPeaberry_10
+  - first:
+      213: 1620127147656445802
+    second: IndigoPeaberry_11
+  - first:
+      213: 5748267133011305572
+    second: IndigoPeaberry_12
+  - first:
+      213: -5905331808296001720
+    second: IndigoPeaberry_13
+  - first:
+      213: 255545404780746893
+    second: IndigoPeaberry_14
+  - first:
+      213: 6639719212352590092
+    second: IndigoPeaberry_15
+  - first:
+      213: 8230776422309863044
+    second: IndigoPeaberry_16
+  - first:
+      213: -5403362948093166421
+    second: IndigoPeaberry_17
+  - first:
+      213: 2320843473493548990
+    second: IndigoPeaberry_18
+  - first:
+      213: -7054345458128423692
+    second: IndigoPeaberry_19
+  - first:
+      213: 7627372952520923785
+    second: IndigoPeaberry_20
+  - first:
+      213: -190765509742745938
+    second: IndigoPeaberry_21
+  - first:
+      213: -3903241119654474449
+    second: IndigoPeaberry_22
+  - first:
+      213: 5097062271564766504
+    second: IndigoPeaberry_23
+  - first:
+      213: 6605281554572507962
+    second: IndigoPeaberry_24
+  - first:
+      213: -226477273212174198
+    second: IndigoPeaberry_25
+  - first:
+      213: 8206083603367994672
+    second: IndigoPeaberry_26
+  - first:
+      213: -3303546190179463446
+    second: IndigoPeaberry_27
+  - first:
+      213: -217644270707213717
+    second: IndigoPeaberry_28
+  - first:
+      213: 7921276242900384633
+    second: IndigoPeaberry_29
+  - first:
+      213: -8729779289523641506
+    second: IndigoPeaberry_30
+  - first:
+      213: 5948710606837522033
+    second: IndigoPeaberry_31
+  - first:
+      213: -3422246224720033667
+    second: IndigoPeaberry_32
+  - first:
+      213: 8707821827442343291
+    second: IndigoPeaberry_33
+  - first:
+      213: 3227823529987917914
+    second: IndigoPeaberry_34
+  - first:
+      213: -4910723056763064019
+    second: IndigoPeaberry_35
+  - first:
+      213: 1328690343152628478
+    second: IndigoPeaberry_36
+  - first:
+      213: 1088104293392012935
+    second: IndigoPeaberry_37
+  - first:
+      213: 7598292827927365376
+    second: IndigoPeaberry_38
+  - first:
+      213: 1094452174276830714
+    second: IndigoPeaberry_39
+  - first:
+      213: -2972963145552895861
+    second: IndigoPeaberry_40
+  - first:
+      213: -6148495157802794869
+    second: IndigoPeaberry_41
+  - first:
+      213: 4701889691679276356
+    second: IndigoPeaberry_42
+  - first:
+      213: 1962465548071724612
+    second: IndigoPeaberry_43
+  - first:
+      213: -5013629660647593422
+    second: IndigoPeaberry_44
+  - first:
+      213: 2961308334958943536
+    second: IndigoPeaberry_45
+  - first:
+      213: -5870219750888343767
+    second: IndigoPeaberry_46
+  - first:
+      213: -4662896612686845006
+    second: IndigoPeaberry_47
+  - first:
+      213: 2458174260819657338
+    second: IndigoPeaberry_48
+  - first:
+      213: -151007238999863081
+    second: IndigoPeaberry_49
+  - first:
+      213: 4543946865620942965
+    second: IndigoPeaberry_50
+  - first:
+      213: 2980704976848683583
+    second: IndigoPeaberry_51
+  - first:
+      213: 8330301163927105329
+    second: IndigoPeaberry_52
+  - first:
+      213: 230692068616123223
+    second: IndigoPeaberry_53
+  - first:
+      213: -1332309202064882460
+    second: IndigoPeaberry_54
+  - first:
+      213: -3408677992244014677
+    second: IndigoPeaberry_55
+  - first:
+      213: -5016483160159496245
+    second: IndigoPeaberry_56
+  - first:
+      213: -1717533292169732808
+    second: IndigoPeaberry_57
+  - first:
+      213: 37650596714846123
+    second: IndigoPeaberry_58
+  - first:
+      213: 1623792526652770987
+    second: IndigoPeaberry_59
+  - first:
+      213: -5493558052554847899
+    second: IndigoPeaberry_60
+  - first:
+      213: -5388381690835418266
+    second: IndigoPeaberry_61
+  - first:
+      213: 1563663211715068063
+    second: IndigoPeaberry_62
+  - first:
+      213: 3949945037639728186
+    second: IndigoPeaberry_63
+  - first:
+      213: -4954983926553231789
+    second: IndigoPeaberry_64
+  - first:
+      213: 6277169315066851238
+    second: IndigoPeaberry_65
+  - first:
+      213: -4619036693745603830
+    second: IndigoPeaberry_66
+  - first:
+      213: 2646373475821326027
+    second: IndigoPeaberry_67
+  - first:
+      213: 6350041530612245137
+    second: IndigoPeaberry_68
+  - first:
+      213: -6853606306867229609
+    second: IndigoPeaberry_69
+  - first:
+      213: 6268267066824861620
+    second: IndigoPeaberry_70
+  - first:
+      213: -6031903313730921653
+    second: IndigoPeaberry_71
+  - first:
+      213: -6374486975796187562
+    second: IndigoPeaberry_72
+  - first:
+      213: 5795398832421162879
+    second: IndigoPeaberry_73
+  - first:
+      213: -748763025166401830
+    second: IndigoPeaberry_74
+  - first:
+      213: -6217857653599534110
+    second: IndigoPeaberry_75
+  - first:
+      213: 7282017041877032107
+    second: IndigoPeaberry_76
+  - first:
+      213: 3044187555438906036
+    second: IndigoPeaberry_77
+  - first:
+      213: 8894970847361163156
+    second: IndigoPeaberry_78
+  - first:
+      213: 2752479130938522534
+    second: IndigoPeaberry_79
+  - first:
+      213: -4745047403449535622
+    second: IndigoPeaberry_80
+  - first:
+      213: 1990960507681323134
+    second: IndigoPeaberry_81
+  - first:
+      213: 3261223953073235630
+    second: IndigoPeaberry_82
+  - first:
+      213: -7693773832016356666
+    second: IndigoPeaberry_83
+  - first:
+      213: -5476841045500048618
+    second: IndigoPeaberry_84
+  - first:
+      213: -5875581202323716749
+    second: IndigoPeaberry_85
+  - first:
+      213: 720228752654536068
+    second: IndigoPeaberry_86
+  - first:
+      213: 4409318809510311396
+    second: IndigoPeaberry_87
+  - first:
+      213: 2352092395915903931
+    second: IndigoPeaberry_88
+  - first:
+      213: 8401839438003704680
+    second: IndigoPeaberry_89
+  - first:
+      213: 4096360984804207167
+    second: IndigoPeaberry_90
+  - first:
+      213: -1116553000044265843
+    second: IndigoPeaberry_91
+  - first:
+      213: -1539872164879066501
+    second: IndigoPeaberry_92
+  - first:
+      213: 5121361681583144134
+    second: IndigoPeaberry_93
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IndigoPeaberry_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 245
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a64f932ce105300800000000000000
+      internalID: 238724599795444278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 245
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76523955b4171da20800000000000000
+      internalID: 3085371788097693031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_2
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 245
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9ebf541e0dc5050800000000000000
+      internalID: 5790732886851971492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 245
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a567f8702eb113840800000000000000
+      internalID: 5201969702193034842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 245
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7ce509e3b7f8eb0800000000000000
+      internalID: -4715414776193300543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 245
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c1e4bde594f48f0800000000000000
+      internalID: -554143557388198866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_6
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 245
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e70b6151433dd830800000000000000
+      internalID: 4097487591608879076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 245
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0164eaf89095d3b0800000000000000
+      internalID: -5488321584162381553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 246
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c866a86b9d118900800000000000000
+      internalID: 684861171649898696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_9
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 247
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 381badcaa4eb03650800000000000000
+      internalID: 6210673114080784771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_10
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 247
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a724674d17b1610800000000000000
+      internalID: 1592992050536675900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 217
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f77079e09db7610800000000000000
+      internalID: 1620127147656445802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_12
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 218
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46421397082f5cf40800000000000000
+      internalID: 5748267133011305572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_13
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 218
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84f93b5120c0c0ea0800000000000000
+      internalID: -5905331808296001720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_14
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 218
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8890f31131eb8300800000000000000
+      internalID: 255545404780746893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_15
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 218
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01dc94e175052c50800000000000000
+      internalID: 6639719212352590092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_16
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 218
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e907d2c87993270800000000000000
+      internalID: 8230776422309863044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 218
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bac3666e6066305b0800000000000000
+      internalID: -5403362948093166421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_18
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 218
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebfddd0c7da453020800000000000000
+      internalID: 2320843473493548990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_19
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 219
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f47d5d6e2ee91e90800000000000000
+      internalID: -7054345458128423692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 219
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a9e6ce94fd9d960800000000000000
+      internalID: 7627372952520923785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_21
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 219
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea6236497c34a5df0800000000000000
+      internalID: -190765509742745938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_22
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 191
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d0c46c1e6e4d9c0800000000000000
+      internalID: -3903241119654474449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_23
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 191
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82dd9ae61276cb640800000000000000
+      internalID: 5097062271564766504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_24
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 191
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3bfbbdd39caaab50800000000000000
+      internalID: 6605281554572507962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_25
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 191
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a804d74be146bdcf0800000000000000
+      internalID: -226477273212174198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_26
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 191
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03528ef3f8dd1e170800000000000000
+      internalID: 8206083603367994672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_27
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 191
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee02433e327722d0800000000000000
+      internalID: -3303546190179463446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_28
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 191
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6af81d50b5cafcf0800000000000000
+      internalID: -217644270707213717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_29
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 191
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b71d136c60eed60800000000000000
+      internalID: 7921276242900384633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_30
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 191
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53a1601df799d680800000000000000
+      internalID: -8729779289523641506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_31
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17e162087c01e8250800000000000000
+      internalID: 5948710606837522033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_32
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7804a1c03db180d0800000000000000
+      internalID: -3422246224720033667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7df718e0d568d870800000000000000
+      internalID: 8707821827442343291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_34
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58c39616688bcc20800000000000000
+      internalID: 3227823529987917914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_35
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d213153e56b99dbb0800000000000000
+      internalID: -4910723056763064019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_36
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef2ba10d3d4707210800000000000000
+      internalID: 1328690343152628478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_37
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 786553ef619b91f00800000000000000
+      internalID: 1088104293392012935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_38
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 007420cc11f827960800000000000000
+      internalID: 7598292827927365376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_39
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5ac6f2476403f00800000000000000
+      internalID: 1094452174276830714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_40
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 165
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80edf245c9edb6d0800000000000000
+      internalID: -2972963145552895861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_41
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8084f7ea382caaa0800000000000000
+      internalID: -6148495157802794869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_42
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d3d9d43c7704140800000000000000
+      internalID: 4701889691679276356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_43
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446e1c4b4041c3b10800000000000000
+      internalID: 1962465548071724612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_44
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23aecb113620c6ab0800000000000000
+      internalID: -5013629660647593422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_45
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d91afad3ea81920800000000000000
+      internalID: 2961308334958943536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_46
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92771d20d3ac88ea0800000000000000
+      internalID: -5870219750888343767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_47
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bbad606c301a4fb0800000000000000
+      internalID: -4662896612686845006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_48
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a720a2c57703d1220800000000000000
+      internalID: 2458174260819657338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_49
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d096e857b387edf0800000000000000
+      internalID: -151007238999863081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_50
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 139
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 570069379975f0f30800000000000000
+      internalID: 4543946865620942965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_51
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f320e4d42679d5920800000000000000
+      internalID: 2980704976848683583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_52
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13fe5e3d5cc2b9370800000000000000
+      internalID: 8330301163927105329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_53
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7533d52d635933300800000000000000
+      internalID: 230692068616123223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_54
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e440ffe6dfa28de0800000000000000
+      internalID: -1332309202064882460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_55
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba19a9e0d61f1b0d0800000000000000
+      internalID: -3408677992244014677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_56
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc7d6f0f42fd16ab0800000000000000
+      internalID: -5016483160159496245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_57
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83dd05612981a28e0800000000000000
+      internalID: -1717533292169732808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_58
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba715caa403c58000800000000000000
+      internalID: 37650596714846123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_59
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa821423bed88610800000000000000
+      internalID: 1623792526652770987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_60
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 113
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5694b7cae06f2c3b0800000000000000
+      internalID: -5493558052554847899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_61
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 87
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663498ba66f9835b0800000000000000
+      internalID: -5388381690835418266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_62
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 87
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f908f9a086f33b510800000000000000
+      internalID: 1563663211715068063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_63
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 87
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c35d2851601d630800000000000000
+      internalID: 3949945037639728186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_64
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 87
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e36061f5c5c3bb0800000000000000
+      internalID: -4954983926553231789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_65
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 87
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6afaa83fb3cfc1750800000000000000
+      internalID: 6277169315066851238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_66
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 87
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b6cc88992e5efb0800000000000000
+      internalID: -4619036693745603830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_67
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 87
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce8859b7aec9b420800000000000000
+      internalID: 2646373475821326027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_68
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 88
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192ee1dc021ef1850800000000000000
+      internalID: 6350041530612245137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_69
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 89
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c4dc8306913e0a0800000000000000
+      internalID: -6853606306867229609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_70
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 90
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b72063cfab5df650800000000000000
+      internalID: 6268267066824861620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_71
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 64
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b119105ef5a4ca0800000000000000
+      internalID: -6031903313730921653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_72
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 64
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e60567ed54987a0800000000000000
+      internalID: -6374486975796187562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_73
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 64
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7f4d2268846d6050800000000000000
+      internalID: 5795398832421162879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_74
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 64
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade7208eefbdb95f0800000000000000
+      internalID: -748763025166401830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_75
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 64
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e3814d586bb5b9a0800000000000000
+      internalID: -6217857653599534110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_76
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 64
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bacdb65faebee0560800000000000000
+      internalID: 7282017041877032107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_77
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 64
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bac99fe3702f3a20800000000000000
+      internalID: 3044187555438906036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_78
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 64
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49fda6cabd8417b70800000000000000
+      internalID: 8894970847361163156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_79
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 64
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab3443bf25c23620800000000000000
+      internalID: 2752479130938522534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_80
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 64
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a733003e684362eb0800000000000000
+      internalID: -4745047403449535622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_81
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e783d2e780051ab10800000000000000
+      internalID: 1990960507681323134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_82
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 41
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea6ece718e1324d20800000000000000
+      internalID: 3261223953073235630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_83
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 41
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca187096793a3590800000000000000
+      internalID: -7693773832016356666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_84
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 41
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61bc0bf261a5ef3b0800000000000000
+      internalID: -5476841045500048618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_85
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 43
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3754882d60eb57ea0800000000000000
+      internalID: -5875581202323716749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_86
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 43
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d0ffe0c34cef900800000000000000
+      internalID: 720228752654536068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_87
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 43
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e57f4e781c013d30800000000000000
+      internalID: 4409318809510311396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_88
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 44
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb30779729f44a020800000000000000
+      internalID: 2352092395915903931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_89
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 45
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863141a3474599470800000000000000
+      internalID: 8401839438003704680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_90
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 45
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a260bbc9239d830800000000000000
+      internalID: 4096360984804207167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_91
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 45
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8ef67356f43180f0800000000000000
+      internalID: -1116553000044265843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_92
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 24
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a1fd4bc6641aae0800000000000000
+      internalID: -1539872164879066501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndigoPeaberry_93
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 24
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc7f05b05bb21740800000000000000
+      internalID: 5121361681583144134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      IndigoPeaberry_0: 238724599795444278
+      IndigoPeaberry_1: 3085371788097693031
+      IndigoPeaberry_10: 1592992050536675900
+      IndigoPeaberry_11: 1620127147656445802
+      IndigoPeaberry_12: 5748267133011305572
+      IndigoPeaberry_13: -5905331808296001720
+      IndigoPeaberry_14: 255545404780746893
+      IndigoPeaberry_15: 6639719212352590092
+      IndigoPeaberry_16: 8230776422309863044
+      IndigoPeaberry_17: -5403362948093166421
+      IndigoPeaberry_18: 2320843473493548990
+      IndigoPeaberry_19: -7054345458128423692
+      IndigoPeaberry_2: 5790732886851971492
+      IndigoPeaberry_20: 7627372952520923785
+      IndigoPeaberry_21: -190765509742745938
+      IndigoPeaberry_22: -3903241119654474449
+      IndigoPeaberry_23: 5097062271564766504
+      IndigoPeaberry_24: 6605281554572507962
+      IndigoPeaberry_25: -226477273212174198
+      IndigoPeaberry_26: 8206083603367994672
+      IndigoPeaberry_27: -3303546190179463446
+      IndigoPeaberry_28: -217644270707213717
+      IndigoPeaberry_29: 7921276242900384633
+      IndigoPeaberry_3: 5201969702193034842
+      IndigoPeaberry_30: -8729779289523641506
+      IndigoPeaberry_31: 5948710606837522033
+      IndigoPeaberry_32: -3422246224720033667
+      IndigoPeaberry_33: 8707821827442343291
+      IndigoPeaberry_34: 3227823529987917914
+      IndigoPeaberry_35: -4910723056763064019
+      IndigoPeaberry_36: 1328690343152628478
+      IndigoPeaberry_37: 1088104293392012935
+      IndigoPeaberry_38: 7598292827927365376
+      IndigoPeaberry_39: 1094452174276830714
+      IndigoPeaberry_4: -4715414776193300543
+      IndigoPeaberry_40: -2972963145552895861
+      IndigoPeaberry_41: -6148495157802794869
+      IndigoPeaberry_42: 4701889691679276356
+      IndigoPeaberry_43: 1962465548071724612
+      IndigoPeaberry_44: -5013629660647593422
+      IndigoPeaberry_45: 2961308334958943536
+      IndigoPeaberry_46: -5870219750888343767
+      IndigoPeaberry_47: -4662896612686845006
+      IndigoPeaberry_48: 2458174260819657338
+      IndigoPeaberry_49: -151007238999863081
+      IndigoPeaberry_5: -554143557388198866
+      IndigoPeaberry_50: 4543946865620942965
+      IndigoPeaberry_51: 2980704976848683583
+      IndigoPeaberry_52: 8330301163927105329
+      IndigoPeaberry_53: 230692068616123223
+      IndigoPeaberry_54: -1332309202064882460
+      IndigoPeaberry_55: -3408677992244014677
+      IndigoPeaberry_56: -5016483160159496245
+      IndigoPeaberry_57: -1717533292169732808
+      IndigoPeaberry_58: 37650596714846123
+      IndigoPeaberry_59: 1623792526652770987
+      IndigoPeaberry_6: 4097487591608879076
+      IndigoPeaberry_60: -5493558052554847899
+      IndigoPeaberry_61: -5388381690835418266
+      IndigoPeaberry_62: 1563663211715068063
+      IndigoPeaberry_63: 3949945037639728186
+      IndigoPeaberry_64: -4954983926553231789
+      IndigoPeaberry_65: 6277169315066851238
+      IndigoPeaberry_66: -4619036693745603830
+      IndigoPeaberry_67: 2646373475821326027
+      IndigoPeaberry_68: 6350041530612245137
+      IndigoPeaberry_69: -6853606306867229609
+      IndigoPeaberry_7: -5488321584162381553
+      IndigoPeaberry_70: 6268267066824861620
+      IndigoPeaberry_71: -6031903313730921653
+      IndigoPeaberry_72: -6374486975796187562
+      IndigoPeaberry_73: 5795398832421162879
+      IndigoPeaberry_74: -748763025166401830
+      IndigoPeaberry_75: -6217857653599534110
+      IndigoPeaberry_76: 7282017041877032107
+      IndigoPeaberry_77: 3044187555438906036
+      IndigoPeaberry_78: 8894970847361163156
+      IndigoPeaberry_79: 2752479130938522534
+      IndigoPeaberry_8: 684861171649898696
+      IndigoPeaberry_80: -4745047403449535622
+      IndigoPeaberry_81: 1990960507681323134
+      IndigoPeaberry_82: 3261223953073235630
+      IndigoPeaberry_83: -7693773832016356666
+      IndigoPeaberry_84: -5476841045500048618
+      IndigoPeaberry_85: -5875581202323716749
+      IndigoPeaberry_86: 720228752654536068
+      IndigoPeaberry_87: 4409318809510311396
+      IndigoPeaberry_88: 2352092395915903931
+      IndigoPeaberry_89: 8401839438003704680
+      IndigoPeaberry_9: 6210673114080784771
+      IndigoPeaberry_90: 4096360984804207167
+      IndigoPeaberry_91: -1116553000044265843
+      IndigoPeaberry_92: -1539872164879066501
+      IndigoPeaberry_93: 5121361681583144134
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2574 @@
+fileFormatVersion: 2
+guid: d7118075850b23040a18b046257f3677
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5478476200708814854
+    second: WhitePeaberry_0
+  - first:
+      213: 6188717640869715953
+    second: WhitePeaberry_1
+  - first:
+      213: 951015287293255067
+    second: WhitePeaberry_2
+  - first:
+      213: 289561228448247774
+    second: WhitePeaberry_3
+  - first:
+      213: 1752104463704229791
+    second: WhitePeaberry_4
+  - first:
+      213: 1017561303673357156
+    second: WhitePeaberry_5
+  - first:
+      213: 5428693738860401304
+    second: WhitePeaberry_6
+  - first:
+      213: -5931807195077246591
+    second: WhitePeaberry_7
+  - first:
+      213: 4800646650389942133
+    second: WhitePeaberry_8
+  - first:
+      213: 7088046584944459419
+    second: WhitePeaberry_9
+  - first:
+      213: 7637428862141801037
+    second: WhitePeaberry_10
+  - first:
+      213: -5216247984199383839
+    second: WhitePeaberry_11
+  - first:
+      213: -2649075564887639233
+    second: WhitePeaberry_12
+  - first:
+      213: -5073827286063584586
+    second: WhitePeaberry_13
+  - first:
+      213: -152363078695199675
+    second: WhitePeaberry_14
+  - first:
+      213: -7712994804083151806
+    second: WhitePeaberry_15
+  - first:
+      213: 7738417554222257611
+    second: WhitePeaberry_16
+  - first:
+      213: 7824807371333243919
+    second: WhitePeaberry_17
+  - first:
+      213: -2727413990204553720
+    second: WhitePeaberry_18
+  - first:
+      213: 6019653432934218607
+    second: WhitePeaberry_19
+  - first:
+      213: -4054471798109921752
+    second: WhitePeaberry_20
+  - first:
+      213: -1147216654919309066
+    second: WhitePeaberry_21
+  - first:
+      213: 1795189598498370417
+    second: WhitePeaberry_22
+  - first:
+      213: -112625470940257658
+    second: WhitePeaberry_23
+  - first:
+      213: -4908641732833001997
+    second: WhitePeaberry_24
+  - first:
+      213: -8132831164416042045
+    second: WhitePeaberry_25
+  - first:
+      213: 3352190113667786593
+    second: WhitePeaberry_26
+  - first:
+      213: -2343046504335252061
+    second: WhitePeaberry_27
+  - first:
+      213: 7530686948711037689
+    second: WhitePeaberry_28
+  - first:
+      213: -6918834166570039412
+    second: WhitePeaberry_29
+  - first:
+      213: -6089985431301413942
+    second: WhitePeaberry_30
+  - first:
+      213: -6316397586709460922
+    second: WhitePeaberry_31
+  - first:
+      213: 6564228737338518975
+    second: WhitePeaberry_32
+  - first:
+      213: -1648038382191654101
+    second: WhitePeaberry_33
+  - first:
+      213: 126061649556800821
+    second: WhitePeaberry_34
+  - first:
+      213: -5299136858282777812
+    second: WhitePeaberry_35
+  - first:
+      213: -2961572804406279885
+    second: WhitePeaberry_36
+  - first:
+      213: 4239167156134900990
+    second: WhitePeaberry_37
+  - first:
+      213: -6935760017940120983
+    second: WhitePeaberry_38
+  - first:
+      213: -4179822160123981779
+    second: WhitePeaberry_39
+  - first:
+      213: -196061501592918708
+    second: WhitePeaberry_40
+  - first:
+      213: 1414574442750311254
+    second: WhitePeaberry_41
+  - first:
+      213: 2830906272678376135
+    second: WhitePeaberry_42
+  - first:
+      213: -153961170485607413
+    second: WhitePeaberry_43
+  - first:
+      213: -7686320198344937961
+    second: WhitePeaberry_44
+  - first:
+      213: 7869330410362649422
+    second: WhitePeaberry_45
+  - first:
+      213: -138459962205730216
+    second: WhitePeaberry_46
+  - first:
+      213: 1275187757789758226
+    second: WhitePeaberry_47
+  - first:
+      213: 448224388630472657
+    second: WhitePeaberry_48
+  - first:
+      213: 3353971473554108690
+    second: WhitePeaberry_49
+  - first:
+      213: -8455548259318956810
+    second: WhitePeaberry_50
+  - first:
+      213: -6125395937486456607
+    second: WhitePeaberry_51
+  - first:
+      213: -175254185752627239
+    second: WhitePeaberry_52
+  - first:
+      213: -4134260066245977392
+    second: WhitePeaberry_53
+  - first:
+      213: -1864313018408148817
+    second: WhitePeaberry_54
+  - first:
+      213: -6928049568210506745
+    second: WhitePeaberry_55
+  - first:
+      213: 8339446825257937773
+    second: WhitePeaberry_56
+  - first:
+      213: 1064236800309735182
+    second: WhitePeaberry_57
+  - first:
+      213: -3299274619100929365
+    second: WhitePeaberry_58
+  - first:
+      213: 7066697162830539596
+    second: WhitePeaberry_59
+  - first:
+      213: -1207233569610541115
+    second: WhitePeaberry_60
+  - first:
+      213: 2849221379781230751
+    second: WhitePeaberry_61
+  - first:
+      213: 5635798324986202885
+    second: WhitePeaberry_62
+  - first:
+      213: -2194232701447348894
+    second: WhitePeaberry_63
+  - first:
+      213: -3684720456419184080
+    second: WhitePeaberry_64
+  - first:
+      213: 8765756756266150591
+    second: WhitePeaberry_65
+  - first:
+      213: -3686110524058195817
+    second: WhitePeaberry_66
+  - first:
+      213: 3820375930431266147
+    second: WhitePeaberry_67
+  - first:
+      213: -8298803108304309726
+    second: WhitePeaberry_68
+  - first:
+      213: -2979728563183431015
+    second: WhitePeaberry_69
+  - first:
+      213: 4639777868408690395
+    second: WhitePeaberry_70
+  - first:
+      213: 7627950076232603021
+    second: WhitePeaberry_71
+  - first:
+      213: -1499296436907291102
+    second: WhitePeaberry_72
+  - first:
+      213: 8247320745240665552
+    second: WhitePeaberry_73
+  - first:
+      213: -858878478750019532
+    second: WhitePeaberry_74
+  - first:
+      213: 8728363083784353185
+    second: WhitePeaberry_75
+  - first:
+      213: -1899869188456722012
+    second: WhitePeaberry_76
+  - first:
+      213: 8539842998615892381
+    second: WhitePeaberry_77
+  - first:
+      213: 3047575428646235485
+    second: WhitePeaberry_78
+  - first:
+      213: -9023426777488290478
+    second: WhitePeaberry_79
+  - first:
+      213: 617245312744950502
+    second: WhitePeaberry_80
+  - first:
+      213: -570013243335300518
+    second: WhitePeaberry_81
+  - first:
+      213: 945859582377755104
+    second: WhitePeaberry_82
+  - first:
+      213: 5198378485241739967
+    second: WhitePeaberry_83
+  - first:
+      213: 3171156646171586021
+    second: WhitePeaberry_84
+  - first:
+      213: 6973228882702068844
+    second: WhitePeaberry_85
+  - first:
+      213: -8421384600219731775
+    second: WhitePeaberry_86
+  - first:
+      213: -8983525301125260438
+    second: WhitePeaberry_87
+  - first:
+      213: -7326734330845123073
+    second: WhitePeaberry_88
+  - first:
+      213: 2821358089818113275
+    second: WhitePeaberry_89
+  - first:
+      213: -6056477776282794060
+    second: WhitePeaberry_90
+  - first:
+      213: 891856796025532581
+    second: WhitePeaberry_91
+  - first:
+      213: -4765750022585023755
+    second: WhitePeaberry_92
+  - first:
+      213: -7774298152568704274
+    second: WhitePeaberry_93
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WhitePeaberry_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 218
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af7c152fbea88f3b0800000000000000
+      internalID: -5478476200708814854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 218
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff9b37b7edb2e550800000000000000
+      internalID: 6188717640869715953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 218
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d94177d5fa23d00800000000000000
+      internalID: 951015287293255067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_3
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 218
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edf2262376ab40400800000000000000
+      internalID: 289561228448247774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_4
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 218
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9787780ab9b05810800000000000000
+      internalID: 1752104463704229791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 218
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46342aa4d9a1f1e00800000000000000
+      internalID: 1017561303673357156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_6
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 218
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 892592b6138965b40800000000000000
+      internalID: 5428693738860401304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_7
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 218
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 181805db8ccfdada0800000000000000
+      internalID: -5931807195077246591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_8
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 219
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f49a091b25f9240800000000000000
+      internalID: 4800646650389942133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_9
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 220
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ef80f90dccd5260800000000000000
+      internalID: 7088046584944459419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_10
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 220
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d422745d5199df960800000000000000
+      internalID: 7637428862141801037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 220
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e4c271681a2c97b0800000000000000
+      internalID: -5216247984199383839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 194
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3b74b32fc79c3bd0800000000000000
+      internalID: -2649075564887639233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_13
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 194
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6baee7237f42699b0800000000000000
+      internalID: -5073827286063584586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_14
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 194
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54cdc715692b2edf0800000000000000
+      internalID: -152363078695199675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_15
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 194
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ca0344710f5f490800000000000000
+      internalID: -7712994804083151806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_16
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 194
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc5901304c1646b60800000000000000
+      internalID: 7738417554222257611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_17
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 194
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f041d2cb8dc479c60800000000000000
+      internalID: 7824807371333243919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_18
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 194
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8064d662d67462ad0800000000000000
+      internalID: -2727413990204553720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_19
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 195
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6b310d57ea1a8350800000000000000
+      internalID: 6019653432934218607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_20
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 196
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e91d1916f9bb7c0800000000000000
+      internalID: -4054471798109921752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_21
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 195
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f86f13d7844410f0800000000000000
+      internalID: -1147216654919309066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_22
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 195
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173b8f2bd6bc9e810800000000000000
+      internalID: 1795189598498370417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_23
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 171
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682e1fb1bbfdf6ef0800000000000000
+      internalID: -112625470940257658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_24
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 171
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fdb4d0e95001ebb0800000000000000
+      internalID: -4908641732833001997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_25
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 171
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb51c24521622f80800000000000000
+      internalID: -8132831164416042045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_26
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 171
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 167aeb0d52f558e20800000000000000
+      internalID: 3352190113667786593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_27
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 171
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a560e84e93db7fd0800000000000000
+      internalID: -2343046504335252061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_28
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 171
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa779c61ef528860800000000000000
+      internalID: 7530686948711037689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_29
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 171
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c87c1c9abfc5bff90800000000000000
+      internalID: -6918834166570039412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_30
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 171
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac3a9ff24860c7ba0800000000000000
+      internalID: -6089985431301413942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_31
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 171
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6484c005cd5a758a0800000000000000
+      internalID: -6316397586709460922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd29710243d81b50800000000000000
+      internalID: 6564228737338518975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_33
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2bc145b2ddf029e0800000000000000
+      internalID: -1648038382191654101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_34
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53502a1076cdfb100800000000000000
+      internalID: 126061649556800821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_35
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2320e97a1fa576b0800000000000000
+      internalID: -5299136858282777812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_36
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33108e8b93166e6d0800000000000000
+      internalID: -2961572804406279885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_37
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef47ce4811c84da30800000000000000
+      internalID: 4239167156134900990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_38
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a725bc20b3fbf90800000000000000
+      internalID: -6935760017940120983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_39
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20118914e94ef5c0800000000000000
+      internalID: -4179822160123981779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_40
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45ac636a13774df0800000000000000
+      internalID: -196061501592918708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_41
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b7a7006f391a310800000000000000
+      internalID: 1414574442750311254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_42
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c27b679146694720800000000000000
+      internalID: 2830906272678376135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_43
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b04800491250dddf0800000000000000
+      internalID: -153961170485607413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_44
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e6db3e084b45590800000000000000
+      internalID: -7686320198344937961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_45
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4b38d1905a753d60800000000000000
+      internalID: 7869330410362649422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_46
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85a0d11e567141ef0800000000000000
+      internalID: -138459962205730216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_47
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2134cfc628062b110800000000000000
+      internalID: 1275187757789758226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_48
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d76cf7e4b9683600800000000000000
+      internalID: 448224388630472657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_49
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2117cfbf843bb8e20800000000000000
+      internalID: 3353971473554108690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_50
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fcfe1658abd7aa80800000000000000
+      internalID: -8455548259318956810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_51
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 125
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e8bf7d39d83efaa0800000000000000
+      internalID: -6125395937486456607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_52
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d770d02f3f519df0800000000000000
+      internalID: -175254185752627239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_53
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da535ebf5820a6c0800000000000000
+      internalID: -4134260066245977392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_54
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa065a3ff21a026e0800000000000000
+      internalID: -1864313018408148817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_55
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ca384cf9f9adf90800000000000000
+      internalID: -6928049568210506745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_56
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b22ca04baabb370800000000000000
+      internalID: 8339446825257937773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_57
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f2c573bbde4ce00800000000000000
+      internalID: 1064236800309735182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_58
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba2e608d63f9632d0800000000000000
+      internalID: -3299274619100929365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_59
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b66cde0a3f11260800000000000000
+      internalID: 7066697162830539596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_60
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7df62f67b0f3fe0800000000000000
+      internalID: -1207233569610541115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_61
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 102
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f900f44cfb77a8720800000000000000
+      internalID: 2849221379781230751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_62
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 79
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b4b8287b0663e40800000000000000
+      internalID: 5635798324986202885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_63
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 79
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d5fabcbf48c81e0800000000000000
+      internalID: -2194232701447348894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_64
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 79
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032f482744e3ddcc0800000000000000
+      internalID: -3684720456419184080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_65
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 79
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba69bca35936a970800000000000000
+      internalID: 8765756756266150591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_66
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 79
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798aeaa120e48dcc0800000000000000
+      internalID: -3686110524058195817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_67
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 79
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36ddec1eaa3b40530800000000000000
+      internalID: 3820375930431266147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_68
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 80
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2223d9cba8ab4dc80800000000000000
+      internalID: -8298803108304309726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_69
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 81
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992dd58b8a0e5a6d0800000000000000
+      internalID: -2979728563183431015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_70
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 82
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd61833836dc36040800000000000000
+      internalID: 4639777868408690395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_71
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 82
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8512420e2cebd960800000000000000
+      internalID: 7627950076232603021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_72
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 59
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ec12195dd613be0800000000000000
+      internalID: -1499296436907291102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_73
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 59
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dd97c8858e547270800000000000000
+      internalID: 8247320745240665552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_74
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 59
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43090e8f296a414f0800000000000000
+      internalID: -858878478750019532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_75
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 59
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a57997daff512970800000000000000
+      internalID: 8728363083784353185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_76
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 59
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1d35ef90f42a5e0800000000000000
+      internalID: -1899869188456722012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_77
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 59
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d916b1216fd938670800000000000000
+      internalID: 8539842998615892381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_78
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 59
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5deaa2a4b92b4a20800000000000000
+      internalID: 3047575428646235485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_79
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 59
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d001f672956c280800000000000000
+      internalID: -9023426777488290478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_80
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 59
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ea00757755e09800800000000000000
+      internalID: 617245312744950502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_81
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 59
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a2bb9a9f7e618f0800000000000000
+      internalID: -570013243335300518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_82
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 39
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1860f574e502d00800000000000000
+      internalID: 945859582377755104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_83
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 39
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbafddca0b9542840800000000000000
+      internalID: 5198378485241739967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_84
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 39
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed2d2e0b26320c20800000000000000
+      internalID: 3171156646171586021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_85
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 41
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c63fa19b2e5c060800000000000000
+      internalID: 6973228882702068844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_86
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 41
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c835f2135b312b80800000000000000
+      internalID: -8421384600219731775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_87
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 41
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6bd1bbd55b145380800000000000000
+      internalID: -8983525301125260438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_88
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 43
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd215ed1f5325a90800000000000000
+      internalID: -7326734330845123073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_89
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 43
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf488c70c3a772720800000000000000
+      internalID: 2821358089818113275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_90
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 43
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7cd921d8113fba0800000000000000
+      internalID: -6056477776282794060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_91
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 43
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0be9dd703806c00800000000000000
+      internalID: 891856796025532581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_92
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 45
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2828fba97acddb0800000000000000
+      internalID: -4765750022585023755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhitePeaberry_93
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 25
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2ba2e25052c1490800000000000000
+      internalID: -7774298152568704274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      WhitePeaberry_0: -5478476200708814854
+      WhitePeaberry_1: 6188717640869715953
+      WhitePeaberry_10: 7637428862141801037
+      WhitePeaberry_11: -5216247984199383839
+      WhitePeaberry_12: -2649075564887639233
+      WhitePeaberry_13: -5073827286063584586
+      WhitePeaberry_14: -152363078695199675
+      WhitePeaberry_15: -7712994804083151806
+      WhitePeaberry_16: 7738417554222257611
+      WhitePeaberry_17: 7824807371333243919
+      WhitePeaberry_18: -2727413990204553720
+      WhitePeaberry_19: 6019653432934218607
+      WhitePeaberry_2: 951015287293255067
+      WhitePeaberry_20: -4054471798109921752
+      WhitePeaberry_21: -1147216654919309066
+      WhitePeaberry_22: 1795189598498370417
+      WhitePeaberry_23: -112625470940257658
+      WhitePeaberry_24: -4908641732833001997
+      WhitePeaberry_25: -8132831164416042045
+      WhitePeaberry_26: 3352190113667786593
+      WhitePeaberry_27: -2343046504335252061
+      WhitePeaberry_28: 7530686948711037689
+      WhitePeaberry_29: -6918834166570039412
+      WhitePeaberry_3: 289561228448247774
+      WhitePeaberry_30: -6089985431301413942
+      WhitePeaberry_31: -6316397586709460922
+      WhitePeaberry_32: 6564228737338518975
+      WhitePeaberry_33: -1648038382191654101
+      WhitePeaberry_34: 126061649556800821
+      WhitePeaberry_35: -5299136858282777812
+      WhitePeaberry_36: -2961572804406279885
+      WhitePeaberry_37: 4239167156134900990
+      WhitePeaberry_38: -6935760017940120983
+      WhitePeaberry_39: -4179822160123981779
+      WhitePeaberry_4: 1752104463704229791
+      WhitePeaberry_40: -196061501592918708
+      WhitePeaberry_41: 1414574442750311254
+      WhitePeaberry_42: 2830906272678376135
+      WhitePeaberry_43: -153961170485607413
+      WhitePeaberry_44: -7686320198344937961
+      WhitePeaberry_45: 7869330410362649422
+      WhitePeaberry_46: -138459962205730216
+      WhitePeaberry_47: 1275187757789758226
+      WhitePeaberry_48: 448224388630472657
+      WhitePeaberry_49: 3353971473554108690
+      WhitePeaberry_5: 1017561303673357156
+      WhitePeaberry_50: -8455548259318956810
+      WhitePeaberry_51: -6125395937486456607
+      WhitePeaberry_52: -175254185752627239
+      WhitePeaberry_53: -4134260066245977392
+      WhitePeaberry_54: -1864313018408148817
+      WhitePeaberry_55: -6928049568210506745
+      WhitePeaberry_56: 8339446825257937773
+      WhitePeaberry_57: 1064236800309735182
+      WhitePeaberry_58: -3299274619100929365
+      WhitePeaberry_59: 7066697162830539596
+      WhitePeaberry_6: 5428693738860401304
+      WhitePeaberry_60: -1207233569610541115
+      WhitePeaberry_61: 2849221379781230751
+      WhitePeaberry_62: 5635798324986202885
+      WhitePeaberry_63: -2194232701447348894
+      WhitePeaberry_64: -3684720456419184080
+      WhitePeaberry_65: 8765756756266150591
+      WhitePeaberry_66: -3686110524058195817
+      WhitePeaberry_67: 3820375930431266147
+      WhitePeaberry_68: -8298803108304309726
+      WhitePeaberry_69: -2979728563183431015
+      WhitePeaberry_7: -5931807195077246591
+      WhitePeaberry_70: 4639777868408690395
+      WhitePeaberry_71: 7627950076232603021
+      WhitePeaberry_72: -1499296436907291102
+      WhitePeaberry_73: 8247320745240665552
+      WhitePeaberry_74: -858878478750019532
+      WhitePeaberry_75: 8728363083784353185
+      WhitePeaberry_76: -1899869188456722012
+      WhitePeaberry_77: 8539842998615892381
+      WhitePeaberry_78: 3047575428646235485
+      WhitePeaberry_79: -9023426777488290478
+      WhitePeaberry_8: 4800646650389942133
+      WhitePeaberry_80: 617245312744950502
+      WhitePeaberry_81: -570013243335300518
+      WhitePeaberry_82: 945859582377755104
+      WhitePeaberry_83: 5198378485241739967
+      WhitePeaberry_84: 3171156646171586021
+      WhitePeaberry_85: 6973228882702068844
+      WhitePeaberry_86: -8421384600219731775
+      WhitePeaberry_87: -8983525301125260438
+      WhitePeaberry_88: -7326734330845123073
+      WhitePeaberry_89: 2821358089818113275
+      WhitePeaberry_9: 7088046584944459419
+      WhitePeaberry_90: -6056477776282794060
+      WhitePeaberry_91: 891856796025532581
+      WhitePeaberry_92: -4765750022585023755
+      WhitePeaberry_93: -7774298152568704274
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
