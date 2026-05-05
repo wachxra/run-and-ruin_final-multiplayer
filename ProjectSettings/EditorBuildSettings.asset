@@ -5,21 +5,36 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bootstrap.unity
     guid: 1bd31bf18757f1a43a1fdaa7d8b84392
-  - enabled: 1
-    path: Assets/Scenes/NetBootstrap.unity
-    guid: 65a9159c68f92274899336f7cbc1c2e4
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 976a5712a4d9ef9459e51ea9e616128f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CharacterSelect.unity
     guid: 09e096e3342ac664990f92bbe9def5ed
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/Menu.unity
+    guid: f2d4a80909fac874aa212ed61f92d06b
+  - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 0
+    path: Assets/Scenes/NetBootstrap.unity
+    guid: 4ee3e43d8f6229243a7f7dd8e19fe523
+  - enabled: 1
+    path: Assets/Final/w_final/scene/Bootstrap_test.unity
+    guid: 17fb1595edefdef4dbf848df319cf915
+  - enabled: 1
+    path: Assets/Final/w_final/scene/NetBootstrap_test.unity
+    guid: 65a9159c68f92274899336f7cbc1c2e4
+  - enabled: 1
+    path: Assets/Final/w_final/scene/Menu_test.unity
+    guid: 976a5712a4d9ef9459e51ea9e616128f
+  - enabled: 1
+    path: Assets/Final/w_final/scene/CharacterSelect_test.unity
+    guid: e58ae96aef134ed4fa029c1a1c48b9f9
+  - enabled: 1
+    path: Assets/Final/w_final/scene/Game_test.unity
+    guid: 89d054b0ba43e714398a12f334255028
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
