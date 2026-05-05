@@ -6,19 +6,34 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Bootstrap.unity
+    path: Assets/Scenes/F_Scenes/Bootstrap.unity
+    guid: 73ee438c8a108d84483aa7ed646b4276
+  - enabled: 1
+    path: Assets/Scenes/F_Scenes/NetBootstrap.unity
+    guid: 39fc72e443875de4cb8d52f43aa4dcfd
+  - enabled: 1
+    path: Assets/Scenes/F_Scenes/Menu.unity
+    guid: dd1b0f1ab1c0a8044bee95158f50df6c
+  - enabled: 1
+    path: Assets/Scenes/F_Scenes/CharacterSelect.unity
+    guid: ccda01a20fdd9894ba0bd06b43a799d7
+  - enabled: 1
+    path: Assets/Scenes/F_Scenes/Game.unity
+    guid: 067c06cb3aa8e9f4791cb09eea2c571b
+  - enabled: 0
+    path: Assets/Scenes/Bootstrap_P.unity
     guid: 1bd31bf18757f1a43a1fdaa7d8b84392
-  - enabled: 1
-    path: Assets/Scenes/NetBootstrap.unity
+  - enabled: 0
+    path: Assets/Scenes/NetBootstrap_P.unity
     guid: 65a9159c68f92274899336f7cbc1c2e4
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
+  - enabled: 0
+    path: Assets/Scenes/Menu_P.unity
     guid: 976a5712a4d9ef9459e51ea9e616128f
-  - enabled: 1
-    path: Assets/Scenes/CharacterSelect.unity
+  - enabled: 0
+    path: Assets/Scenes/CharacterSelect_P.unity
     guid: 09e096e3342ac664990f92bbe9def5ed
-  - enabled: 1
-    path: Assets/Scenes/Game.unity
+  - enabled: 0
+    path: Assets/Scenes/Game_P.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
