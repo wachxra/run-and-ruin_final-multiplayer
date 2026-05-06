@@ -1,7 +1,8 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
+using Unity.Services.Authentication;
 
 public class LobbiesList : MonoBehaviour
 {
@@ -60,8 +61,29 @@ public class LobbiesList : MonoBehaviour
         isJoining = true;
         try
         {
-            Debug.Log(LobbyService.Instance);
-            Lobby joiningLobby = await LobbyService.Instance.JoinLobbyByIdAsync(lobby.Id);
+            string playerName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Player");
+
+            JoinLobbyByIdOptions options = new JoinLobbyByIdOptions
+            {
+                Player = new Player(
+                    id: AuthenticationService.Instance.PlayerId,
+                    data: new Dictionary<string, PlayerDataObject>
+                    {
+                        {
+                            "PlayerName",
+                            new PlayerDataObject(
+                                PlayerDataObject.VisibilityOptions.Public,
+                                playerName
+                            )
+                        }
+                    }
+                )
+            };
+
+            Lobby joiningLobby = await LobbyService.Instance.JoinLobbyByIdAsync(lobby.Id, options);
+
+            ClientSingleton.Instance.GameManager.CurrentLobby = joiningLobby;
+
             string joinCode = joiningLobby.Data["JoinCode"].Value;
 
             await ClientSingleton.Instance.GameManager.StartClientAsync(joinCode);

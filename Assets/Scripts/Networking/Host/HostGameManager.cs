@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +10,7 @@ using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
+using Unity.Services.Authentication;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +25,7 @@ public class HostGameManager
     private const int MaxConnections = 2;
     private const string GameSceneName = "CharacterSelect";
     private const string JoinCodeKey = "JoinCode";
+
     public async Task StartHostAsync()
     {
         try
@@ -35,6 +37,7 @@ public class HostGameManager
             Debug.Log(e);
             return;
         }
+
         try
         {
             joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
@@ -54,20 +57,39 @@ public class HostGameManager
 
         try
         {
+            string playerName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Unknown");
+
             CreateLobbyOptions lobbyOptions = new CreateLobbyOptions();
             lobbyOptions.IsPrivate = false;
             lobbyOptions.Data = new Dictionary<string, DataObject>()
             {
                 {
-                    "JoinCode",new DataObject(
+                    "JoinCode", new DataObject(
                         visibility: DataObject.VisibilityOptions.Member,
                         value: joinCode
                     )
                 }
             };
-            string playerName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Unknown");
+
+            lobbyOptions.Player = new Player(
+                id: AuthenticationService.Instance.PlayerId,
+                data: new Dictionary<string, PlayerDataObject>
+                {
+                    {
+                        "PlayerName",
+                        new PlayerDataObject(
+                            PlayerDataObject.VisibilityOptions.Public,
+                            playerName
+                        )
+                    }
+                }
+            );
+
             Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(
                 $"{playerName}'s Lobby", MaxConnections, lobbyOptions);
+
+            ClientSingleton.Instance.GameManager.CurrentLobby = lobby;
+
             lobbyId = lobby.Id;
 
             HostSingleton.Instance.StartCoroutine(HeartbeatLobby(15));

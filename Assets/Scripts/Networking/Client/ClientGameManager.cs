@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Unity.Netcode.Transports.UTP;
 using Unity.Netcode;
@@ -9,11 +9,15 @@ using Unity.Services.Relay.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Text;
+using Unity.Services.Lobbies.Models;
 
 public class ClientGameManager
 {
+    public Lobby CurrentLobby;
+
     private JoinAllocation allocation;
     private const string MenuSceneName = "Menu";
+
     public async Task<bool> InitAsync()
     {
         await UnityServices.InitializeAsync();
