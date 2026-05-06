@@ -1,8 +1,8 @@
-/*using UnityEngine;
+using UnityEngine;
 
 public class SceneUIButtons : MonoBehaviour
 {
-    public void Restart()
+    /*public void Restart()
     {
         if (SceneLoader.Instance != null)
             SceneLoader.Instance.RestartGame();
@@ -12,5 +12,5 @@ public class SceneUIButtons : MonoBehaviour
     {
         if (SceneLoader.Instance != null)
             SceneLoader.Instance.GoBack();
-    }
-}*/
+    }*/
+}

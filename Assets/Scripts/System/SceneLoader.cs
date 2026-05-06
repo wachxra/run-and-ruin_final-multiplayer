@@ -1,11 +1,11 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class SceneLoader : NetworkBehaviour
 {
-    public static SceneLoader Instance;
+    /*public static SceneLoader Instance;
 
     private Stack<string> sceneHistory = new Stack<string>();
 
@@ -64,6 +64,11 @@ public class SceneLoader : NetworkBehaviour
     [Rpc(SendTo.ClientsAndHost)]
     private void RestartGameClientRpc()
     {
+        if (GameFlowManager.Instance != null && GameFlowManager.Instance.IsServer)
+        {
+            GameFlowManager.Instance.ResetGameFlow();
+        }
+
         sceneHistory.Clear();
         SceneManager.LoadScene("CharacterSelect");
     }
@@ -89,9 +94,14 @@ public class SceneLoader : NetworkBehaviour
 
     private void HandleBack()
     {
+        string current = SceneManager.GetActiveScene().name;
         string targetScene = "Menu";
 
-        if (SceneManager.GetActiveScene().name != "CharacterSelect" && sceneHistory.Count > 1)
+        if (current == "CharacterSelect")
+        {
+            targetScene = "Menu";
+        }
+        else if (sceneHistory.Count > 1)
         {
             sceneHistory.Pop();
             targetScene = sceneHistory.Pop();
@@ -105,5 +115,5 @@ public class SceneLoader : NetworkBehaviour
     {
         sceneHistory.Clear();
         SceneManager.LoadScene(sceneName);
-    }
-}*/
+    }*/
+}
