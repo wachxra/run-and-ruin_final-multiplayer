@@ -10,7 +10,9 @@ public class NetworkServer
     {
         this.networkManager = networkManager;
 
-        networkManager.ConnectionApprovalCallback += ApprovalCheck;
+        /*networkManager.ConnectionApprovalCallback += ApprovalCheck;*/
+
+        networkManager.ConnectionApprovalCallback = ApprovalCheck;
     }
 
     private void ApprovalCheck(
