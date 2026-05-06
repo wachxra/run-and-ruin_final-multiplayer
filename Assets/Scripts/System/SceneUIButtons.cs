@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class SceneUIButtons : MonoBehaviour
 {
-    /*public void Restart()
+    public void Restart()
     {
         if (SceneLoader.Instance != null)
+        {
             SceneLoader.Instance.RestartGame();
+        }
+        else
+        {
+            Debug.LogWarning("SceneLoader not found");
+        }
     }
 
     public void Back()
     {
         if (SceneLoader.Instance != null)
-            SceneLoader.Instance.GoBack();
-    }*/
+        {
+            SceneLoader.Instance.BackToMenu();
+        }
+        else
+        {
+            Debug.LogWarning("SceneLoader not found");
+        }
+    }
 }

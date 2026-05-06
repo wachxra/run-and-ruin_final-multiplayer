@@ -72,9 +72,6 @@ public class GameFlowManager : NetworkBehaviour
     private float roundTimer = 0f;
     private bool isTiming = false;
 
-    private float runner1Time = 0f;
-    private float runner2Time = 0f;
-
     IEnumerator RoundTimer()
     {
         roundTimer = 0f;

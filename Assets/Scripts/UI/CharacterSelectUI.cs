@@ -28,7 +28,9 @@ public class CharacterSelectUI : MonoBehaviour
 
     void Start()
     {
-        okButton.interactable = false;
+        if (okButton != null)
+            okButton.interactable = false;
+
         StartCoroutine(WaitForPlayerObject());
     }
 
@@ -47,17 +49,28 @@ public class CharacterSelectUI : MonoBehaviour
             .GetComponent<NetworkPlayer>();
 
         SetupToggles();
+        SyncUIWithData();
     }
 
     void SetupToggles()
     {
+        if (localPlayer == null) return;
+
+        foreach (var t in runnerToggles)
+            t.onValueChanged.RemoveAllListeners();
+
+        foreach (var t in tricksterToggles)
+            t.onValueChanged.RemoveAllListeners();
+
         for (int i = 0; i < runnerToggles.Length; i++)
         {
             int index = i;
 
+            runnerToggles[i].isOn = false;
+
             runnerToggles[i].onValueChanged.AddListener((isOn) =>
             {
-                if (isOn)
+                if (isOn && localPlayer != null)
                     localPlayer.SetRunnerServerRpc(index);
             });
         }
@@ -66,27 +79,62 @@ public class CharacterSelectUI : MonoBehaviour
         {
             int index = i;
 
+            tricksterToggles[i].isOn = false;
+
             tricksterToggles[i].onValueChanged.AddListener((isOn) =>
             {
-                if (isOn)
+                if (isOn && localPlayer != null)
                     localPlayer.SetTricksterServerRpc(index);
             });
         }
+
+        localPlayer.selectedRunnerIndex.OnValueChanged -= OnSelectionChanged;
+        localPlayer.selectedTricksterIndex.OnValueChanged -= OnSelectionChanged;
 
         localPlayer.selectedRunnerIndex.OnValueChanged += OnSelectionChanged;
         localPlayer.selectedTricksterIndex.OnValueChanged += OnSelectionChanged;
     }
 
+    void SyncUIWithData()
+    {
+        if (localPlayer == null) return;
+
+        int runnerIndex = localPlayer.selectedRunnerIndex.Value;
+        int tricksterIndex = localPlayer.selectedTricksterIndex.Value;
+
+        if (runnerIndex >= 0 && runnerIndex < runnerToggles.Length)
+            runnerToggles[runnerIndex].isOn = true;
+
+        if (tricksterIndex >= 0 && tricksterIndex < tricksterToggles.Length)
+            tricksterToggles[tricksterIndex].isOn = true;
+
+        UpdateOKButton();
+    }
+
     void OnSelectionChanged(int oldValue, int newValue)
     {
-        if (localPlayer.selectedRunnerIndex.Value >= 0 &&
-            localPlayer.selectedTricksterIndex.Value >= 0)
+        if (this == null || gameObject == null) return;
+        if (okButton == null) return;
+        if (localPlayer == null) return;
+
+        UpdateOKButton();
+    }
+
+    void UpdateOKButton()
+    {
+        if (okButton == null || localPlayer == null) return;
+
+        okButton.interactable =
+            localPlayer.selectedRunnerIndex.Value >= 0 &&
+            localPlayer.selectedTricksterIndex.Value >= 0;
+    }
+
+    void OnDestroy()
+    {
+        if (localPlayer != null)
         {
-            okButton.interactable = true;
-        }
-        else
-        {
-            okButton.interactable = false;
+            localPlayer.selectedRunnerIndex.OnValueChanged -= OnSelectionChanged;
+            localPlayer.selectedTricksterIndex.OnValueChanged -= OnSelectionChanged;
         }
     }
 
@@ -95,6 +143,8 @@ public class CharacterSelectUI : MonoBehaviour
         if (localPlayer == null) return;
 
         localPlayer.SetReadyServerRpc();
-        okButton.interactable = false;
+
+        if (okButton != null)
+            okButton.interactable = false;
     }
 }

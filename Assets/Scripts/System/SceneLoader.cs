@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 
 public class SceneLoader : NetworkBehaviour
 {
-    /*public static SceneLoader Instance;
+    public static SceneLoader Instance;
 
-    private Stack<string> sceneHistory = new Stack<string>();
+    private const string CharacterSelectScene = "CharacterSelect";
+    private const string MenuScene = "Menu";
 
     private void Awake()
     {
@@ -22,98 +22,125 @@ public class SceneLoader : NetworkBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (mode == LoadSceneMode.Single)
-        {
-            if (sceneHistory.Count == 0 || sceneHistory.Peek() != scene.name)
-            {
-                sceneHistory.Push(scene.name);
-            }
-        }
-    }
-
     public void RestartGame()
     {
-        if (IsServer)
+        if (NetworkManager.Singleton.IsServer)
         {
-            RestartGameClientRpc();
+            RestartGameServer();
         }
         else
         {
-            RestartGameServerRpc();
+            RequestRestartServerRpc();
         }
     }
 
-    [Rpc(SendTo.Server)]
-    private void RestartGameServerRpc()
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    void RequestRestartServerRpc()
     {
-        RestartGameClientRpc();
+        RestartGameServer();
     }
 
-    [Rpc(SendTo.ClientsAndHost)]
-    private void RestartGameClientRpc()
+    void RestartGameServer()
     {
-        if (GameFlowManager.Instance != null && GameFlowManager.Instance.IsServer)
-        {
-            GameFlowManager.Instance.ResetGameFlow();
-        }
+        Debug.Log("Restart Game (Server)");
 
-        sceneHistory.Clear();
-        SceneManager.LoadScene("CharacterSelect");
+        ResetGameFlow();
+        ResetAllPlayers();
+
+        NetworkManager.Singleton.SceneManager.LoadScene(
+            CharacterSelectScene,
+            LoadSceneMode.Single
+        );
     }
 
-
-    public void GoBack()
+    public void BackToMenu()
     {
-        if (IsServer)
+        if (NetworkManager.Singleton != null &&
+            NetworkManager.Singleton.IsListening)
         {
-            HandleBack();
+            if (NetworkManager.Singleton.IsServer)
+            {
+                BackToMenuServer();
+            }
+            else
+            {
+                RequestBackToMenuServerRpc();
+            }
         }
         else
         {
-            GoBackServerRpc();
+            SceneManager.LoadScene(MenuScene);
         }
     }
 
-    [Rpc(SendTo.Server)]
-    private void GoBackServerRpc()
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    void RequestBackToMenuServerRpc()
     {
-        HandleBack();
+        if (!NetworkManager.Singleton.IsListening)
+            return;
+
+        BackToMenuServer();
     }
 
-    private void HandleBack()
+    void BackToMenuServer()
     {
-        string current = SceneManager.GetActiveScene().name;
-        string targetScene = "Menu";
+        if (!NetworkManager.Singleton.IsListening)
+            return;
 
-        if (current == "CharacterSelect")
+        Debug.Log("Back To Menu (Server)");
+
+        DisconnectClientRpc();
+
+        NetworkManager.Singleton.Shutdown();
+
+        SceneManager.LoadScene(MenuScene);
+    }
+
+    [ClientRpc]
+    void DisconnectClientRpc()
+    {
+        if (NetworkManager.Singleton != null &&
+            NetworkManager.Singleton.IsListening)
         {
-            targetScene = "Menu";
+            NetworkManager.Singleton.Shutdown();
         }
-        else if (sceneHistory.Count > 1)
-        {
-            sceneHistory.Pop();
-            targetScene = sceneHistory.Pop();
-        }
-
-        LoadSceneClientRpc(targetScene);
     }
 
-    [Rpc(SendTo.ClientsAndHost)]
-    private void LoadSceneClientRpc(string sceneName)
+    void ResetGameFlow()
     {
-        sceneHistory.Clear();
-        SceneManager.LoadScene(sceneName);
-    }*/
+        var flow = GameFlowManager.Instance;
+        if (flow == null) return;
+
+        flow.currentRound.Value = 1;
+        flow.phase.Value = GamePhase.Menu;
+        flow.countdownValue.Value = 0;
+        flow.isRoleDecided.Value = false;
+
+        flow.runner1TimeNet.Value = 0f;
+        flow.runner2TimeNet.Value = 0f;
+
+        flow.runner1ClientId.Value = 0;
+        flow.runner2ClientId.Value = 0;
+
+        flow.networkTimer.Value = 0f;
+    }
+
+    void ResetAllPlayers()
+    {
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+        {
+            var playerObj = client.PlayerObject;
+            if (playerObj == null) continue;
+
+            var player = playerObj.GetComponent<NetworkPlayer>();
+            if (player == null) continue;
+
+            player.selectedRunnerIndex.Value = -1;
+            player.selectedTricksterIndex.Value = -1;
+
+            player.isReady.Value = false;
+
+            player.currentRole.Value = CharacterRole.Runner;
+        }
+    }
 }
