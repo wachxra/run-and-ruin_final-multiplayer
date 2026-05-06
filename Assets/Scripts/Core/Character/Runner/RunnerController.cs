@@ -47,6 +47,12 @@ public class RunnerController : NetworkBehaviour
     {
         if (!IsOwner) return;
 
+        if (GameFlowManager.Instance == null ||
+        (GameFlowManager.Instance.phase.Value != GamePhase.Round1 &&
+         GameFlowManager.Instance.phase.Value != GamePhase.Round2))
+            return;
+
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!isJumping && !isSliding)

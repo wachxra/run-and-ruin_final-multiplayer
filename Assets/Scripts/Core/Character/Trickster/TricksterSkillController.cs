@@ -21,6 +21,11 @@ public class TricksterSkillController : NetworkBehaviour
         if (player == null || player.currentRole.Value != CharacterRole.Trickster)
             return;
 
+        if (GameFlowManager.Instance == null ||
+        (GameFlowManager.Instance.phase.Value != GamePhase.Round1 &&
+         GameFlowManager.Instance.phase.Value != GamePhase.Round2))
+            return;
+
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
             UseSkillServerRpc(1);
 
