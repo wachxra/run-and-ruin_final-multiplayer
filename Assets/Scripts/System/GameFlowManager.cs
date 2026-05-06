@@ -38,6 +38,9 @@ public class GameFlowManager : NetworkBehaviour
     public NetworkVariable<ulong> firstRunnerClientId =
         new NetworkVariable<ulong>();
 
+    public NetworkVariable<ulong> runner1ClientId = new NetworkVariable<ulong>();
+    public NetworkVariable<ulong> runner2ClientId = new NetworkVariable<ulong>();
+
     public NetworkVariable<int> currentRound =
         new NetworkVariable<int>(1);
 
@@ -119,6 +122,8 @@ public class GameFlowManager : NetworkBehaviour
 
     void UpdateResultUI()
     {
+        string runner1Name = GetPlayerName(runner1ClientId.Value);
+        string runner2Name = GetPlayerName(runner2ClientId.Value);
         string winner = GetWinnerName();
 
         if (resultText != null)
@@ -126,8 +131,8 @@ public class GameFlowManager : NetworkBehaviour
             resultText.text =
                 "Game Over\n" +
                 "Winner: " + winner + "\n\n" +
-                "Round 1: " + runner1TimeNet.Value.ToString("F2") + "s\n" +
-                "Round 2: " + runner2TimeNet.Value.ToString("F2") + "s";
+                runner1Name + ": " + runner1TimeNet.Value.ToString("F2") + "s\n" +
+                runner2Name + ": " + runner2TimeNet.Value.ToString("F2") + "s";
         }
     }
 
@@ -175,18 +180,22 @@ public class GameFlowManager : NetworkBehaviour
         if (clients.Count < 2)
             return;
 
+        ulong selectedRunnerId = 0;
+
         if (currentRound.Value == 1)
         {
             int random = Random.Range(0, clients.Count);
-            firstRunnerClientId.Value = clients[random].ClientId;
+            selectedRunnerId = clients[random].ClientId;
+            runner1ClientId.Value = selectedRunnerId;
         }
         else
         {
             foreach (var client in clients)
             {
-                if (client.ClientId != firstRunnerClientId.Value)
+                if (client.ClientId != runner1ClientId.Value)
                 {
-                    firstRunnerClientId.Value = client.ClientId;
+                    selectedRunnerId = client.ClientId;
+                    runner2ClientId.Value = selectedRunnerId;
                     break;
                 }
             }
@@ -208,7 +217,7 @@ public class GameFlowManager : NetworkBehaviour
                 continue;
             }
 
-            if (client.ClientId == firstRunnerClientId.Value)
+            if (client.ClientId == selectedRunnerId)
                 player.currentRole.Value = CharacterRole.Runner;
             else
                 player.currentRole.Value = CharacterRole.Trickster;
@@ -357,30 +366,26 @@ public class GameFlowManager : NetworkBehaviour
 
     string GetWinnerName()
     {
-        ulong runner1Id = firstRunnerClientId.Value;
-        ulong runner2Id = 0;
-
-        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
-        {
-            if (client.ClientId != runner1Id)
-            {
-                runner2Id = client.ClientId;
-                break;
-            }
-        }
-
         ulong winnerId;
 
         if (runner1TimeNet.Value > runner2TimeNet.Value)
         {
-            winnerId = runner1Id;
+            winnerId = runner1ClientId.Value;
         }
         else
         {
-            winnerId = runner2Id;
+            winnerId = runner2ClientId.Value;
         }
 
-        var playerObj = NetworkManager.Singleton.ConnectedClients[winnerId].PlayerObject;
+        return GetPlayerName(winnerId);
+    }
+
+    string GetPlayerName(ulong clientId)
+    {
+        if (!NetworkManager.Singleton.ConnectedClients.ContainsKey(clientId))
+            return "Unknown";
+
+        var playerObj = NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
         var netPlayer = playerObj.GetComponent<NetworkPlayer>();
 
         return netPlayer != null ? netPlayer.playerName.Value.ToString() : "Unknown";

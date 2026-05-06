@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using Unity.Netcode;
 using System.Collections;
-using System.Collections.Generic;
 
 public class TricksterSkillController : NetworkBehaviour
 {
@@ -14,12 +13,9 @@ public class TricksterSkillController : NetworkBehaviour
 
     private SkillUIController skillUI;
 
-    private Dictionary<int, float> lastSkillUseTime = new Dictionary<int, float>();
-
-    [Header("Projectile Skill Cooldown")]
-    public float skill1Cooldown = 1f;
-    public float skill2Cooldown = 1f;
-    public float skill3Cooldown = 1f;
+    [Header("Projectile Cooldown")]
+    public float projectileCooldown = 1f;
+    private float lastProjectileSkillTime = -999f;
 
     void Update()
     {
@@ -130,15 +126,10 @@ public class TricksterSkillController : NetworkBehaviour
         if (senderPlayer.currentRole.Value != CharacterRole.Trickster)
             return;
 
-        float cooldown = GetCooldown(skillIndex);
+        if (Time.time - lastProjectileSkillTime < projectileCooldown)
+            return;
 
-        if (lastSkillUseTime.ContainsKey(skillIndex))
-        {
-            if (Time.time - lastSkillUseTime[skillIndex] < cooldown)
-                return;
-        }
-
-        lastSkillUseTime[skillIndex] = Time.time;
+        lastProjectileSkillTime = Time.time;
 
         foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
         {
@@ -154,21 +145,6 @@ public class TricksterSkillController : NetworkBehaviour
                     SpawnProjectile(2);
             }
         }
-    }
-
-    float GetCooldown(int skillIndex)
-    {
-        switch (skillIndex)
-        {
-            case 1:
-                return skill1Cooldown > 0 ? skill1Cooldown : (skill != null ? skill.cooldown : 1f);
-            case 2:
-                return skill2Cooldown > 0 ? skill2Cooldown : (skill != null ? skill.cooldown : 1f);
-            case 3:
-                return skill3Cooldown > 0 ? skill3Cooldown : (skill != null ? skill.cooldown : 1f);
-        }
-
-        return 1f;
     }
 
     void SpawnProjectile(int lane)
