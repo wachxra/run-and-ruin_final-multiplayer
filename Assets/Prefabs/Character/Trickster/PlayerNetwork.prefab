@@ -140,6 +140,9 @@ MonoBehaviour:
   - {fileID: 17829204850095064}
   - {fileID: 7604014169384264962}
   skill: {fileID: 0}
+  skill1Cooldown: 1
+  skill2Cooldown: 1
+  skill3Cooldown: 1
 --- !u!1 &4281421959153673157
 GameObject:
   m_ObjectHideFlags: 0
