@@ -769,8 +769,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter Name...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 31e1a896e8db2474784bb823a95af7e1, type: 2}
-  m_sharedMaterial: {fileID: 3707294539653815949, guid: 31e1a896e8db2474784bb823a95af7e1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 565998da8717bfa40b26bcc3ad9aeac4, type: 2}
+  m_sharedMaterial: {fileID: 4815404128815856636, guid: 565998da8717bfa40b26bcc3ad9aeac4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1039,8 +1039,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 31e1a896e8db2474784bb823a95af7e1, type: 2}
-  m_sharedMaterial: {fileID: 3707294539653815949, guid: 31e1a896e8db2474784bb823a95af7e1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 565998da8717bfa40b26bcc3ad9aeac4, type: 2}
+  m_sharedMaterial: {fileID: 4815404128815856636, guid: 565998da8717bfa40b26bcc3ad9aeac4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

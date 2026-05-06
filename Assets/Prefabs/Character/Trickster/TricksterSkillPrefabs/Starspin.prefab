@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9126247099608221662}
   - component: {fileID: 8897140691728109732}
   m_Layer: 0
-  m_Name: Hook
+  m_Name: Starspin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.56558, y: -2.09429, z: 0}
-  m_LocalScale: {x: 2.1137, y: 2.1137, z: 2.1137}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.014250755, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 1065002385524394031, guid: eaf0dcdfc09378d4e8f80da31a8d136c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,8 +154,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0.016189583, y: 0}
+  m_Radius: 0.38307482
 --- !u!114 &9126247099608221662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,9 +172,6 @@ MonoBehaviour:
   speed: 10
   damage: 1
   lifeTime: 5
-  ownerClientId: 0
-  laneIndex: 0
-  projectileType: 0
 --- !u!114 &8897140691728109732
 MonoBehaviour:
   m_ObjectHideFlags: 0
