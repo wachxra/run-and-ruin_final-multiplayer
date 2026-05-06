@@ -357,27 +357,33 @@ public class GameFlowManager : NetworkBehaviour
 
     string GetWinnerName()
     {
-        ulong winnerId = firstRunnerClientId.Value;
+        ulong runner1Id = firstRunnerClientId.Value;
+        ulong runner2Id = 0;
 
-        if (runner2TimeNet.Value > runner1TimeNet.Value)
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
         {
-            foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+            if (client.ClientId != runner1Id)
             {
-                if (client.ClientId != firstRunnerClientId.Value)
-                {
-                    winnerId = client.ClientId;
-                    break;
-                }
+                runner2Id = client.ClientId;
+                break;
             }
+        }
+
+        ulong winnerId;
+
+        if (runner1TimeNet.Value > runner2TimeNet.Value)
+        {
+            winnerId = runner1Id;
+        }
+        else
+        {
+            winnerId = runner2Id;
         }
 
         var playerObj = NetworkManager.Singleton.ConnectedClients[winnerId].PlayerObject;
         var netPlayer = playerObj.GetComponent<NetworkPlayer>();
 
-        if (netPlayer != null)
-            return netPlayer.playerName.Value.ToString();
-
-        return "Unknown";
+        return netPlayer != null ? netPlayer.playerName.Value.ToString() : "Unknown";
     }
 
     [ClientRpc]
