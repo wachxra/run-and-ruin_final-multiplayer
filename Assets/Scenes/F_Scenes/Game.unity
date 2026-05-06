@@ -1584,8 +1584,8 @@ MonoBehaviour:
   - {fileID: 403999229}
   - {fileID: 1405420097}
   - {fileID: 2126514214}
-  fullHeart: {fileID: 21300000, guid: e6d478ccc51853b4c8d28d3230f3f931, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 6ffadbd30aafc6441903d99c4f41e41f, type: 3}
+  fullHeart: {fileID: 3052914872174502235, guid: c4597051af129c143b27f0e17854b9ce, type: 3}
+  emptyHeart: {fileID: -7853967194303941667, guid: c4597051af129c143b27f0e17854b9ce, type: 3}
   timerText: {fileID: 1165662443}
 --- !u!1 &619394800
 GameObject:
@@ -5072,10 +5072,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
