@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
@@ -36,21 +36,51 @@ public class LobbyHostWatcher : MonoBehaviour
         {
             currentLobby = await LobbyService.Instance.GetLobbyAsync(currentLobby.Id);
 
+            HashSet<string> currentPlayerIds = new HashSet<string>();
+
             foreach (var player in currentLobby.Players)
             {
+                currentPlayerIds.Add(player.Id);
+
                 if (!knownPlayerIds.Contains(player.Id))
                 {
                     knownPlayerIds.Add(player.Id);
 
                     string playerName = player.Data["PlayerName"].Value;
-
                     ShowJoinMessage(playerName);
                 }
+            }
+
+            var playersToRemove = new List<string>();
+
+            foreach (var id in knownPlayerIds)
+            {
+                if (!currentPlayerIds.Contains(id))
+                {
+                    playersToRemove.Add(id);
+                }
+            }
+
+            foreach (var id in playersToRemove)
+            {
+                knownPlayerIds.Remove(id);
+                OnPlayerLeft();
             }
         }
         catch (LobbyServiceException e)
         {
             Debug.Log(e);
+        }
+    }
+
+    void OnPlayerLeft()
+    {
+        Debug.Log("A player left lobby");
+
+        if (joinNotifyText != null)
+        {
+            joinNotifyText.text = "";
+            joinNotifyText.gameObject.SetActive(false);
         }
     }
 
@@ -60,6 +90,7 @@ public class LobbyHostWatcher : MonoBehaviour
 
         if (joinNotifyText != null)
         {
+            joinNotifyText.gameObject.SetActive(true);
             joinNotifyText.text = playerName + " joined the lobby!";
         }
     }

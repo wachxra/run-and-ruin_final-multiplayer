@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
+using Unity.Services.Lobbies;
+using Unity.Services.Authentication;
 
 public class SceneLoader : NetworkBehaviour
 {
@@ -53,33 +55,51 @@ public class SceneLoader : NetworkBehaviour
         );
     }
 
-    public void BackToMenu()
+    public async void BackToMenu()
     {
-        if (NetworkManager.Singleton != null &&
-            NetworkManager.Singleton.IsListening)
+        if (NetworkManager.Singleton == null)
         {
-            if (NetworkManager.Singleton.IsServer)
+            SceneManager.LoadScene(MenuScene);
+            return;
+        }
+
+        if (ClientSingleton.Instance.GameManager.CurrentLobby != null)
+        {
+            try
             {
-                BackToMenuServer();
+                await LobbyService.Instance.RemovePlayerAsync(
+                    ClientSingleton.Instance.GameManager.CurrentLobby.Id,
+                    AuthenticationService.Instance.PlayerId
+                );
             }
-            else
+            catch (LobbyServiceException e)
             {
-                RequestBackToMenuServerRpc();
+                Debug.Log(e);
             }
+        }
+
+        if (NetworkManager.Singleton.IsServer)
+        {
+            Debug.Log("Host Back To Menu");
+
+            foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+            {
+                if (client.ClientId == NetworkManager.Singleton.LocalClientId)
+                    continue;
+
+                NetworkManager.Singleton.DisconnectClient(client.ClientId);
+            }
+
+            NetworkManager.Singleton.Shutdown();
+            SceneManager.LoadScene(MenuScene);
         }
         else
         {
+            Debug.Log("Client Leave Lobby");
+
+            NetworkManager.Singleton.Shutdown();
             SceneManager.LoadScene(MenuScene);
         }
-    }
-
-    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
-    void RequestBackToMenuServerRpc()
-    {
-        if (!NetworkManager.Singleton.IsListening)
-            return;
-
-        BackToMenuServer();
     }
 
     void BackToMenuServer()
@@ -87,7 +107,7 @@ public class SceneLoader : NetworkBehaviour
         if (!NetworkManager.Singleton.IsListening)
             return;
 
-        Debug.Log("Back To Menu (Server)");
+        Debug.Log("Host closing lobby");
 
         DisconnectClientRpc();
 

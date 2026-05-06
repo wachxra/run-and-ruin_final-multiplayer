@@ -27,12 +27,10 @@ public class LobbiesList : MonoBehaviour
             options.Count = 25;
             options.Filters = new List<QueryFilter>()
             {
-                new QueryFilter(field: QueryFilter.FieldOptions.AvailableSlots,
-                op: QueryFilter.OpOptions.GT,
-                value: "0"),
-                new QueryFilter(field: QueryFilter.FieldOptions.IsLocked,
-                op: QueryFilter.OpOptions.EQ,
-                value: "0")
+                new QueryFilter(
+                    field: QueryFilter.FieldOptions.IsLocked,
+                    op: QueryFilter.OpOptions.EQ,
+                    value: "0")
             };
 
             QueryResponse lobbies = await LobbyService.Instance.QueryLobbiesAsync(options);
