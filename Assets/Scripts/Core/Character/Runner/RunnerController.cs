@@ -28,6 +28,8 @@ public class RunnerController : NetworkBehaviour
     private bool hasReflect = false;
     private bool isInvisible = false;
 
+    private int blockedLane = -1;
+
     private SkillUIController skillUI;
 
     private SpriteRenderer sprite;
@@ -219,6 +221,9 @@ public class RunnerController : NetworkBehaviour
     {
         if (sprite == null) return;
 
+        if (IsOwner)
+            return;
+
         Color c = sprite.color;
 
         c.a = state ? 0f : 1f;
@@ -229,9 +234,25 @@ public class RunnerController : NetworkBehaviour
     [ClientRpc]
     void BlockRandomLaneClientRpc()
     {
-        int lane = Random.Range(1, 4);
+        blockedLane = Random.Range(1, 4);
 
-        Debug.Log("Blocked Lane : " + lane);
+        Debug.Log("Blocked Lane : " + blockedLane);
+
+        StartCoroutine(UnblockLaneRoutine());
+    }
+
+    IEnumerator UnblockLaneRoutine()
+    {
+        yield return new WaitForSeconds(3f);
+
+        blockedLane = -1;
+
+        Debug.Log("Lane Unblocked");
+    }
+
+    public bool IsLaneBlocked(int lane)
+    {
+        return blockedLane == lane;
     }
 
     public bool HasReflect()

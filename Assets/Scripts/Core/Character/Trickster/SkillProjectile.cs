@@ -12,6 +12,8 @@ public class SkillProjectile : NetworkBehaviour
     private bool isStopped = false;
     private bool isReflected = false;
 
+    private bool canHitTrickster = false;
+
     public void SetFreeze(bool state)
     {
         isStopped = state;
@@ -20,6 +22,7 @@ public class SkillProjectile : NetworkBehaviour
     public void Reflect()
     {
         isReflected = true;
+        canHitTrickster = true;
     }
 
     private void Start()
@@ -64,6 +67,25 @@ public class SkillProjectile : NetworkBehaviour
             runner.TakeDamage(damage);
 
             DespawnSelf();
+
+            return;
+        }
+
+        if (canHitTrickster)
+        {
+            var trickster = other.GetComponentInParent<NetworkPlayer>();
+
+            if (trickster != null)
+            {
+                if (trickster.currentRole.Value == CharacterRole.Trickster)
+                {
+                    hasHit = true;
+
+                    Debug.Log("Reflected Projectile Hit Trickster");
+
+                    DespawnSelf();
+                }
+            }
         }
     }
 

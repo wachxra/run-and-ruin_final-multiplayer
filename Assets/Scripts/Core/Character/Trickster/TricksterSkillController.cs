@@ -91,18 +91,6 @@ public class TricksterSkillController : NetworkBehaviour
             case SkillType.Blur:
                 BlurAllRunnerClientRpc();
                 break;
-
-            case SkillType.SlowAll:
-                SlowAllRunners();
-                break;
-
-            case SkillType.MultiShot:
-                MultiShot();
-                break;
-
-            case SkillType.Trap:
-                SpawnProjectile(1);
-                break;
         }
     }
 
@@ -118,31 +106,15 @@ public class TricksterSkillController : NetworkBehaviour
         }
     }
 
-    void MultiShot()
-    {
-        SpawnProjectile(0);
-        SpawnProjectile(1);
-        SpawnProjectile(2);
-    }
-
-    void SlowAllRunners()
-    {
-        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
-        {
-            var runner =
-                client.PlayerObject.GetComponentInChildren<RunnerController>();
-
-            if (runner != null)
-            {
-                runner.ApplySlow(skill.duration);
-            }
-        }
-    }
-
     [ClientRpc]
     void BlurAllRunnerClientRpc()
     {
-        Debug.Log("SCREEN BLUR");
+        var blur = FindFirstObjectByType<ScreenBlurEffect>();
+
+        if (blur != null)
+        {
+            blur.PlayBlur(5f);
+        }
     }
 
     [ServerRpc]
@@ -164,25 +136,24 @@ public class TricksterSkillController : NetworkBehaviour
         if (Time.time - lastProjectileSkillTime < projectileCooldown)
             return;
 
-        lastProjectileSkillTime = Time.time;
-
         foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
         {
-            var player =
-                client.PlayerObject.GetComponent<NetworkPlayer>();
+            var runner =
+                client.PlayerObject.GetComponentInChildren<RunnerController>();
 
-            if (player.currentRole.Value == CharacterRole.Runner)
+            if (runner != null)
             {
-                if (skillIndex == 1)
-                    SpawnProjectile(0);
-
-                else if (skillIndex == 2)
-                    SpawnProjectile(1);
-
-                else if (skillIndex == 3)
-                    SpawnProjectile(2);
+                if (runner.IsLaneBlocked(skillIndex))
+                {
+                    Debug.Log("Lane Blocked");
+                    return;
+                }
             }
         }
+
+        lastProjectileSkillTime = Time.time;
+
+        SpawnProjectile(skillIndex - 1);
     }
 
     void SpawnProjectile(int lane)
@@ -229,6 +200,11 @@ public class TricksterSkillController : NetworkBehaviour
         {
             projectile.speed = effect.moveSpeed;
             projectile.damage = effect.damage;
+
+            if (effect.followRunnerSpeed)
+            {
+                projectile.speed += 4f;
+            }
         }
 
         obj.GetComponent<NetworkObject>().Spawn();

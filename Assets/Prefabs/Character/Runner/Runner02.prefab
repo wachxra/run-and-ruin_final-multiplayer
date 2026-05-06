@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RunnerController
   ShowTopMostFoldoutHeaderGroup: 1
   jumpHeight: 8
-  jumpDuration: 1.2
+  jumpDuration: 1
   slideOffset: 1
   slideDuration: 1.5
   skill: {fileID: 11400000, guid: 8bc43c648eae3974ea9b8e6148658b8c, type: 2}

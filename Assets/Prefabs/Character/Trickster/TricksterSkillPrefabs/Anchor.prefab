@@ -172,7 +172,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   speed: 10
   damage: 1
-  lifeTime: 5
+  lifeTime: 20
 --- !u!114 &8897140691728109732
 MonoBehaviour:
   m_ObjectHideFlags: 0
