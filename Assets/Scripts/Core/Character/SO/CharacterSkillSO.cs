@@ -2,12 +2,14 @@ using UnityEngine;
 
 public enum SkillType
 {
+    // Runner
     StopTime,
     ScreenBlock,
     Reflect,
     Shield,
     Invisible,
 
+    // Trickster
     Cannon,
     Blur,
     SlowAll,
@@ -19,8 +21,11 @@ public enum SkillType
 public class CharacterSkillSO : ScriptableObject
 {
     public string skillName;
+
     public SkillType skillType;
+
     public float cooldown = 5f;
+
     public float duration = 5f;
 
     [Header("UI")]

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSkillSO
   skillName: Trickster_Bartender_Blur
   skillType: 6
-  cooldown: 5
+  cooldown: 12
   duration: 5
+  icon: {fileID: 0}

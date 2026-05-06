@@ -227,6 +227,7 @@ MonoBehaviour:
     m_InternalValue: 0
   currentRole:
     m_InternalValue: 0
+  skillDatabase: {fileID: 0}
 --- !u!114 &-6469483800389720013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +245,10 @@ MonoBehaviour:
   jumpDuration: 1.2
   slideOffset: 1
   slideDuration: 1.5
+  skill: {fileID: 11400000, guid: 5481cb11220465d46a11d1fc6a21aec0, type: 2}
   maxHP: 3
+  currentHP:
+    m_InternalValue: 0
 --- !u!95 &-7921608768129299212
 Animator:
   serializedVersion: 7
@@ -328,7 +332,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

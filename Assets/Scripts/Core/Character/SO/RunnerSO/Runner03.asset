@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSkillSO
   skillName: Runner_3_Reflect
   skillType: 2
-  cooldown: 5
-  duration: 5
+  cooldown: 12
+  duration: 3
+  icon: {fileID: 0}

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSkillSO
   skillName: Trickster_Pirate_Cannon
   skillType: 5
-  cooldown: 5
-  duration: 5
+  cooldown: 15
+  duration: 1
+  icon: {fileID: 0}

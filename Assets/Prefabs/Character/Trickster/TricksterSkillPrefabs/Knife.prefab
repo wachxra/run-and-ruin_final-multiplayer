@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1213136201091585706}
   - component: {fileID: 9126247099608221662}
   - component: {fileID: 8897140691728109732}
+  - component: {fileID: -8847288103707129980}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Untagged
@@ -107,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3369628360
+  GlobalObjectIdHash: 3116163831
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -218,3 +219,18 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &-8847288103707129980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4756696758205907266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6158939aa09a1d747b0618019566aebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileEffectData
+  moveSpeed: 18
+  damage: 1
+  followRunnerSpeed: 0

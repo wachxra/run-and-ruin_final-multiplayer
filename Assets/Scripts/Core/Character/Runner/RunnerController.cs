@@ -21,11 +21,28 @@ public class RunnerController : NetworkBehaviour
 
     [Header("Skill")]
     public CharacterSkillSO skill;
+
     private float lastSkillTime = -999f;
+
     private bool hasShield = false;
+    private bool hasReflect = false;
     private bool isInvisible = false;
 
     private SkillUIController skillUI;
+
+    private SpriteRenderer sprite;
+
+    private bool isSlowed = false;
+    private float actionSpeedMultiplier = 1f;
+
+    [Header("Health")]
+    public int maxHP = 3;
+
+    public NetworkVariable<int> currentHP =
+        new NetworkVariable<int>(
+            0,
+            NetworkVariableReadPermission.Everyone,
+            NetworkVariableWritePermission.Server);
 
     private void Awake()
     {
@@ -33,6 +50,11 @@ public class RunnerController : NetworkBehaviour
 
         if (animator == null)
             Debug.LogError("Animator not found on Runner");
+    }
+
+    private void OnEnable()
+    {
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start()
@@ -43,15 +65,40 @@ public class RunnerController : NetworkBehaviour
             animator.SetBool("Run", true);
     }
 
+    public override void OnNetworkSpawn()
+    {
+        if (IsServer)
+            currentHP.Value = maxHP;
+
+        currentHP.OnValueChanged += OnHPChanged;
+
+        OnHPChanged(0, currentHP.Value);
+
+        if (IsOwner)
+        {
+            if (RunnerHUD.Instance != null)
+                RunnerHUD.Instance.ShowHUD(true);
+        }
+
+        if (IsOwner)
+        {
+            skillUI = FindFirstObjectByType<SkillUIController>();
+
+            if (skillUI != null && skill != null)
+            {
+                skillUI.SetSkill(skill);
+            }
+        }
+    }
+
     private void Update()
     {
         if (!IsOwner) return;
 
         if (GameFlowManager.Instance == null ||
-        (GameFlowManager.Instance.phase.Value != GamePhase.Round1 &&
-         GameFlowManager.Instance.phase.Value != GamePhase.Round2))
+            (GameFlowManager.Instance.phase.Value != GamePhase.Round1 &&
+             GameFlowManager.Instance.phase.Value != GamePhase.Round2))
             return;
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -75,9 +122,12 @@ public class RunnerController : NetworkBehaviour
     void TryUseSkillServerRpc()
     {
         if (skill == null) return;
-        if (Time.time - lastSkillTime < skill.cooldown) return;
+
+        if (Time.time - lastSkillTime < skill.cooldown)
+            return;
 
         lastSkillTime = Time.time;
+
         ActivateSkill();
     }
 
@@ -94,48 +144,73 @@ public class RunnerController : NetworkBehaviour
                 break;
 
             case SkillType.Reflect:
-                hasShield = true;
-                StartCoroutine(ReflectRoutine());
+                if (!hasReflect)
+                {
+                    hasReflect = true;
+                    StartCoroutine(ReflectRoutine());
+                }
                 break;
 
             case SkillType.Shield:
-                hasShield = true;
-                StartCoroutine(ShieldRoutine());
+                if (!hasShield)
+                {
+                    hasShield = true;
+                    StartCoroutine(ShieldRoutine());
+                }
                 break;
 
             case SkillType.Invisible:
-                StartCoroutine(InvisibleRoutine());
+                if (!isInvisible)
+                {
+                    StartCoroutine(InvisibleRoutine());
+                }
                 break;
         }
     }
 
     IEnumerator StopTimeRoutine()
     {
-        ApplySlowVisualClientRpc(true);
-        yield return new WaitForSeconds(skill.duration);
-        ApplySlowVisualClientRpc(false);
+        var allProjectiles = FindObjectsByType<SkillProjectile>(
+            FindObjectsSortMode.None);
+
+        foreach (var p in allProjectiles)
+        {
+            p.SetFreeze(true);
+        }
+
+        yield return new WaitForSeconds(3f);
+
+        foreach (var p in allProjectiles)
+        {
+            if (p != null)
+                p.SetFreeze(false);
+        }
     }
 
     IEnumerator ReflectRoutine()
     {
         yield return new WaitForSeconds(skill.duration);
-        hasShield = false;
+
+        hasReflect = false;
     }
 
     IEnumerator ShieldRoutine()
     {
         yield return new WaitForSeconds(10f);
+
         hasShield = false;
     }
 
     IEnumerator InvisibleRoutine()
     {
         isInvisible = true;
+
         SetInvisibleClientRpc(true);
 
         yield return new WaitForSeconds(skill.duration);
 
         isInvisible = false;
+
         SetInvisibleClientRpc(false);
     }
 
@@ -145,14 +220,23 @@ public class RunnerController : NetworkBehaviour
         if (sprite == null) return;
 
         Color c = sprite.color;
-        c.a = state ? 0.3f : 1f;
+
+        c.a = state ? 0f : 1f;
+
         sprite.color = c;
     }
 
     [ClientRpc]
     void BlockRandomLaneClientRpc()
     {
-        Debug.Log("Block Random Lane!");
+        int lane = Random.Range(1, 4);
+
+        Debug.Log("Blocked Lane : " + lane);
+    }
+
+    public bool HasReflect()
+    {
+        return hasReflect;
     }
 
     [ServerRpc]
@@ -161,6 +245,7 @@ public class RunnerController : NetworkBehaviour
         if (isJumping || isSliding) return;
 
         StartCoroutine(JumpRoutine());
+
         JumpClientRpc();
     }
 
@@ -180,7 +265,9 @@ public class RunnerController : NetworkBehaviour
         while (elapsed < jumpDuration)
         {
             float progress = elapsed / jumpDuration;
-            float height = Mathf.Sin(progress * Mathf.PI) * jumpHeight;
+
+            float height =
+                Mathf.Sin(progress * Mathf.PI) * jumpHeight;
 
             transform.position = new Vector3(
                 startPosition.x,
@@ -189,10 +276,12 @@ public class RunnerController : NetworkBehaviour
             );
 
             elapsed += Time.deltaTime * actionSpeedMultiplier;
+
             yield return null;
         }
 
         transform.position = startPosition;
+
         isJumping = false;
     }
 
@@ -202,6 +291,7 @@ public class RunnerController : NetworkBehaviour
         if (isSliding || isJumping) return;
 
         StartCoroutine(SlideRoutine());
+
         SlideClientRpc();
     }
 
@@ -223,13 +313,16 @@ public class RunnerController : NetworkBehaviour
         );
 
         float timer = 0f;
+
         while (timer < slideDuration)
         {
             timer += Time.deltaTime * actionSpeedMultiplier;
+
             yield return null;
         }
 
         transform.position = startPosition;
+
         isSliding = false;
     }
 
@@ -240,6 +333,7 @@ public class RunnerController : NetworkBehaviour
         if (isJumping || isSliding) return;
 
         StartCoroutine(JumpRoutine());
+
         JumpClientRpc();
     }
 
@@ -250,21 +344,14 @@ public class RunnerController : NetworkBehaviour
         if (isSliding || isJumping) return;
 
         StartCoroutine(SlideRoutine());
+
         SlideClientRpc();
-    }
-
-    private SpriteRenderer sprite;
-    private bool isSlowed = false;
-    private float actionSpeedMultiplier = 1f;
-
-    private void OnEnable()
-    {
-        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     public void ApplySlow(float duration)
     {
         if (!IsServer) return;
+
         if (isSlowed) return;
 
         StartCoroutine(SlowRoutine(duration));
@@ -295,48 +382,16 @@ public class RunnerController : NetworkBehaviour
         if (state)
         {
             sprite.color = Color.black;
+
             if (animator != null)
                 animator.speed = 0.5f;
         }
         else
         {
             sprite.color = Color.white;
+
             if (animator != null)
                 animator.speed = 1f;
-        }
-    }
-
-    [Header("Health")]
-    public int maxHP = 3;
-
-    public NetworkVariable<int> currentHP =
-        new NetworkVariable<int>(0,
-            NetworkVariableReadPermission.Everyone,
-            NetworkVariableWritePermission.Server);
-
-    public override void OnNetworkSpawn()
-    {
-        if (IsServer)
-            currentHP.Value = maxHP;
-
-        currentHP.OnValueChanged += OnHPChanged;
-
-        OnHPChanged(0, currentHP.Value);
-
-        if (IsOwner)
-        {
-            if (RunnerHUD.Instance != null)
-                RunnerHUD.Instance.ShowHUD(true);
-        }
-
-        if (IsOwner)
-        {
-            skillUI = FindFirstObjectByType<SkillUIController>();
-
-            if (skillUI != null && skill != null)
-            {
-                skillUI.SetSkill(skill);
-            }
         }
     }
 
@@ -358,10 +413,13 @@ public class RunnerController : NetworkBehaviour
             return;
         }
 
-        if (NetworkObject == null || !NetworkObject.IsSpawned) return;
+        if (NetworkObject == null || !NetworkObject.IsSpawned)
+            return;
 
         currentHP.Value -= dmg;
-        if (currentHP.Value < 0) currentHP.Value = 0;
+
+        if (currentHP.Value < 0)
+            currentHP.Value = 0;
 
         if (currentHP.Value <= 0)
         {
@@ -372,6 +430,7 @@ public class RunnerController : NetworkBehaviour
     void Die()
     {
         GameFlowManager.Instance.RecordRunnerTime(OwnerClientId);
+
         GameFlowManager.Instance.EndRound();
 
         if (NetworkObject != null && NetworkObject.IsSpawned)

@@ -135,14 +135,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TricksterSkillController
   ShowTopMostFoldoutHeaderGroup: 1
   projectilePrefab: {fileID: 4756696758205907266, guid: 298cce88a9a7b804297dabf57352b615, type: 3}
+  cannonBallPrefab: {fileID: 4756696758205907266, guid: 12aeed0a85c365e429a6868971d7de95, type: 3}
+  bombPrefab: {fileID: 4756696758205907266, guid: 073e9e1d397389c4e8c5fee54fb9c972, type: 3}
+  knifePrefab: {fileID: 4756696758205907266, guid: e3d20541e0880254ea8340b3662be426, type: 3}
+  glassPrefab: {fileID: 4756696758205907266, guid: 7675a1d065182b44b89d9c67c3bfcc2d, type: 3}
+  barrelPrefab: {fileID: 4756696758205907266, guid: d15f10050645dd243ab4453be032bdee, type: 3}
   firePoints:
   - {fileID: 4227171730365196575}
   - {fileID: 17829204850095064}
   - {fileID: 7604014169384264962}
   skill: {fileID: 0}
-  skill1Cooldown: 1
-  skill2Cooldown: 1
-  skill3Cooldown: 1
+  projectileCooldown: 1
 --- !u!1 &4281421959153673157
 GameObject:
   m_ObjectHideFlags: 0

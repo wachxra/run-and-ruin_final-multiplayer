@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSkillSO
   skillName: Runner_5_Invisible
   skillType: 4
-  cooldown: 5
+  cooldown: 20
   duration: 5
+  icon: {fileID: 0}

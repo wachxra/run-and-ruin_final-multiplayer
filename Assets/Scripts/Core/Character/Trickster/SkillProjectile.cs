@@ -9,6 +9,19 @@ public class SkillProjectile : NetworkBehaviour
 
     private bool hasHit = false;
 
+    private bool isStopped = false;
+    private bool isReflected = false;
+
+    public void SetFreeze(bool state)
+    {
+        isStopped = state;
+    }
+
+    public void Reflect()
+    {
+        isReflected = true;
+    }
+
     private void Start()
     {
         if (IsServer)
@@ -19,20 +32,32 @@ public class SkillProjectile : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        if (isStopped) return;
+
+        Vector2 dir = isReflected ? Vector2.right : Vector2.left;
+
+        transform.Translate(dir * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!IsServer) return;
+
         if (hasHit) return;
 
         var runner = other.GetComponentInParent<RunnerController>();
 
         if (runner != null)
         {
-            if (runner.NetworkObject == null || !runner.NetworkObject.IsSpawned)
+            if (runner.NetworkObject == null ||
+                !runner.NetworkObject.IsSpawned)
                 return;
+
+            if (runner.HasReflect())
+            {
+                Reflect();
+                return;
+            }
 
             hasHit = true;
 
@@ -44,7 +69,8 @@ public class SkillProjectile : NetworkBehaviour
 
     void DespawnSelf()
     {
-        if (NetworkObject != null && NetworkObject.IsSpawned)
+        if (NetworkObject != null &&
+            NetworkObject.IsSpawned)
         {
             NetworkObject.Despawn();
         }
