@@ -1,15 +1,31 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SkillUIController : MonoBehaviour
 {
-    public Image skillIcon;
+    [Header("UI")]
+    public SkillCooldownUI cooldownUI;
+
+    private CharacterSkillSO currentSkill;
+
+    public CharacterSkillSO CurrentSkill => currentSkill;
 
     public void SetSkill(CharacterSkillSO skill)
     {
-        if (skill == null) return;
+        currentSkill = skill;
 
-        if (skillIcon != null)
-            skillIcon.sprite = skill.icon;
+        if (cooldownUI != null)
+        {
+            cooldownUI.SetSkill(skill);
+        }
+
+        Debug.Log("SET HUD SKILL : " + skill.skillName);
+    }
+
+    public void TriggerCooldown(float duration)
+    {
+        if (cooldownUI != null)
+        {
+            cooldownUI.StartCooldown(duration);
+        }
     }
 }

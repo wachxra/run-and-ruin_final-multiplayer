@@ -50,6 +50,17 @@ public class SkillProjectile : NetworkBehaviour
 
         var runner = other.GetComponentInParent<RunnerController>();
 
+        if (runner.skill != null)
+        {
+            if (runner.skill.hitVFX != null)
+            {
+                Instantiate(
+                    runner.skill.hitVFX,
+                    transform.position,
+                    Quaternion.identity);
+            }
+        }
+
         if (runner != null)
         {
             if (runner.NetworkObject == null ||
