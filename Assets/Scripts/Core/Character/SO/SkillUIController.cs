@@ -28,4 +28,16 @@ public class SkillUIController : MonoBehaviour
             cooldownUI.StartCooldown(duration);
         }
     }
+
+    public void ClearSkill()
+    {
+        currentSkill = null;
+
+        if (cooldownUI != null)
+        {
+            cooldownUI.skillIcon.sprite = null;
+            cooldownUI.cooldownOverlay.fillAmount = 0f;
+            cooldownUI.cooldownText.text = "";
+        }
+    }
 }

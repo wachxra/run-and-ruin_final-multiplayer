@@ -78,6 +78,29 @@ public class TricksterSkillController : NetworkBehaviour
         lastSkillTime = Time.time;
 
         ActivateSkill();
+
+        TriggerSkillCooldownClientRpc(
+            OwnerClientId,
+            skill.cooldown);
+    }
+
+    [ClientRpc]
+    void TriggerSkillCooldownClientRpc(
+    ulong ownerId,
+    float duration)
+    {
+        if (NetworkManager.Singleton.LocalClientId != ownerId)
+            return;
+
+        if (skillUI == null)
+        {
+            skillUI = FindFirstObjectByType<SkillUIController>();
+        }
+
+        if (skillUI != null)
+        {
+            skillUI.TriggerCooldown(duration);
+        }
     }
 
     void ActivateSkill()
@@ -210,16 +233,44 @@ public class TricksterSkillController : NetworkBehaviour
         obj.GetComponent<NetworkObject>().Spawn();
     }
 
+    void SetupSkillUI()
+    {
+        if (!IsOwner) return;
+
+        skillUI = FindFirstObjectByType<SkillUIController>();
+
+        if (skillUI != null && skill != null)
+        {
+            skillUI.SetSkill(skill);
+        }
+    }
+
     public override void OnNetworkSpawn()
     {
-        if (IsOwner)
+        skillUI = FindFirstObjectByType<SkillUIController>();
+    }
+
+    public void RefreshSkillUI()
+    {
+        if (!IsOwner) return;
+
+        if (skillUI == null)
         {
             skillUI = FindFirstObjectByType<SkillUIController>();
-
-            if (skillUI != null && skill != null)
-            {
-                skillUI.SetSkill(skill);
-            }
         }
+
+        if (skillUI != null && skill != null)
+        {
+            skillUI.SetSkill(skill);
+        }
+    }
+
+    [ClientRpc]
+    public void RefreshSkillUIClientRpc(ulong ownerId)
+    {
+        if (NetworkManager.Singleton.LocalClientId != ownerId)
+            return;
+
+        RefreshSkillUI();
     }
 }

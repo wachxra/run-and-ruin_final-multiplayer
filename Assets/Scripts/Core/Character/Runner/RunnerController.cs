@@ -67,32 +67,6 @@ public class RunnerController : NetworkBehaviour
             animator.SetBool("Run", true);
     }
 
-    public override void OnNetworkSpawn()
-    {
-        if (IsServer)
-            currentHP.Value = maxHP;
-
-        currentHP.OnValueChanged += OnHPChanged;
-
-        OnHPChanged(0, currentHP.Value);
-
-        if (IsOwner)
-        {
-            if (RunnerHUD.Instance != null)
-                RunnerHUD.Instance.ShowHUD(true);
-        }
-
-        if (IsOwner)
-        {
-            skillUI = FindFirstObjectByType<SkillUIController>();
-
-            if (skillUI != null && skill != null)
-            {
-                skillUI.SetSkill(skill);
-            }
-        }
-    }
-
     private void Update()
     {
         if (!IsOwner) return;
@@ -131,6 +105,29 @@ public class RunnerController : NetworkBehaviour
         lastSkillTime = Time.time;
 
         ActivateSkill();
+
+        TriggerSkillCooldownClientRpc(
+            OwnerClientId,
+            skill.cooldown);
+    }
+
+    [ClientRpc]
+    void TriggerSkillCooldownClientRpc(
+    ulong ownerId,
+    float duration)
+    {
+        if (NetworkManager.Singleton.LocalClientId != ownerId)
+            return;
+
+        if (skillUI == null)
+        {
+            skillUI = FindFirstObjectByType<SkillUIController>();
+        }
+
+        if (skillUI != null)
+        {
+            skillUI.TriggerCooldown(duration);
+        }
     }
 
     void ActivateSkill()
@@ -458,5 +455,35 @@ public class RunnerController : NetworkBehaviour
         {
             NetworkObject.Despawn();
         }
+    }
+
+    void SetupSkillUI()
+    {
+        if (!IsOwner) return;
+
+        skillUI = FindFirstObjectByType<SkillUIController>();
+
+        if (skillUI != null && skill != null)
+        {
+            skillUI.SetSkill(skill);
+        }
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        if (IsServer)
+            currentHP.Value = maxHP;
+
+        currentHP.OnValueChanged += OnHPChanged;
+
+        OnHPChanged(0, currentHP.Value);
+
+        if (IsOwner)
+        {
+            if (RunnerHUD.Instance != null)
+                RunnerHUD.Instance.ShowHUD(true);
+        }
+
+        SetupSkillUI();
     }
 }

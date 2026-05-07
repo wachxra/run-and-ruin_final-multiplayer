@@ -281,6 +281,14 @@ public class GameFlowManager : NetworkBehaviour
                 continue;
 
             ShowTricksterUIClientRpc(index, client.ClientId);
+
+            var trickster =
+                client.PlayerObject.GetComponent<TricksterSkillController>();
+
+            if (trickster != null)
+            {
+                trickster.RefreshSkillUIClientRpc(client.ClientId);
+            }
         }
     }
 
@@ -321,6 +329,8 @@ public class GameFlowManager : NetworkBehaviour
         countdownValue.Value = 0;
 
         HideAllTricksterUIClientRpc();
+
+        ClearSkillUIClientRpc();
     }
 
     public void EndRound()
@@ -395,6 +405,17 @@ public class GameFlowManager : NetworkBehaviour
         {
             if (panel != null)
                 panel.SetActive(false);
+        }
+    }
+
+    [ClientRpc]
+    void ClearSkillUIClientRpc()
+    {
+        var ui = FindFirstObjectByType<SkillUIController>();
+
+        if (ui != null)
+        {
+            ui.ClearSkill();
         }
     }
 }
