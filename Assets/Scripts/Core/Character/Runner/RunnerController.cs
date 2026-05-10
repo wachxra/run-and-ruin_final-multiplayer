@@ -30,8 +30,6 @@ public class RunnerController : NetworkBehaviour
 
     private int blockedLane = -1;
 
-    private SkillUIController skillUI;
-
     private SpriteRenderer sprite;
 
     private bool isSlowed = false;
@@ -117,18 +115,11 @@ public class RunnerController : NetworkBehaviour
         if (NetworkManager.Singleton.LocalClientId != ownerId)
             return;
 
-        if (skillUI == null)
-        {
-            skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
-        }
+        SkillUIController skillUI =
+            FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
 
         if (skillUI != null)
         {
-            if (skill != null)
-            {
-                skillUI.SetSkill(skill);
-            }
-
             skillUI.TriggerCooldown(duration);
         }
     }
@@ -460,22 +451,6 @@ public class RunnerController : NetworkBehaviour
         }
     }
 
-    void SetupSkillUI()
-    {
-        if (!IsOwner) return;
-
-        skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
-
-        if (skillUI != null && skill != null)
-        {
-            skillUI.SetSkill(skill);
-        }
-        else
-        {
-            Debug.LogWarning("SetupSkillUI failed | skillUI: " + skillUI + " | skill: " + skill);
-        }
-    }
-
     public override void OnNetworkSpawn()
     {
         if (IsServer)
@@ -490,7 +465,5 @@ public class RunnerController : NetworkBehaviour
             if (RunnerHUD.Instance != null)
                 RunnerHUD.Instance.ShowHUD(true);
         }
-
-        SetupSkillUI();
     }
 }

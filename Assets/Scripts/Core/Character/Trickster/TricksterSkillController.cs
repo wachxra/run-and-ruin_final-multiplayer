@@ -21,8 +21,6 @@ public class TricksterSkillController : NetworkBehaviour
 
     private float lastSkillTime = -999f;
 
-    private SkillUIController skillUI;
-
     [Header("Projectile Cooldown")]
     public float projectileCooldown = 1f;
 
@@ -90,18 +88,11 @@ public class TricksterSkillController : NetworkBehaviour
         if (NetworkManager.Singleton.LocalClientId != ownerId)
             return;
 
-        if (skillUI == null)
-        {
-            skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
-        }
+        SkillUIController skillUI =
+            FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
 
         if (skillUI != null)
         {
-            if (skill != null)
-            {
-                skillUI.SetSkill(skill);
-            }
-
             skillUI.TriggerCooldown(duration);
         }
     }
@@ -222,7 +213,7 @@ public class TricksterSkillController : NetworkBehaviour
 
         var effect = obj.GetComponent<ProjectileEffectData>();
 
-        if (effect != null)
+        if (effect != null && projectile != null)
         {
             projectile.speed = effect.moveSpeed;
             projectile.damage = effect.damage;
@@ -234,59 +225,5 @@ public class TricksterSkillController : NetworkBehaviour
         }
 
         obj.GetComponent<NetworkObject>().Spawn();
-    }
-
-    void SetupSkillUI()
-    {
-        if (!IsOwner) return;
-
-        skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
-
-        if (skillUI != null && skill != null)
-        {
-            skillUI.ClearSkill();
-            skillUI.SetSkill(skill);
-
-            Debug.Log("TRICKSTER SET SKILL UI : " + skill.skillName);
-        }
-        else
-        {
-            Debug.LogWarning("Trickster SetupSkillUI failed | skillUI: " + skillUI + " | skill: " + skill);
-        }
-    }
-
-    public override void OnNetworkSpawn()
-    {
-        if (!IsOwner) return;
-
-        skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
-    }
-
-    public void RefreshSkillUI()
-    {
-        if (!IsOwner) return;
-
-        skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
-
-        if (skillUI != null && skill != null)
-        {
-            skillUI.ClearSkill();
-            skillUI.SetSkill(skill);
-
-            Debug.Log("TRICKSTER REFRESH SKILL UI : " + skill.skillName);
-        }
-        else
-        {
-            Debug.LogWarning("Trickster RefreshSkillUI failed | skillUI: " + skillUI + " | skill: " + skill);
-        }
-    }
-
-    [ClientRpc]
-    public void RefreshSkillUIClientRpc(ulong ownerId)
-    {
-        if (NetworkManager.Singleton.LocalClientId != ownerId)
-            return;
-
-        RefreshSkillUI();
     }
 }

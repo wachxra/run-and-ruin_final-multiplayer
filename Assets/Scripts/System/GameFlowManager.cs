@@ -67,7 +67,10 @@ public class GameFlowManager : NetworkBehaviour
     public CharacterSkillDatabase skillDatabase;
 
     public NetworkVariable<float> networkTimer =
-        new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+        new NetworkVariable<float>(
+            0f,
+            NetworkVariableReadPermission.Everyone,
+            NetworkVariableWritePermission.Server);
 
     public NetworkVariable<float> runner1TimeNet = new NetworkVariable<float>();
     public NetworkVariable<float> runner2TimeNet = new NetworkVariable<float>();
@@ -102,14 +105,15 @@ public class GameFlowManager : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        if (IsServer)
-        {
-            currentRound.Value = 1;
-            StartCoroutine(StartRound());
-        }
-
         runner1TimeNet.OnValueChanged += OnTimeChanged;
         runner2TimeNet.OnValueChanged += OnTimeChanged;
+
+        if (!IsServer) return;
+
+        currentRound.Value = 1;
+        phase.Value = GamePhase.LoadingGame;
+
+        StartCoroutine(StartRound());
     }
 
     void OnTimeChanged(float oldVal, float newVal)
@@ -189,6 +193,7 @@ public class GameFlowManager : NetworkBehaviour
                 if (client.PlayerObject == null)
                     return false;
             }
+
             return true;
         });
 
@@ -364,30 +369,6 @@ public class GameFlowManager : NetworkBehaviour
                 index,
                 client.ClientId
             );
-
-            StartCoroutine(RefreshTricksterSkillUIDelayed(client.ClientId));
-        }
-    }
-
-    IEnumerator RefreshTricksterSkillUIDelayed(ulong clientId)
-    {
-        yield return new WaitForSeconds(0.2f);
-
-        if (!NetworkManager.Singleton.ConnectedClients.ContainsKey(clientId))
-            yield break;
-
-        var playerObj =
-            NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
-
-        if (playerObj == null)
-            yield break;
-
-        var trickster =
-            playerObj.GetComponent<TricksterSkillController>();
-
-        if (trickster != null)
-        {
-            trickster.RefreshSkillUIClientRpc(clientId);
         }
     }
 
