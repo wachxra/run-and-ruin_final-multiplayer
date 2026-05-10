@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.33, y: -3.71, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -241,10 +241,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RunnerController
   ShowTopMostFoldoutHeaderGroup: 1
-  jumpHeight: 8
-  jumpDuration: 1
+  jumpHeight: 12
+  jumpDuration: 0.7
   slideOffset: 1
-  slideDuration: 1.5
+  slideDuration: 1
+  slideAnimationLength: 1
+  bodyCollider: {fileID: 5525293135382076222}
+  normalColliderSize: {x: 5, y: 5.5}
+  normalColliderOffset: {x: 0, y: 0}
+  slideColliderSize: {x: 5, y: 2}
+  slideColliderOffset: {x: 0, y: -1.7}
   skill: {fileID: 11400000, guid: a5498673008728548b505b41d22d3965, type: 2}
   maxHP: 3
   currentHP:
@@ -315,7 +321,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.857143, y: 5.571429}
+  m_Size: {x: 5, y: 5.5}
   m_EdgeRadius: 0
 --- !u!50 &-8028296366053525117
 Rigidbody2D:

@@ -19,6 +19,16 @@ public class RunnerController : NetworkBehaviour
     public float slideOffset = 0.5f;
     public float slideDuration = 0.5f;
 
+    [Header("Animation")]
+    public float slideAnimationLength = 0.5f;
+
+    [Header("Slide Collider")]
+    public BoxCollider2D bodyCollider;
+    public Vector2 normalColliderSize = new Vector2(1f, 2f);
+    public Vector2 normalColliderOffset = new Vector2(0f, 0f);
+    public Vector2 slideColliderSize = new Vector2(1f, 1f);
+    public Vector2 slideColliderOffset = new Vector2(0f, -0.5f);
+
     [Header("Skill")]
     public CharacterSkillSO skill;
 
@@ -50,6 +60,9 @@ public class RunnerController : NetworkBehaviour
 
         if (animator == null)
             Debug.LogError("Animator not found on Runner");
+
+        if (bodyCollider == null)
+            bodyCollider = GetComponent<BoxCollider2D>();
     }
 
     private void OnEnable()
@@ -310,32 +323,54 @@ public class RunnerController : NetworkBehaviour
     [ClientRpc]
     void SlideClientRpc()
     {
-        if (animator != null)
-            animator.SetTrigger("Slide");
+        if (animator == null) return;
+
+        float animSpeed =
+            slideAnimationLength / slideDuration;
+
+        animator.speed = animSpeed;
+
+        animator.SetTrigger("Slide");
     }
 
     IEnumerator SlideRoutine()
     {
         isSliding = true;
 
-        transform.position = new Vector3(
-            startPosition.x,
-            startPosition.y - slideOffset,
-            startPosition.z
-        );
+        SetSlideCollider(true);
 
         float timer = 0f;
 
         while (timer < slideDuration)
         {
             timer += Time.deltaTime * actionSpeedMultiplier;
-
             yield return null;
         }
 
-        transform.position = startPosition;
+        SetSlideCollider(false);
+
+        if (animator != null)
+        {
+            animator.speed = 1f;
+        }
 
         isSliding = false;
+    }
+
+    void SetSlideCollider(bool slide)
+    {
+        if (bodyCollider == null) return;
+
+        if (slide)
+        {
+            bodyCollider.size = slideColliderSize;
+            bodyCollider.offset = slideColliderOffset;
+        }
+        else
+        {
+            bodyCollider.size = normalColliderSize;
+            bodyCollider.offset = normalColliderOffset;
+        }
     }
 
     public void ForceJump()
