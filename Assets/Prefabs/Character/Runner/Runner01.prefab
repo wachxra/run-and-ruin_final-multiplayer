@@ -245,6 +245,7 @@ MonoBehaviour:
   jumpDuration: 0.7
   slideOffset: 1
   slideDuration: 1
+  slideInputUnlockTime: 0.85
   slideAnimationLength: 1
   bodyCollider: {fileID: 5525293135382076222}
   normalColliderSize: {x: 5, y: 5.5}

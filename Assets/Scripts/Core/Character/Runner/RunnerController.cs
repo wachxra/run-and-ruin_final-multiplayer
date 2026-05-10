@@ -8,6 +8,7 @@ public class RunnerController : NetworkBehaviour
 
     private bool isJumping = false;
     private bool isSliding = false;
+    private bool canJumpDuringSlide = false;
 
     private Vector3 startPosition;
 
@@ -18,6 +19,7 @@ public class RunnerController : NetworkBehaviour
     [Header("Slide Settings")]
     public float slideOffset = 0.5f;
     public float slideDuration = 0.5f;
+    public float slideInputUnlockTime = 0.4f;
 
     [Header("Animation")]
     public float slideAnimationLength = 0.5f;
@@ -89,7 +91,7 @@ public class RunnerController : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!isJumping && !isSliding)
+            if (!isJumping)
                 JumpServerRpc();
         }
 
@@ -264,10 +266,31 @@ public class RunnerController : NetworkBehaviour
         return hasReflect;
     }
 
+    [ClientRpc]
+    void StopSlideForJumpClientRpc()
+    {
+        if (animator != null)
+        {
+            animator.speed = 1f;
+            animator.ResetTrigger("Slide");
+            animator.SetBool("Run", true);
+        }
+    }
+
     [ServerRpc]
     void JumpServerRpc()
     {
-        if (isJumping || isSliding) return;
+        if (isJumping) return;
+
+        if (isSliding && !canJumpDuringSlide)
+            return;
+
+        if (isSliding)
+        {
+            StopSlideForJumpClientRpc();
+            SetSlideCollider(false);
+            isSliding = false;
+        }
 
         StartCoroutine(JumpRoutine());
 
@@ -336,6 +359,7 @@ public class RunnerController : NetworkBehaviour
     IEnumerator SlideRoutine()
     {
         isSliding = true;
+        canJumpDuringSlide = false;
 
         SetSlideCollider(true);
 
@@ -344,6 +368,15 @@ public class RunnerController : NetworkBehaviour
         while (timer < slideDuration)
         {
             timer += Time.deltaTime * actionSpeedMultiplier;
+
+            if (timer >= slideInputUnlockTime)
+            {
+                canJumpDuringSlide = true;
+            }
+
+            if (!isSliding)
+                yield break;
+
             yield return null;
         }
 
@@ -355,6 +388,7 @@ public class RunnerController : NetworkBehaviour
         }
 
         isSliding = false;
+        canJumpDuringSlide = false;
     }
 
     void SetSlideCollider(bool slide)
