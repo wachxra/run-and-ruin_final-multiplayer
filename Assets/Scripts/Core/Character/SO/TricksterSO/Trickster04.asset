@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSkillSO
   skillName: Trickster_Scientist
   skillType: 8
+  description: 
   cooldown: 5
   duration: 5
+  icon: {fileID: -855298285791758126, guid: f35b32b7df2f81c48bd58a48191b5054, type: 3}
+  castVFX: {fileID: 0}
+  hitVFX: {fileID: 0}

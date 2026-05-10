@@ -11,14 +11,18 @@ public class SkillUIController : MonoBehaviour
 
     public void SetSkill(CharacterSkillSO skill)
     {
+        if (skill == null)
+        {
+            Debug.LogWarning("SetSkill failed: skill is null");
+            return;
+        }
+
         currentSkill = skill;
 
         if (cooldownUI != null)
         {
             cooldownUI.SetSkill(skill);
         }
-
-        Debug.Log("SET HUD SKILL : " + skill.skillName);
     }
 
     public void TriggerCooldown(float duration)
@@ -29,15 +33,47 @@ public class SkillUIController : MonoBehaviour
         }
     }
 
-    public void ClearSkill()
+    public void ResetCooldown()
     {
-        currentSkill = null;
-
         if (cooldownUI != null)
         {
-            cooldownUI.skillIcon.sprite = null;
-            cooldownUI.cooldownOverlay.fillAmount = 0f;
-            cooldownUI.cooldownText.text = "";
+            cooldownUI.ResetCooldown();
+        }
+    }
+
+    public void ClearSkill()
+    {
+        if (cooldownUI != null)
+        {
+            cooldownUI.ClearSkill();
+        }
+
+        currentSkill = null;
+    }
+
+    public void RefreshCurrentSkill()
+    {
+        if (currentSkill == null)
+            return;
+
+        SetSkill(currentSkill);
+    }
+
+    public void RefreshSkillIcon()
+    {
+        if (currentSkill == null)
+            return;
+
+        if (cooldownUI == null)
+            return;
+
+        if (cooldownUI.skillIcon != null)
+        {
+            cooldownUI.skillIcon.gameObject.SetActive(true);
+            cooldownUI.skillIcon.enabled = true;
+            cooldownUI.skillIcon.sprite = currentSkill.icon;
+            cooldownUI.skillIcon.color = Color.white;
+            cooldownUI.skillIcon.preserveAspect = true;
         }
     }
 }

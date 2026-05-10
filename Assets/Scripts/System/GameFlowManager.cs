@@ -63,6 +63,9 @@ public class GameFlowManager : NetworkBehaviour
     public GameObject gameOverPanel;
     public TMPro.TextMeshProUGUI resultText;
 
+    [Header("Skill Database")]
+    public CharacterSkillDatabase skillDatabase;
+
     public NetworkVariable<float> networkTimer =
         new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
@@ -117,6 +120,46 @@ public class GameFlowManager : NetworkBehaviour
         }
     }
 
+    [ClientRpc]
+    void SetLocalSkillUIClientRpc(CharacterRole role, int skillIndex, ulong targetClientId)
+    {
+        if (NetworkManager.Singleton.LocalClientId != targetClientId)
+            return;
+
+        SkillUIController skillUI =
+            FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
+
+        if (skillUI == null || skillDatabase == null)
+            return;
+
+        skillUI.ClearSkill();
+
+        CharacterSkillSO skill = null;
+
+        if (role == CharacterRole.Runner)
+        {
+            if (skillIndex >= 0 && skillIndex < skillDatabase.runnerSkills.Length)
+                skill = skillDatabase.runnerSkills[skillIndex];
+        }
+        else if (role == CharacterRole.Trickster)
+        {
+            if (skillIndex >= 0 && skillIndex < skillDatabase.tricksterSkills.Length)
+                skill = skillDatabase.tricksterSkills[skillIndex];
+        }
+
+        if (skill != null)
+        {
+            skillUI.SetSkill(skill);
+            skillUI.ResetCooldown();
+
+            Debug.Log("SET LOCAL SKILL UI : " + role + " / " + skill.skillName);
+        }
+        else
+        {
+            Debug.LogWarning("SetLocalSkillUI failed | role: " + role + " | index: " + skillIndex);
+        }
+    }
+
     void UpdateResultUI()
     {
         string runner1Name = GetPlayerName(runner1ClientId.Value);
@@ -153,11 +196,17 @@ public class GameFlowManager : NetworkBehaviour
 
         isRoleDecided.Value = true;
 
+        ShowHUDClientRpc(false);
+
+        ResetAllSkillCooldownUIClientRpc();
+
         yield return StartCoroutine(Countdown(5));
 
         SpawnRunner();
 
         SetupTricksterUI();
+
+        ShowHUDClientRpc(true);
 
         yield return StartCoroutine(Countdown(3));
 
@@ -166,6 +215,28 @@ public class GameFlowManager : NetworkBehaviour
             : GamePhase.Round2;
 
         StartCoroutine(RoundTimer());
+    }
+
+    public void EndRound()
+    {
+        if (!IsServer) return;
+
+        phase.Value = GamePhase.RoundEnd;
+
+        ResetAllSkillCooldownUIClientRpc();
+
+        ShowHUDClientRpc(false);
+
+        if (currentRound.Value == 1)
+        {
+            currentRound.Value = 2;
+            StartCoroutine(StartNextRoundWithReset());
+        }
+        else
+        {
+            phase.Value = GamePhase.GameOver;
+            ShowGameOverClientRpc();
+        }
     }
 
     void AssignRoles()
@@ -260,6 +331,12 @@ public class GameFlowManager : NetworkBehaviour
             netObj.SpawnWithOwnership(client.ClientId);
 
             character.transform.SetParent(client.PlayerObject.transform);
+
+            SetLocalSkillUIClientRpc(
+                CharacterRole.Runner,
+                index,
+                client.ClientId
+            );
         }
     }
 
@@ -282,13 +359,35 @@ public class GameFlowManager : NetworkBehaviour
 
             ShowTricksterUIClientRpc(index, client.ClientId);
 
-            var trickster =
-                client.PlayerObject.GetComponent<TricksterSkillController>();
+            SetLocalSkillUIClientRpc(
+                CharacterRole.Trickster,
+                index,
+                client.ClientId
+            );
 
-            if (trickster != null)
-            {
-                trickster.RefreshSkillUIClientRpc(client.ClientId);
-            }
+            StartCoroutine(RefreshTricksterSkillUIDelayed(client.ClientId));
+        }
+    }
+
+    IEnumerator RefreshTricksterSkillUIDelayed(ulong clientId)
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        if (!NetworkManager.Singleton.ConnectedClients.ContainsKey(clientId))
+            yield break;
+
+        var playerObj =
+            NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
+
+        if (playerObj == null)
+            yield break;
+
+        var trickster =
+            playerObj.GetComponent<TricksterSkillController>();
+
+        if (trickster != null)
+        {
+            trickster.RefreshSkillUIClientRpc(clientId);
         }
     }
 
@@ -301,6 +400,15 @@ public class GameFlowManager : NetworkBehaviour
         for (int i = 0; i < tricksterUIPanels.Length; i++)
         {
             tricksterUIPanels[i].SetActive(i == index);
+        }
+    }
+
+    [ClientRpc]
+    void ShowHUDClientRpc(bool show)
+    {
+        if (HUDManager.Instance != null)
+        {
+            HUDManager.Instance.ShowHUD(show);
         }
     }
 
@@ -329,26 +437,6 @@ public class GameFlowManager : NetworkBehaviour
         countdownValue.Value = 0;
 
         HideAllTricksterUIClientRpc();
-
-        ClearSkillUIClientRpc();
-    }
-
-    public void EndRound()
-    {
-        if (!IsServer) return;
-
-        phase.Value = GamePhase.RoundEnd;
-
-        if (currentRound.Value == 1)
-        {
-            currentRound.Value = 2;
-            StartCoroutine(StartNextRoundWithReset());
-        }
-        else
-        {
-            phase.Value = GamePhase.GameOver;
-            ShowGameOverClientRpc();
-        }
     }
 
     IEnumerator StartNextRoundWithReset()
@@ -365,6 +453,11 @@ public class GameFlowManager : NetworkBehaviour
     [ClientRpc]
     void ShowGameOverClientRpc()
     {
+        if (HUDManager.Instance != null)
+        {
+            HUDManager.Instance.ShowHUD(false);
+        }
+
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
 
@@ -409,13 +502,14 @@ public class GameFlowManager : NetworkBehaviour
     }
 
     [ClientRpc]
-    void ClearSkillUIClientRpc()
+    void ResetAllSkillCooldownUIClientRpc()
     {
-        var ui = FindFirstObjectByType<SkillUIController>();
+        SkillUIController skillUI =
+            FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
 
-        if (ui != null)
+        if (skillUI != null)
         {
-            ui.ClearSkill();
+            skillUI.ResetCooldown();
         }
     }
 }

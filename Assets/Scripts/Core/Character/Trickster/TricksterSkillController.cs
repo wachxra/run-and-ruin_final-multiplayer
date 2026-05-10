@@ -85,20 +85,23 @@ public class TricksterSkillController : NetworkBehaviour
     }
 
     [ClientRpc]
-    void TriggerSkillCooldownClientRpc(
-    ulong ownerId,
-    float duration)
+    void TriggerSkillCooldownClientRpc(ulong ownerId, float duration)
     {
         if (NetworkManager.Singleton.LocalClientId != ownerId)
             return;
 
         if (skillUI == null)
         {
-            skillUI = FindFirstObjectByType<SkillUIController>();
+            skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
         }
 
         if (skillUI != null)
         {
+            if (skill != null)
+            {
+                skillUI.SetSkill(skill);
+            }
+
             skillUI.TriggerCooldown(duration);
         }
     }
@@ -237,31 +240,44 @@ public class TricksterSkillController : NetworkBehaviour
     {
         if (!IsOwner) return;
 
-        skillUI = FindFirstObjectByType<SkillUIController>();
+        skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
 
         if (skillUI != null && skill != null)
         {
+            skillUI.ClearSkill();
             skillUI.SetSkill(skill);
+
+            Debug.Log("TRICKSTER SET SKILL UI : " + skill.skillName);
+        }
+        else
+        {
+            Debug.LogWarning("Trickster SetupSkillUI failed | skillUI: " + skillUI + " | skill: " + skill);
         }
     }
 
     public override void OnNetworkSpawn()
     {
-        skillUI = FindFirstObjectByType<SkillUIController>();
+        if (!IsOwner) return;
+
+        skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
     }
 
     public void RefreshSkillUI()
     {
         if (!IsOwner) return;
 
-        if (skillUI == null)
-        {
-            skillUI = FindFirstObjectByType<SkillUIController>();
-        }
+        skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
 
         if (skillUI != null && skill != null)
         {
+            skillUI.ClearSkill();
             skillUI.SetSkill(skill);
+
+            Debug.Log("TRICKSTER REFRESH SKILL UI : " + skill.skillName);
+        }
+        else
+        {
+            Debug.LogWarning("Trickster RefreshSkillUI failed | skillUI: " + skillUI + " | skill: " + skill);
         }
     }
 

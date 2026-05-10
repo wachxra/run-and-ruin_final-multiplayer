@@ -112,20 +112,23 @@ public class RunnerController : NetworkBehaviour
     }
 
     [ClientRpc]
-    void TriggerSkillCooldownClientRpc(
-    ulong ownerId,
-    float duration)
+    void TriggerSkillCooldownClientRpc(ulong ownerId, float duration)
     {
         if (NetworkManager.Singleton.LocalClientId != ownerId)
             return;
 
         if (skillUI == null)
         {
-            skillUI = FindFirstObjectByType<SkillUIController>();
+            skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
         }
 
         if (skillUI != null)
         {
+            if (skill != null)
+            {
+                skillUI.SetSkill(skill);
+            }
+
             skillUI.TriggerCooldown(duration);
         }
     }
@@ -461,11 +464,15 @@ public class RunnerController : NetworkBehaviour
     {
         if (!IsOwner) return;
 
-        skillUI = FindFirstObjectByType<SkillUIController>();
+        skillUI = FindFirstObjectByType<SkillUIController>(FindObjectsInactive.Include);
 
         if (skillUI != null && skill != null)
         {
             skillUI.SetSkill(skill);
+        }
+        else
+        {
+            Debug.LogWarning("SetupSkillUI failed | skillUI: " + skillUI + " | skill: " + skill);
         }
     }
 

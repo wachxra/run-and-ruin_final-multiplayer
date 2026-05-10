@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSkillSO
   skillName: Trickster_Shadow
   skillType: 7
+  description: 
   cooldown: 5
   duration: 5
+  icon: {fileID: -855298285791758126, guid: a934c5149ecaf364080c31e98ab43bdd, type: 3}
+  castVFX: {fileID: 0}
+  hitVFX: {fileID: 0}
