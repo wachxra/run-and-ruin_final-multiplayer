@@ -1,12 +1,16 @@
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using UnityEngine;
 
 [InitializeOnLoad]
 public static class PlayFromBootstrap
 {
     private const string BootstrapScenePath =
         "Assets/Scenes/F_Scenes/Bootstrap.unity";
+
+    private const string LastSceneKey =
+        "PlayFromBootstrap_LastScenePath";
 
     static PlayFromBootstrap()
     {
@@ -15,16 +19,40 @@ public static class PlayFromBootstrap
 
     private static void OnPlayModeChanged(PlayModeStateChange state)
     {
-        if (state != PlayModeStateChange.ExitingEditMode)
-            return;
+        if (state == PlayModeStateChange.ExitingEditMode)
+        {
+            string currentScenePath =
+                EditorSceneManager.GetActiveScene().path;
 
-        if (EditorSceneManager.GetActiveScene().path ==
-            BootstrapScenePath)
-            return;
+            if (currentScenePath == BootstrapScenePath)
+                return;
 
-        EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+            if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+            {
+                EditorApplication.isPlaying = false;
+                return;
+            }
 
-        EditorSceneManager.OpenScene(BootstrapScenePath);
+            EditorPrefs.SetString(LastSceneKey, currentScenePath);
+
+            EditorSceneManager.OpenScene(BootstrapScenePath);
+        }
+
+        if (state == PlayModeStateChange.EnteredEditMode)
+        {
+            string lastScenePath =
+                EditorPrefs.GetString(LastSceneKey, "");
+
+            if (string.IsNullOrEmpty(lastScenePath))
+                return;
+
+            if (EditorSceneManager.GetActiveScene().path == lastScenePath)
+                return;
+
+            EditorSceneManager.OpenScene(lastScenePath);
+
+            EditorPrefs.DeleteKey(LastSceneKey);
+        }
     }
 }
 #endif

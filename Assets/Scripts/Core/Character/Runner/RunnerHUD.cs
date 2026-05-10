@@ -34,6 +34,11 @@ public class RunnerHUD : MonoBehaviour
         canvasGroup.alpha = show ? 1 : 0;
         canvasGroup.interactable = show;
         canvasGroup.blocksRaycasts = show;
+
+        if (!show)
+        {
+            ResetHearts();
+        }
     }
 
     public void SetHearts(int current, int max)
@@ -50,6 +55,11 @@ public class RunnerHUD : MonoBehaviour
                 heartIcons[i].gameObject.SetActive(false);
             }
         }
+    }
+
+    public void ResetHearts()
+    {
+        SetHearts(0, heartIcons.Length);
     }
 
     public void SetTimer(float time)

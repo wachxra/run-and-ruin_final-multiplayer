@@ -433,6 +433,12 @@ public class RunnerController : NetworkBehaviour
         if (currentHP.Value < 0)
             currentHP.Value = 0;
 
+        ForceUpdateRunnerHUDClientRpc(
+            OwnerClientId,
+            currentHP.Value,
+            maxHP
+        );
+
         if (currentHP.Value <= 0)
         {
             Die();
@@ -448,6 +454,21 @@ public class RunnerController : NetworkBehaviour
         if (NetworkObject != null && NetworkObject.IsSpawned)
         {
             NetworkObject.Despawn();
+        }
+    }
+
+    [ClientRpc]
+    void ForceUpdateRunnerHUDClientRpc(
+    ulong targetClientId,
+    int current,
+    int max)
+    {
+        if (NetworkManager.Singleton.LocalClientId != targetClientId)
+            return;
+
+        if (RunnerHUD.Instance != null)
+        {
+            RunnerHUD.Instance.SetHearts(current, max);
         }
     }
 
