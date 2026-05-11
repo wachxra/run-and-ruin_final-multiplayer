@@ -1,43 +1,34 @@
 fileFormatVersion: 2
-guid: bca5e2970886bed498524b22fb4bdcb7
+guid: f9befbdc711ca4b43a07d0a4c468d50c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1518155681679823630
-    second: Small Happines-Sadness icons_0
+      213: 141893073332109768
+    second: 06_0
   - first:
-      213: -3773612311301868485
-    second: Small Happines-Sadness icons_1
+      213: 7526069927036187072
+    second: 06_1
   - first:
-      213: 2459910743077178551
-    second: Small Happines-Sadness icons_2
+      213: -3213609745909556679
+    second: 06_2
   - first:
-      213: 1423825456514305097
-    second: Small Happines-Sadness icons_3
+      213: -946184459887860389
+    second: 06_3
   - first:
-      213: 8138787437986451434
-    second: Small Happines-Sadness icons_4
+      213: 2741956415766260738
+    second: 06_4
   - first:
-      213: 3825241385883442936
-    second: Small Happines-Sadness icons_5
+      213: 2967124502552339141
+    second: 06_5
   - first:
-      213: -5664294003376812961
-    second: Small Happines-Sadness icons_6
+      213: 547354065027947891
+    second: 06_6
   - first:
-      213: 3919126718974192468
-    second: Small Happines-Sadness icons_7
+      213: -1558173570600255707
+    second: 06_7
   - first:
-      213: 728252458813965168
-    second: Small Happines-Sadness icons_8
-  - first:
-      213: 242920908560744896
-    second: Small Happines-Sadness icons_9
-  - first:
-      213: -6785078319393755791
-    second: Small Happines-Sadness icons_10
-  - first:
-      213: -9217023203763084313
-    second: Small Happines-Sadness icons_11
+      213: -2159092337048555947
+    second: 06_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -146,13 +137,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Small Happines-Sadness icons_0
+      name: 06_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 18
-        width: 11
-        height: 11
+        x: 6
+        y: 26
+        width: 16
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2fcabb7737d6eeae0800000000000000
-      internalID: -1518155681679823630
+      spriteID: 8c18c089ffa18f100800000000000000
+      internalID: 141893073332109768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Small Happines-Sadness icons_1
+      name: 06_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 18
-        width: 11
-        height: 11
+        x: 42
+        y: 40
+        width: 16
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,196 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b34bfc8a89f61abc0800000000000000
-      internalID: -3773612311301868485
+      spriteID: 0c1fdbb49b8f17860800000000000000
+      internalID: 7526069927036187072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Small Happines-Sadness icons_2
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 18
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7bc4844a9cb532220800000000000000
-      internalID: 2459910743077178551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Happines-Sadness icons_3
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 18
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94c81bd75b172c310800000000000000
-      internalID: 1423825456514305097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Happines-Sadness icons_4
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 18
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aef089fbd08c2f070800000000000000
-      internalID: 8138787437986451434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Happines-Sadness icons_5
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 18
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8fe94b106ccf51530800000000000000
-      internalID: 3825241385883442936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Happines-Sadness icons_6
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 1
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f5c89595d926461b0800000000000000
-      internalID: -5664294003376812961
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Happines-Sadness icons_7
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 1
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 45be23a8cf8836630800000000000000
-      internalID: 3919126718974192468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Happines-Sadness icons_8
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 1
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 073496ab0c54b1a00800000000000000
-      internalID: 728252458813965168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Happines-Sadness icons_9
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 1
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c1474f77470f5300800000000000000
-      internalID: 242920908560744896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Happines-Sadness icons_10
+      name: 06_2
       rect:
         serializedVersion: 2
         x: 66
-        y: 1
-        width: 13
-        height: 13
+        y: 5
+        width: 31
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 17da457a73f86d1a0800000000000000
-      internalID: -6785078319393755791
+      spriteID: 93ad35866f6f663d0800000000000000
+      internalID: -3213609745909556679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Small Happines-Sadness icons_11
+      name: 06_3
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1
-        width: 13
-        height: 13
+        x: 101
+        y: 8
+        width: 28
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,8 +218,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e32b25ea3e861080800000000000000
-      internalID: -9217023203763084313
+      spriteID: b55a3603f3a7ed2f0800000000000000
+      internalID: -946184459887860389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 06_4
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 31
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ce95725d26d0620800000000000000
+      internalID: 2741956415766260738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 06_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 31
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c26dfab3085d2920800000000000000
+      internalID: 2967124502552339141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 06_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37d5b544f97989700800000000000000
+      internalID: 547354065027947891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 06_7
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 12
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f38f1a461406ae0800000000000000
+      internalID: -1558173570600255707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 06_8
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 2
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ee3f475fc5902e0800000000000000
+      internalID: -2159092337048555947
       vertices: []
       indices: 
       edges: []
@@ -423,18 +348,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Small Happines-Sadness icons_0: -1518155681679823630
-      Small Happines-Sadness icons_1: -3773612311301868485
-      Small Happines-Sadness icons_10: -6785078319393755791
-      Small Happines-Sadness icons_11: -9217023203763084313
-      Small Happines-Sadness icons_2: 2459910743077178551
-      Small Happines-Sadness icons_3: 1423825456514305097
-      Small Happines-Sadness icons_4: 8138787437986451434
-      Small Happines-Sadness icons_5: 3825241385883442936
-      Small Happines-Sadness icons_6: -5664294003376812961
-      Small Happines-Sadness icons_7: 3919126718974192468
-      Small Happines-Sadness icons_8: 728252458813965168
-      Small Happines-Sadness icons_9: 242920908560744896
+      06_0: 141893073332109768
+      06_1: 7526069927036187072
+      06_2: -3213609745909556679
+      06_3: -946184459887860389
+      06_4: 2741956415766260738
+      06_5: 2967124502552339141
+      06_6: 547354065027947891
+      06_7: -1558173570600255707
+      06_8: -2159092337048555947
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
