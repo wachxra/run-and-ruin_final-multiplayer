@@ -2580,7 +2580,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shadow (Yellow)
+  m_Text: Speedster (Yellow)
 --- !u!222 &1144523342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2820,7 +2820,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Speedster (Pink)
+  m_Text: Scientist (Pink)
 --- !u!222 &1187812164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4175,7 +4175,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Scientist (Blue)
+  m_Text: Shadow (Blue)
 --- !u!222 &1673932240
 CanvasRenderer:
   m_ObjectHideFlags: 0
