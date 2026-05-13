@@ -6,17 +6,6 @@ public class SkillFeedbackController : NetworkBehaviour
     [Header("VFX Spawn Point")]
     public Transform runnerCenterPoint;
 
-    [Header("VFX Scale")]
-    public float stopTimeScale = 4f;
-    public float screenBlockScale = 3f;
-    public float screenBlockLaneScale = 5f;
-    public float reflectActiveScale = 2.5f;
-    public float reflectHitScale = 2f;
-    public float shieldActiveScale = 3f;
-    public float shieldBreakScale = 4f;
-    public float invisibleScale = 2f;
-    public float slowScale = 2f;
-
     private GameObject currentShieldVFX;
     private GameObject currentReflectVFX;
     private GameObject currentSlowVFX;
@@ -92,13 +81,13 @@ public class SkillFeedbackController : NetworkBehaviour
             case SkillType.StopTime:
                 SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.stopTimeVFX,
-                    stopTimeScale);
+                    SkillVFXDatabase.Instance.stopTimeScale);
                 break;
 
             case SkillType.ScreenBlock:
                 SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.screenBlockVFX,
-                    screenBlockScale);
+                    SkillVFXDatabase.Instance.screenBlockScale);
                 break;
 
             case SkillType.Reflect:
@@ -107,7 +96,7 @@ public class SkillFeedbackController : NetworkBehaviour
                 currentReflectVFX =
                     SpawnLoopAtRunner(
                         SkillVFXDatabase.Instance.reflectActiveVFX,
-                        reflectActiveScale);
+                        SkillVFXDatabase.Instance.reflectActiveScale);
                 break;
 
             case SkillType.Shield:
@@ -116,13 +105,13 @@ public class SkillFeedbackController : NetworkBehaviour
                 currentShieldVFX =
                     SpawnLoopAtRunner(
                         SkillVFXDatabase.Instance.shieldActiveVFX,
-                        shieldActiveScale);
+                        SkillVFXDatabase.Instance.shieldActiveScale);
                 break;
 
             case SkillType.Invisible:
                 SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.invisibleStartVFX,
-                    invisibleScale);
+                    SkillVFXDatabase.Instance.invisibleScale);
                 break;
         }
     }
@@ -146,7 +135,7 @@ public class SkillFeedbackController : NetworkBehaviour
             case SkillType.Invisible:
                 SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.invisibleEndVFX,
-                    invisibleScale);
+                    SkillVFXDatabase.Instance.invisibleScale);
                 break;
         }
     }
@@ -161,7 +150,7 @@ public class SkillFeedbackController : NetworkBehaviour
 
         SpawnOneShotAtRunner(
             SkillVFXDatabase.Instance.shieldBreakVFX,
-            shieldBreakScale);
+            SkillVFXDatabase.Instance.shieldBreakScale);
     }
 
     [ClientRpc]
@@ -175,7 +164,7 @@ public class SkillFeedbackController : NetworkBehaviour
         currentSlowVFX =
             SpawnLoopAtRunner(
                 SkillVFXDatabase.Instance.slowActiveVFX,
-                slowScale);
+                SkillVFXDatabase.Instance.slowScale);
     }
 
     [ClientRpc]
@@ -192,7 +181,7 @@ public class SkillFeedbackController : NetworkBehaviour
 
         SpawnOneShotAtRunner(
             SkillVFXDatabase.Instance.reflectHitVFX,
-            reflectHitScale);
+            SkillVFXDatabase.Instance.reflectHitScale);
     }
 
     [ClientRpc]
@@ -223,7 +212,8 @@ public class SkillFeedbackController : NetworkBehaviour
             point.position,
             Quaternion.identity);
 
-        currentScreenBlockLaneVFX.transform.localScale *= screenBlockLaneScale;
+        currentScreenBlockLaneVFX.transform.localScale *=
+            SkillVFXDatabase.Instance.screenBlockLaneScale;
 
         Invoke(nameof(StopScreenBlockLaneVFX), duration);
     }

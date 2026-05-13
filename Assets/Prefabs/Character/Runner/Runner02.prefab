@@ -98,7 +98,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,8 +117,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1793643237
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1684687934892386565, guid: 52e846d01bdfc4f4691950033e12d710, type: 3}
@@ -317,7 +317,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -1.7}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -327,7 +327,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5, y: 2}
+  m_Size: {x: 5, y: 5.5}
   m_EdgeRadius: 0
 --- !u!50 &8643665404352052410
 Rigidbody2D:
@@ -398,12 +398,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillFeedbackController
   ShowTopMostFoldoutHeaderGroup: 1
   runnerCenterPoint: {fileID: 5221317359885647279}
-  stopTimeScale: 5
-  screenBlockScale: 5
-  screenBlockLaneScale: 2
-  reflectActiveScale: 5
-  reflectHitScale: 5
-  shieldActiveScale: 1
-  shieldBreakScale: 5
-  invisibleScale: 5
-  slowScale: 5

@@ -2222,19 +2222,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillVFXDatabase
   stopTimeVFX: {fileID: 7786238644024684301, guid: c0e12d71650cf1646ac55b8ee0e18eb8, type: 3}
+  stopTimeScale: 5
   screenBlockVFX: {fileID: 6451150555930077173, guid: d88d83841b76d21458f14fc53bbcfba8, type: 3}
+  screenBlockScale: 5
   screenBlockLaneLoopVFX: {fileID: 6451150555930077173, guid: d88d83841b76d21458f14fc53bbcfba8, type: 3}
+  screenBlockLaneScale: 2
   screenBlockLanePoints:
   - {fileID: 464738447}
   - {fileID: 1738434954}
   - {fileID: 1896737456}
   reflectActiveVFX: {fileID: 734907967480106710, guid: 50fe6c09d221a5e4eacf14e2800bd762, type: 3}
+  reflectActiveScale: 5
   reflectHitVFX: {fileID: 386757688575891012, guid: ff35aa504a2fb794facf9f843f5ea234, type: 3}
+  reflectHitScale: 5
   shieldActiveVFX: {fileID: 2135096948192847699, guid: e5df5acc90bcab74d8fb2199514445b8, type: 3}
+  shieldActiveScale: 1
   shieldBreakVFX: {fileID: 4471280742474292598, guid: 0a4e038de67e4094ab8eb8b45d9f142d, type: 3}
+  shieldBreakScale: 5
   invisibleStartVFX: {fileID: 9087229480556574336, guid: 6092f1bd03093d845a15617a8fc7b125, type: 3}
+  invisibleScale: 5
   invisibleEndVFX: {fileID: 7164973706892379231, guid: c73e92b3bfac7a84dbb7dbf3584e8cbe, type: 3}
   slowActiveVFX: {fileID: 5269662575706595410, guid: 08f8af00c8e3a2648991fb62414b497c, type: 3}
+  slowScale: 5
 --- !u!4 &683689024
 Transform:
   m_ObjectHideFlags: 0
