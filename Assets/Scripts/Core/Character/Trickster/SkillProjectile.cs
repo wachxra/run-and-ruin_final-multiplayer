@@ -14,9 +14,18 @@ public class SkillProjectile : NetworkBehaviour
 
     private bool canHitTrickster = false;
 
+    private bool applySlow = false;
+    private float slowDuration = 3f;
+
     public void SetFreeze(bool state)
     {
         isStopped = state;
+    }
+
+    public void SetSlow(float duration)
+    {
+        applySlow = true;
+        slowDuration = duration;
     }
 
     public void Reflect()
@@ -50,19 +59,19 @@ public class SkillProjectile : NetworkBehaviour
 
         var runner = other.GetComponentInParent<RunnerController>();
 
-        if (runner.skill != null)
-        {
-            if (runner.skill.hitVFX != null)
-            {
-                Instantiate(
-                    runner.skill.hitVFX,
-                    transform.position,
-                    Quaternion.identity);
-            }
-        }
-
         if (runner != null)
         {
+            if (runner.skill != null)
+            {
+                if (runner.skill.hitVFX != null)
+                {
+                    Instantiate(
+                        runner.skill.hitVFX,
+                        transform.position,
+                        Quaternion.identity);
+                }
+            }
+
             if (runner.NetworkObject == null ||
                 !runner.NetworkObject.IsSpawned)
                 return;
@@ -74,6 +83,11 @@ public class SkillProjectile : NetworkBehaviour
             }
 
             hasHit = true;
+
+            if (applySlow)
+            {
+                runner.ApplySlow(slowDuration);
+            }
 
             runner.TakeDamage(damage);
 
@@ -91,8 +105,6 @@ public class SkillProjectile : NetworkBehaviour
                 if (trickster.currentRole.Value == CharacterRole.Trickster)
                 {
                     hasHit = true;
-
-                    Debug.Log("Reflected Projectile Hit Trickster");
 
                     DespawnSelf();
                 }

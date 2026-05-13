@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Trickster05
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSkillSO
   skillName: Trickster_Speedster
-  skillType: 9
+  skillType: 8
   description: 
   cooldown: 5
   duration: 5

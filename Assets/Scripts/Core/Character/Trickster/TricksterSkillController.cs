@@ -6,13 +6,30 @@ public class TricksterSkillController : NetworkBehaviour
 {
     public GameObject projectilePrefab;
 
-    [Header("Projectile Prefabs")]
+    [Header("Pirate King Prefabs")]
     public GameObject cannonBallPrefab;
     public GameObject bombPrefab;
     public GameObject knifePrefab;
 
+    [Header("Bartender Prefabs")]
     public GameObject glassPrefab;
     public GameObject barrelPrefab;
+    public GameObject bartenderKnifePrefab;
+
+    [Header("Scientist Prefabs")]
+    public GameObject poisonBottlePrefab;
+    public GameObject chemicalBombPrefab;
+    public GameObject poisonNeedlePrefab;
+
+    [Header("Speedster Prefabs")]
+    public GameObject fastStarPrefab;
+    public GameObject fastEnergyPrefab;
+    public GameObject fastKnifePrefab;
+
+    [Header("Shadow Prefabs")]
+    public GameObject shadowBallPrefab;
+    public GameObject shadowTrapPrefab;
+    public GameObject shadowKnifePrefab;
 
     public Transform[] firePoints;
 
@@ -25,6 +42,19 @@ public class TricksterSkillController : NetworkBehaviour
     public float projectileCooldown = 1f;
 
     private float lastProjectileSkillTime = -999f;
+
+    [Header("Scientist Skill")]
+    public float slowDuration = 3f;
+
+    [Header("Speedster Skill")]
+    public float rapidFireDuration = 5f;
+    public float rapidFireCooldownMultiplier = 0.5f;
+    public float rapidProjectileSpeedMultiplier = 2f;
+
+    [Header("Shadow Skill")]
+    public float shadowHideDuration = 3f;
+
+    private bool isRapidFireActive = false;
 
     void Update()
     {
@@ -108,6 +138,18 @@ public class TricksterSkillController : NetworkBehaviour
             case SkillType.Blur:
                 BlurAllRunnerClientRpc();
                 break;
+
+            case SkillType.SlowAll:
+                SlowAllRunners();
+                break;
+
+            case SkillType.MultiShot:
+                StartCoroutine(RapidFireRoutine());
+                break;
+
+            case SkillType.Trap:
+                StartCoroutine(HideProjectilesRoutine());
+                break;
         }
     }
 
@@ -120,6 +162,74 @@ public class TricksterSkillController : NetworkBehaviour
             SpawnProjectile(randomLane);
 
             yield return new WaitForSeconds(1f);
+        }
+    }
+
+    void SlowAllRunners()
+    {
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+        {
+            var runner =
+                client.PlayerObject.GetComponentInChildren<RunnerController>();
+
+            if (runner != null)
+            {
+                runner.ApplySlow(slowDuration);
+            }
+        }
+    }
+
+    IEnumerator RapidFireRoutine()
+    {
+        isRapidFireActive = true;
+
+        yield return new WaitForSeconds(rapidFireDuration);
+
+        isRapidFireActive = false;
+    }
+
+    IEnumerator HideProjectilesRoutine()
+    {
+        SetAllProjectilesFreeze(true);
+        SetAllProjectilesVisibleClientRpc(false);
+
+        yield return new WaitForSeconds(shadowHideDuration);
+
+        SetAllProjectilesFreeze(false);
+        SetAllProjectilesVisibleClientRpc(true);
+    }
+
+    void SetAllProjectilesFreeze(bool state)
+    {
+        SkillProjectile[] projectiles =
+            FindObjectsByType<SkillProjectile>(FindObjectsSortMode.None);
+
+        foreach (SkillProjectile projectile in projectiles)
+        {
+            if (projectile != null)
+            {
+                projectile.SetFreeze(state);
+            }
+        }
+    }
+
+    [ClientRpc]
+    void SetAllProjectilesVisibleClientRpc(bool state)
+    {
+        SkillProjectile[] projectiles =
+            FindObjectsByType<SkillProjectile>(FindObjectsSortMode.None);
+
+        foreach (SkillProjectile projectile in projectiles)
+        {
+            if (projectile == null) continue;
+
+            SpriteRenderer sprite =
+                projectile.GetComponentInChildren<SpriteRenderer>();
+
+            if (sprite != null)
+            {
+                sprite.enabled = state;
+            }
         }
     }
 
@@ -150,7 +260,14 @@ public class TricksterSkillController : NetworkBehaviour
         if (senderPlayer.currentRole.Value != CharacterRole.Trickster)
             return;
 
-        if (Time.time - lastProjectileSkillTime < projectileCooldown)
+        float currentProjectileCooldown = projectileCooldown;
+
+        if (isRapidFireActive)
+        {
+            currentProjectileCooldown *= rapidFireCooldownMultiplier;
+        }
+
+        if (Time.time - lastProjectileSkillTime < currentProjectileCooldown)
             return;
 
         foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
@@ -177,6 +294,9 @@ public class TricksterSkillController : NetworkBehaviour
     {
         if (!IsServer) return;
 
+        if (firePoints == null || firePoints.Length <= lane)
+            return;
+
         var spawnPoint = firePoints[lane];
 
         GameObject prefabToSpawn = projectilePrefab;
@@ -201,8 +321,44 @@ public class TricksterSkillController : NetworkBehaviour
                 prefabToSpawn = barrelPrefab;
 
             else
-                prefabToSpawn = knifePrefab;
+                prefabToSpawn = bartenderKnifePrefab;
         }
+        else if (skill.skillType == SkillType.SlowAll)
+        {
+            if (lane == 0)
+                prefabToSpawn = poisonBottlePrefab;
+
+            else if (lane == 1)
+                prefabToSpawn = chemicalBombPrefab;
+
+            else
+                prefabToSpawn = poisonNeedlePrefab;
+        }
+        else if (skill.skillType == SkillType.MultiShot)
+        {
+            if (lane == 0)
+                prefabToSpawn = fastStarPrefab;
+
+            else if (lane == 1)
+                prefabToSpawn = fastEnergyPrefab;
+
+            else
+                prefabToSpawn = fastKnifePrefab;
+        }
+        else if (skill.skillType == SkillType.Trap)
+        {
+            if (lane == 0)
+                prefabToSpawn = shadowBallPrefab;
+
+            else if (lane == 1)
+                prefabToSpawn = shadowTrapPrefab;
+
+            else
+                prefabToSpawn = shadowKnifePrefab;
+        }
+
+        if (prefabToSpawn == null)
+            return;
 
         var obj = Instantiate(
             prefabToSpawn,
@@ -221,6 +377,20 @@ public class TricksterSkillController : NetworkBehaviour
             if (effect.followRunnerSpeed)
             {
                 projectile.speed += 4f;
+            }
+        }
+
+        if (projectile != null)
+        {
+            if (skill.skillType == SkillType.SlowAll)
+            {
+                projectile.SetSlow(slowDuration);
+            }
+
+            if (skill.skillType == SkillType.MultiShot &&
+                isRapidFireActive)
+            {
+                projectile.speed *= rapidProjectileSpeedMultiplier;
             }
         }
 

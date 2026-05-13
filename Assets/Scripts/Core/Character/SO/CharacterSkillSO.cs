@@ -10,12 +10,11 @@ public enum SkillType
     Invisible,
 
     // Trickster
-    Cannon,
-    Blur,
-
-    SlowAll,
-    MultiShot,
-    Trap
+    Cannon,     // Pirate King
+    Blur,       // Bartender
+    SlowAll,    // Scientist
+    MultiShot,  // Speedster
+    Trap        // Shadow
 }
 
 [CreateAssetMenu(menuName = "Game/Character Skill")]

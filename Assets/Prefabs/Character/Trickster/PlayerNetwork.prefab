@@ -140,12 +140,26 @@ MonoBehaviour:
   knifePrefab: {fileID: 4756696758205907266, guid: e3d20541e0880254ea8340b3662be426, type: 3}
   glassPrefab: {fileID: 4756696758205907266, guid: 7675a1d065182b44b89d9c67c3bfcc2d, type: 3}
   barrelPrefab: {fileID: 4756696758205907266, guid: d15f10050645dd243ab4453be032bdee, type: 3}
+  poisonBottlePrefab: {fileID: 4756696758205907266, guid: 7675a1d065182b44b89d9c67c3bfcc2d, type: 3}
+  chemicalBombPrefab: {fileID: 4756696758205907266, guid: 073e9e1d397389c4e8c5fee54fb9c972, type: 3}
+  poisonNeedlePrefab: {fileID: 4756696758205907266, guid: 12aeed0a85c365e429a6868971d7de95, type: 3}
+  fastStarPrefab: {fileID: 4756696758205907266, guid: 061bfef236212514287f763b90bbffda, type: 3}
+  fastEnergyPrefab: {fileID: 4756696758205907266, guid: 7675a1d065182b44b89d9c67c3bfcc2d, type: 3}
+  fastKnifePrefab: {fileID: 4756696758205907266, guid: e3d20541e0880254ea8340b3662be426, type: 3}
+  shadowBallPrefab: {fileID: 4756696758205907266, guid: 12aeed0a85c365e429a6868971d7de95, type: 3}
+  shadowTrapPrefab: {fileID: 4756696758205907266, guid: 073e9e1d397389c4e8c5fee54fb9c972, type: 3}
+  shadowKnifePrefab: {fileID: 4756696758205907266, guid: e3d20541e0880254ea8340b3662be426, type: 3}
   firePoints:
   - {fileID: 4227171730365196575}
   - {fileID: 17829204850095064}
   - {fileID: 7604014169384264962}
   skill: {fileID: 0}
   projectileCooldown: 1
+  slowDuration: 3
+  rapidFireDuration: 5
+  rapidFireCooldownMultiplier: 0.5
+  rapidProjectileSpeedMultiplier: 2
+  shadowHideDuration: 3
 --- !u!1 &4281421959153673157
 GameObject:
   m_ObjectHideFlags: 0

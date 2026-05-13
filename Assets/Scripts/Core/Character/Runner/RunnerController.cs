@@ -458,21 +458,15 @@ public class RunnerController : NetworkBehaviour
     [ClientRpc]
     void ApplySlowVisualClientRpc(bool state)
     {
-        if (sprite == null) return;
+        if (animator == null) return;
 
         if (state)
         {
-            sprite.color = Color.black;
-
-            if (animator != null)
-                animator.speed = 0.5f;
+            animator.speed = 0.5f;
         }
         else
         {
-            sprite.color = Color.white;
-
-            if (animator != null)
-                animator.speed = 1f;
+            animator.speed = 1f;
         }
     }
 
