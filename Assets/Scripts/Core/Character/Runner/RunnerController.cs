@@ -9,6 +9,10 @@ public class RunnerController : NetworkBehaviour
     private bool isJumping = false;
     private bool isSliding = false;
     private bool canJumpDuringSlide = false;
+    private bool isSlideHeld = false;
+
+    private Coroutine slideRoutine;
+    private Coroutine slidePauseRoutine;
 
     private Vector3 startPosition;
 
@@ -23,6 +27,7 @@ public class RunnerController : NetworkBehaviour
 
     [Header("Animation")]
     public float slideAnimationLength = 0.5f;
+    public float slidePauseTime = 0.25f;
 
     [Header("Slide Collider")]
     public BoxCollider2D bodyCollider;
@@ -101,7 +106,13 @@ public class RunnerController : NetworkBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (!isSliding && !isJumping)
-                SlideServerRpc();
+                StartSlideServerRpc();
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            if (isSliding)
+                StopSlideServerRpc();
         }
 
         if (Input.GetKeyDown(KeyCode.J))
@@ -327,6 +338,12 @@ public class RunnerController : NetworkBehaviour
     [ClientRpc]
     void StopSlideForJumpClientRpc()
     {
+        if (slidePauseRoutine != null)
+        {
+            StopCoroutine(slidePauseRoutine);
+            slidePauseRoutine = null;
+        }
+
         if (animator != null)
         {
             animator.speed = 1f;
@@ -345,9 +362,14 @@ public class RunnerController : NetworkBehaviour
 
         if (isSliding)
         {
+            isSlideHeld = false;
+
             StopSlideForJumpClientRpc();
+
             SetSlideCollider(false);
+
             isSliding = false;
+            canJumpDuringSlide = false;
         }
 
         StartCoroutine(JumpRoutine());
@@ -397,26 +419,85 @@ public class RunnerController : NetworkBehaviour
     }
 
     [ServerRpc]
-    void SlideServerRpc()
+    void StartSlideServerRpc()
     {
         if (isSliding || isJumping) return;
 
-        StartCoroutine(SlideRoutine());
+        isSlideHeld = true;
 
-        SlideClientRpc();
+        slideRoutine = StartCoroutine(SlideRoutine());
+
+        StartSlideClientRpc();
+    }
+
+    [ServerRpc]
+    void StopSlideServerRpc()
+    {
+        if (!isSliding) return;
+
+        isSlideHeld = false;
+
+        ResumeSlideClientRpc();
     }
 
     [ClientRpc]
-    void SlideClientRpc()
+    void StartSlideClientRpc()
     {
+        isSliding = true;
+        isSlideHeld = true;
+        SetSlideCollider(true);
+
         if (animator == null) return;
 
-        float animSpeed =
-            slideAnimationLength / slideDuration;
+        if (slidePauseRoutine != null)
+        {
+            StopCoroutine(slidePauseRoutine);
+            slidePauseRoutine = null;
+        }
 
-        animator.speed = animSpeed;
-
+        animator.speed = 1f;
         animator.SetTrigger("Slide");
+
+        slidePauseRoutine = StartCoroutine(PauseSlideAnimationRoutine());
+    }
+
+    IEnumerator PauseSlideAnimationRoutine()
+    {
+        float timer = 0f;
+
+        while (timer < slidePauseTime)
+        {
+            timer += Time.deltaTime * actionSpeedMultiplier;
+            yield return null;
+        }
+
+        if (animator != null)
+        {
+            animator.speed = 0f;
+        }
+
+        slidePauseRoutine = null;
+    }
+
+    [ClientRpc]
+    void ResumeSlideClientRpc()
+    {
+        isSlideHeld = false;
+        SetSlideCollider(false);
+
+        if (slidePauseRoutine != null)
+        {
+            StopCoroutine(slidePauseRoutine);
+            slidePauseRoutine = null;
+        }
+
+        if (animator != null)
+        {
+            animator.speed = 1f;
+        }
+
+        isSliding = false;
+        canJumpDuringSlide = false;
     }
 
     IEnumerator SlideRoutine()
@@ -426,32 +507,26 @@ public class RunnerController : NetworkBehaviour
 
         SetSlideCollider(true);
 
-        float timer = 0f;
+        float unlockTimer = 0f;
 
-        while (timer < slideDuration)
+        while (isSlideHeld)
         {
-            timer += Time.deltaTime * actionSpeedMultiplier;
+            unlockTimer += Time.deltaTime * actionSpeedMultiplier;
 
-            if (timer >= slideInputUnlockTime)
+            if (unlockTimer >= slideInputUnlockTime)
             {
                 canJumpDuringSlide = true;
             }
-
-            if (!isSliding)
-                yield break;
 
             yield return null;
         }
 
         SetSlideCollider(false);
 
-        if (animator != null)
-        {
-            animator.speed = 1f;
-        }
-
         isSliding = false;
         canJumpDuringSlide = false;
+
+        slideRoutine = null;
     }
 
     void SetSlideCollider(bool slide)
@@ -487,9 +562,18 @@ public class RunnerController : NetworkBehaviour
 
         if (isSliding || isJumping) return;
 
-        StartCoroutine(SlideRoutine());
+        isSlideHeld = true;
 
-        SlideClientRpc();
+        slideRoutine = StartCoroutine(ForceSlideRoutine());
+
+        StartSlideClientRpc();
+    }
+
+    IEnumerator ForceSlideRoutine()
+    {
+        yield return SlideRoutine();
+
+        ResumeSlideClientRpc();
     }
 
     public void ApplySlow(float duration)

@@ -87,7 +87,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1793643237
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1684687934892386565, guid: 52e846d01bdfc4f4691950033e12d710, type: 3}
@@ -339,12 +339,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RunnerController
   ShowTopMostFoldoutHeaderGroup: 1
   jumpHeight: 12
-  jumpDuration: 0.7
+  jumpDuration: 1
   slideOffset: 1
   slideDuration: 1
   slideInputUnlockTime: 0.85
   slideAnimationLength: 1
-  bodyCollider: {fileID: 8925314139854967875, guid: 2a22576db5be7644898014b67400ac84, type: 3}
+  slidePauseTime: 0.5
+  bodyCollider: {fileID: -5320422277836347678}
   normalColliderSize: {x: 5, y: 5.5}
   normalColliderOffset: {x: 0, y: 0}
   slideColliderSize: {x: 5, y: 2}
