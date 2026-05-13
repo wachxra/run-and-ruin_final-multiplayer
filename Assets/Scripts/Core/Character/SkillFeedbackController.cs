@@ -3,10 +3,46 @@ using Unity.Netcode;
 
 public class SkillFeedbackController : NetworkBehaviour
 {
+    [Header("VFX Spawn Point")]
+    public Transform runnerCenterPoint;
+
+    [Header("VFX Scale")]
+    public float stopTimeScale = 4f;
+    public float screenBlockScale = 3f;
+    public float screenBlockLaneScale = 5f;
+    public float reflectActiveScale = 2.5f;
+    public float reflectHitScale = 2f;
+    public float shieldActiveScale = 3f;
+    public float shieldBreakScale = 4f;
+    public float invisibleScale = 2f;
+    public float slowScale = 2f;
+
     private GameObject currentShieldVFX;
     private GameObject currentReflectVFX;
     private GameObject currentSlowVFX;
-    private GameObject currentRapidFireVFX;
+    private GameObject currentScreenBlockLaneVFX;
+
+    Vector3 RunnerCenterPosition
+    {
+        get
+        {
+            if (runnerCenterPoint != null)
+                return runnerCenterPoint.position;
+
+            return transform.position;
+        }
+    }
+
+    Transform RunnerCenterParent
+    {
+        get
+        {
+            if (runnerCenterPoint != null)
+                return runnerCenterPoint;
+
+            return transform;
+        }
+    }
 
     public void PlayRunnerSkillStart(SkillType skillType, float duration)
     {
@@ -25,9 +61,7 @@ public class SkillFeedbackController : NetworkBehaviour
 
     public void PlayReflectHit(Vector3 position)
     {
-        PlayOneShotWorldVFXClientRpc(
-            SkillFeedbackType.ReflectHit,
-            position);
+        PlayReflectHitClientRpc();
     }
 
     public void PlaySlowStart(float duration)
@@ -40,20 +74,9 @@ public class SkillFeedbackController : NetworkBehaviour
         PlaySlowEndClientRpc();
     }
 
-    public void PlayTricksterSkillStart(
-        SkillType skillType,
-        float duration)
+    public void PlayScreenBlockLane(int lane, float duration)
     {
-        PlayTricksterSkillStartClientRpc(
-            skillType,
-            duration);
-    }
-
-    public void PlayProjectileHide(Vector3 position)
-    {
-        PlayOneShotWorldVFXClientRpc(
-            SkillFeedbackType.ShadowHide,
-            position);
+        PlayScreenBlockLaneClientRpc(lane, duration);
     }
 
     [ClientRpc]
@@ -67,43 +90,39 @@ public class SkillFeedbackController : NetworkBehaviour
         switch (skillType)
         {
             case SkillType.StopTime:
-
-                SpawnOneShot(
+                SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.stopTimeVFX,
-                    transform.position);
-
+                    stopTimeScale);
                 break;
 
             case SkillType.ScreenBlock:
-
-                SpawnOneShot(
+                SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.screenBlockVFX,
-                    transform.position);
-
+                    screenBlockScale);
                 break;
 
             case SkillType.Reflect:
+                DestroyCurrent(ref currentReflectVFX);
 
                 currentReflectVFX =
-                    SpawnLoop(
-                        SkillVFXDatabase.Instance.reflectActiveVFX);
-
+                    SpawnLoopAtRunner(
+                        SkillVFXDatabase.Instance.reflectActiveVFX,
+                        reflectActiveScale);
                 break;
 
             case SkillType.Shield:
+                DestroyCurrent(ref currentShieldVFX);
 
                 currentShieldVFX =
-                    SpawnLoop(
-                        SkillVFXDatabase.Instance.shieldActiveVFX);
-
+                    SpawnLoopAtRunner(
+                        SkillVFXDatabase.Instance.shieldActiveVFX,
+                        shieldActiveScale);
                 break;
 
             case SkillType.Invisible:
-
-                SpawnOneShot(
+                SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.invisibleStartVFX,
-                    transform.position);
-
+                    invisibleScale);
                 break;
         }
     }
@@ -117,23 +136,17 @@ public class SkillFeedbackController : NetworkBehaviour
         switch (skillType)
         {
             case SkillType.Reflect:
-
                 DestroyCurrent(ref currentReflectVFX);
-
                 break;
 
             case SkillType.Shield:
-
                 DestroyCurrent(ref currentShieldVFX);
-
                 break;
 
             case SkillType.Invisible:
-
-                SpawnOneShot(
+                SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.invisibleEndVFX,
-                    transform.position);
-
+                    invisibleScale);
                 break;
         }
     }
@@ -146,9 +159,9 @@ public class SkillFeedbackController : NetworkBehaviour
 
         DestroyCurrent(ref currentShieldVFX);
 
-        SpawnOneShot(
+        SpawnOneShotAtRunner(
             SkillVFXDatabase.Instance.shieldBreakVFX,
-            transform.position);
+            shieldBreakScale);
     }
 
     [ClientRpc]
@@ -160,8 +173,9 @@ public class SkillFeedbackController : NetworkBehaviour
         DestroyCurrent(ref currentSlowVFX);
 
         currentSlowVFX =
-            SpawnLoop(
-                SkillVFXDatabase.Instance.slowActiveVFX);
+            SpawnLoopAtRunner(
+                SkillVFXDatabase.Instance.slowActiveVFX,
+                slowScale);
     }
 
     [ClientRpc]
@@ -171,113 +185,86 @@ public class SkillFeedbackController : NetworkBehaviour
     }
 
     [ClientRpc]
-    void PlayTricksterSkillStartClientRpc(
-        SkillType skillType,
-        float duration)
+    void PlayReflectHitClientRpc()
     {
         if (SkillVFXDatabase.Instance == null)
             return;
 
-        switch (skillType)
-        {
-            case SkillType.Cannon:
-
-                SpawnOneShot(
-                    SkillVFXDatabase.Instance.cannonCastVFX,
-                    transform.position);
-
-                break;
-
-            case SkillType.Blur:
-
-                SpawnOneShot(
-                    SkillVFXDatabase.Instance.blurCastVFX,
-                    transform.position);
-
-                break;
-
-            case SkillType.SlowAll:
-
-                SpawnOneShot(
-                    SkillVFXDatabase.Instance.scientistSlowVFX,
-                    transform.position);
-
-                break;
-
-            case SkillType.MultiShot:
-
-                currentRapidFireVFX =
-                    SpawnLoop(
-                        SkillVFXDatabase.Instance.rapidFireVFX);
-
-                Invoke(
-                    nameof(StopRapidFireVFX),
-                    duration);
-
-                break;
-
-            case SkillType.Trap:
-
-                SpawnOneShot(
-                    SkillVFXDatabase.Instance.shadowHideVFX,
-                    transform.position);
-
-                break;
-        }
-    }
-
-    void StopRapidFireVFX()
-    {
-        DestroyCurrent(ref currentRapidFireVFX);
+        SpawnOneShotAtRunner(
+            SkillVFXDatabase.Instance.reflectHitVFX,
+            reflectHitScale);
     }
 
     [ClientRpc]
-    void PlayOneShotWorldVFXClientRpc(
-        SkillFeedbackType feedbackType,
-        Vector3 position)
+    void PlayScreenBlockLaneClientRpc(int lane, float duration)
     {
         if (SkillVFXDatabase.Instance == null)
             return;
 
-        if (feedbackType == SkillFeedbackType.ReflectHit)
-        {
-            SpawnOneShot(
-                SkillVFXDatabase.Instance.reflectHitVFX,
-                position);
-        }
-        else if (feedbackType == SkillFeedbackType.ShadowHide)
-        {
-            SpawnOneShot(
-                SkillVFXDatabase.Instance.shadowHideVFX,
-                position);
-        }
+        if (SkillVFXDatabase.Instance.screenBlockLanePoints == null)
+            return;
+
+        int index = lane - 1;
+
+        if (index < 0 ||
+            index >= SkillVFXDatabase.Instance.screenBlockLanePoints.Length)
+            return;
+
+        Transform point =
+            SkillVFXDatabase.Instance.screenBlockLanePoints[index];
+
+        if (point == null)
+            return;
+
+        DestroyCurrent(ref currentScreenBlockLaneVFX);
+
+        currentScreenBlockLaneVFX = Instantiate(
+            SkillVFXDatabase.Instance.screenBlockLaneLoopVFX,
+            point.position,
+            Quaternion.identity);
+
+        currentScreenBlockLaneVFX.transform.localScale *= screenBlockLaneScale;
+
+        Invoke(nameof(StopScreenBlockLaneVFX), duration);
     }
 
-    GameObject SpawnLoop(GameObject prefab)
+    void StopScreenBlockLaneVFX()
+    {
+        DestroyCurrent(ref currentScreenBlockLaneVFX);
+    }
+
+    GameObject SpawnLoopAtRunner(
+        GameObject prefab,
+        float scaleMultiplier)
     {
         if (prefab == null)
             return null;
 
         GameObject obj = Instantiate(
             prefab,
-            transform.position,
+            RunnerCenterPosition,
             Quaternion.identity,
-            transform);
+            RunnerCenterParent);
+
+        obj.transform.localPosition = Vector3.zero;
+        obj.transform.localScale *= scaleMultiplier;
 
         return obj;
     }
 
-    void SpawnOneShot(
+    void SpawnOneShotAtRunner(
         GameObject prefab,
-        Vector3 position)
+        float scaleMultiplier)
     {
         if (prefab == null)
             return;
 
-        Instantiate(
+        GameObject obj = Instantiate(
             prefab,
-            position,
+            RunnerCenterPosition,
             Quaternion.identity);
+
+        obj.transform.localScale *= scaleMultiplier;
     }
 
     void DestroyCurrent(ref GameObject obj)

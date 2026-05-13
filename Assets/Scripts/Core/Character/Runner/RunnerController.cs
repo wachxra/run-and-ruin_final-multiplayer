@@ -166,9 +166,13 @@ public class RunnerController : NetworkBehaviour
 
             case SkillType.ScreenBlock:
                 if (feedback != null)
-                    feedback.PlayRunnerSkillStart(skill.skillType, skill.duration);
+                {
+                    feedback.PlayRunnerSkillStart(
+                        skill.skillType,
+                        skill.duration);
+                }
 
-                BlockRandomLaneClientRpc();
+                BlockRandomLane();
                 break;
 
             case SkillType.Reflect:
@@ -277,19 +281,33 @@ public class RunnerController : NetworkBehaviour
         sprite.color = c;
     }
 
-    [ClientRpc]
-    void BlockRandomLaneClientRpc()
+    void BlockRandomLane()
     {
         blockedLane = Random.Range(1, 4);
 
         Debug.Log("Blocked Lane : " + blockedLane);
 
+        if (feedback != null)
+        {
+            feedback.PlayScreenBlockLane(
+                blockedLane,
+                skill.duration);
+        }
+
+        BlockLaneClientRpc(blockedLane);
+
         StartCoroutine(UnblockLaneRoutine());
+    }
+
+    [ClientRpc]
+    void BlockLaneClientRpc(int lane)
+    {
+        blockedLane = lane;
     }
 
     IEnumerator UnblockLaneRoutine()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(skill.duration);
 
         blockedLane = -1;
 

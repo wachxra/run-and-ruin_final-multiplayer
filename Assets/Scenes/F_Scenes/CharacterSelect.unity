@@ -712,7 +712,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Runner04 (Pink)
+  m_Text: Shield (Pink)
 --- !u!222 &226309540
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1180,7 +1180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Runner05 (Yellow)
+  m_Text: Invisible (Yellow)
 --- !u!222 &448347081
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1928,9 +1928,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 490842873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &956036746
@@ -2501,7 +2501,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Runner02 (Red)
+  m_Text: Lane Block (Red)
 --- !u!222 &1135868506
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2580,7 +2580,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trickster05 (Yellow)
+  m_Text: Shadow (Yellow)
 --- !u!222 &1144523342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2820,7 +2820,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trickster04 (Pink)
+  m_Text: Speedster (Pink)
 --- !u!222 &1187812164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3337,7 +3337,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trickster02 (Red)
+  m_Text: Bartender (Red)
 --- !u!222 &1373448591
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4175,7 +4175,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trickster03 (Blue)
+  m_Text: Scientist (Blue)
 --- !u!222 &1673932240
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4254,7 +4254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Runner03 (Blue)
+  m_Text: Reflect (Blue)
 --- !u!222 &1747408500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4470,7 +4470,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Runner01 (Green)
+  m_Text: Stop Time (Green)
 --- !u!222 &1881915906
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5120,7 +5120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trickster01 (Green)
+  m_Text: Pirate King (Green)
 --- !u!222 &2107336399
 CanvasRenderer:
   m_ObjectHideFlags: 0

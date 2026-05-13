@@ -1546,7 +1546,7 @@ Transform:
   m_GameObject: {fileID: 464738446}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.353142, y: 9.0073595, z: 0}
+  m_LocalPosition: {x: 20.35, y: 9.0073595, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2173,7 +2173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &647111567
 Transform:
   m_ObjectHideFlags: 0
@@ -2216,25 +2216,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683689022}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 053fa4b499accb74db932c2a9c5a3316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillVFXDatabase
-  stopTimeVFX: {fileID: 0}
-  screenBlockVFX: {fileID: 0}
-  reflectActiveVFX: {fileID: 0}
-  reflectHitVFX: {fileID: 0}
-  shieldActiveVFX: {fileID: 0}
-  shieldBreakVFX: {fileID: 0}
-  invisibleStartVFX: {fileID: 0}
-  invisibleEndVFX: {fileID: 0}
-  slowActiveVFX: {fileID: 0}
-  cannonCastVFX: {fileID: 0}
-  blurCastVFX: {fileID: 0}
-  scientistSlowVFX: {fileID: 0}
-  rapidFireVFX: {fileID: 0}
-  shadowHideVFX: {fileID: 0}
+  stopTimeVFX: {fileID: 7786238644024684301, guid: c0e12d71650cf1646ac55b8ee0e18eb8, type: 3}
+  screenBlockVFX: {fileID: 6451150555930077173, guid: d88d83841b76d21458f14fc53bbcfba8, type: 3}
+  screenBlockLaneLoopVFX: {fileID: 6451150555930077173, guid: d88d83841b76d21458f14fc53bbcfba8, type: 3}
+  screenBlockLanePoints:
+  - {fileID: 464738447}
+  - {fileID: 1738434954}
+  - {fileID: 1896737456}
+  reflectActiveVFX: {fileID: 734907967480106710, guid: 50fe6c09d221a5e4eacf14e2800bd762, type: 3}
+  reflectHitVFX: {fileID: 386757688575891012, guid: ff35aa504a2fb794facf9f843f5ea234, type: 3}
+  shieldActiveVFX: {fileID: 2135096948192847699, guid: e5df5acc90bcab74d8fb2199514445b8, type: 3}
+  shieldBreakVFX: {fileID: 4471280742474292598, guid: 0a4e038de67e4094ab8eb8b45d9f142d, type: 3}
+  invisibleStartVFX: {fileID: 9087229480556574336, guid: 6092f1bd03093d845a15617a8fc7b125, type: 3}
+  invisibleEndVFX: {fileID: 7164973706892379231, guid: c73e92b3bfac7a84dbb7dbf3584e8cbe, type: 3}
+  slowActiveVFX: {fileID: 5269662575706595410, guid: 08f8af00c8e3a2648991fb62414b497c, type: 3}
 --- !u!4 &683689024
 Transform:
   m_ObjectHideFlags: 0
@@ -5729,7 +5729,7 @@ Transform:
   m_GameObject: {fileID: 1738434953}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.353142, y: 3.4073598, z: 0}
+  m_LocalPosition: {x: 20.350002, y: 2.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5972,7 +5972,7 @@ Transform:
   m_GameObject: {fileID: 1896737455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.353142, y: -3.47, z: 0}
+  m_LocalPosition: {x: 20.350002, y: -3.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

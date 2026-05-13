@@ -4,23 +4,30 @@ public class SkillVFXDatabase : MonoBehaviour
 {
     public static SkillVFXDatabase Instance;
 
-    [Header("Runner VFX")]
+    [Header("Runner - StopTime")]
     public GameObject stopTimeVFX;
+
+    [Header("Runner - ScreenBlock")]
     public GameObject screenBlockVFX;
+    public GameObject screenBlockLaneLoopVFX;
+
+    [Header("Runner - ScreenBlock Lane Points")]
+    public Transform[] screenBlockLanePoints;
+
+    [Header("Runner - Reflect")]
     public GameObject reflectActiveVFX;
     public GameObject reflectHitVFX;
+
+    [Header("Runner - Shield")]
     public GameObject shieldActiveVFX;
     public GameObject shieldBreakVFX;
+
+    [Header("Runner - Invisible")]
     public GameObject invisibleStartVFX;
     public GameObject invisibleEndVFX;
-    public GameObject slowActiveVFX;
 
-    [Header("Trickster VFX")]
-    public GameObject cannonCastVFX;
-    public GameObject blurCastVFX;
-    public GameObject scientistSlowVFX;
-    public GameObject rapidFireVFX;
-    public GameObject shadowHideVFX;
+    [Header("Runner - Slow Status")]
+    public GameObject slowActiveVFX;
 
     private void Awake()
     {

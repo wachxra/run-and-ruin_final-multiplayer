@@ -112,8 +112,8 @@ public class TricksterSkillController : NetworkBehaviour
         lastSkillTime = Time.time;
         PlayTricksterUltimateClientRpc();
 
-        if (feedback != null)
-            feedback.PlayTricksterSkillStart(skill.skillType, skill.duration);
+        /*if (feedback != null)
+            feedback.PlayTricksterSkillStart(skill.skillType, skill.duration);*/
 
         ActivateSkill();
 
@@ -215,12 +215,6 @@ public class TricksterSkillController : NetworkBehaviour
         foreach (SkillProjectile projectile in projectiles)
         {
             if (projectile == null) continue;
-
-            if (feedback != null)
-            {
-                feedback.PlayProjectileHide(
-                    projectile.transform.position);
-            }
         }
 
         SetAllProjectilesFreeze(true);
