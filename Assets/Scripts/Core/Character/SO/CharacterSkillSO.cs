@@ -38,6 +38,9 @@ public class CharacterSkillSO : ScriptableObject
 
     [Header("VFX")]
     public GameObject castVFX;
-
     public GameObject hitVFX;
+
+    [Header("VFX Timing")]
+    public bool useSkillDurationForVFX = true;
+    public float customVFXDuration = 1f;
 }

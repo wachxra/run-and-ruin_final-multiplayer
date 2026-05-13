@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1793643237
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -164082725380277428, guid: 8d8420767f80a9f45ba850d36b99dc68, type: 3}
@@ -122,9 +122,8 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7164973706892379231}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4feaf6fd484feba488d4d633f42c4e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterAnimation
-  destroyTime: 1

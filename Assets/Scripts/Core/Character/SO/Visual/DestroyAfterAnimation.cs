@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class DestroyAfterAnimation : MonoBehaviour
 {
-    public float destroyTime = 1f;
+    private float destroyTime = 1f;
+
+    public void SetDestroyTime(float time)
+    {
+        destroyTime = time;
+    }
 
     private void Start()
     {
         Destroy(gameObject, destroyTime);
     }
+
 }

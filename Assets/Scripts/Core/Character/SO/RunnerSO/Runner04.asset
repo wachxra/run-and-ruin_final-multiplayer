@@ -20,3 +20,5 @@ MonoBehaviour:
   icon: {fileID: 2269355453057643909, guid: f2b6c3ecfa664da4f8f683ff36c56da4, type: 3}
   castVFX: {fileID: 0}
   hitVFX: {fileID: 0}
+  useSkillDurationForVFX: 1
+  customVFXDuration: 1
