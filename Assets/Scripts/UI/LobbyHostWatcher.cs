@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 public class LobbyHostWatcher : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI joinNotifyText;
+    public TMPro.TextMeshProUGUI playerCountText;
 
     private Lobby currentLobby;
     private HashSet<string> knownPlayerIds = new HashSet<string>();
@@ -24,6 +25,8 @@ public class LobbyHostWatcher : MonoBehaviour
                 knownPlayerIds.Add(player.Id);
             }
 
+            UpdatePlayerCountText(currentLobby.Players.Count);
+
             InvokeRepeating(nameof(CheckLobbyUpdate), 2f, 2f);
         }
     }
@@ -36,6 +39,8 @@ public class LobbyHostWatcher : MonoBehaviour
         {
             currentLobby = await LobbyService.Instance.GetLobbyAsync(currentLobby.Id);
 
+            UpdatePlayerCountText(currentLobby.Players.Count);
+
             HashSet<string> currentPlayerIds = new HashSet<string>();
 
             foreach (var player in currentLobby.Players)
@@ -46,7 +51,15 @@ public class LobbyHostWatcher : MonoBehaviour
                 {
                     knownPlayerIds.Add(player.Id);
 
-                    string playerName = player.Data["PlayerName"].Value;
+                    string playerName = "Player";
+
+                    if (player.Data != null &&
+                        player.Data.ContainsKey("PlayerName") &&
+                        player.Data["PlayerName"] != null)
+                    {
+                        playerName = player.Data["PlayerName"].Value;
+                    }
+
                     ShowJoinMessage(playerName);
                 }
             }
@@ -73,9 +86,19 @@ public class LobbyHostWatcher : MonoBehaviour
         }
     }
 
+    void UpdatePlayerCountText(int count)
+    {
+        if (playerCountText != null)
+        {
+            playerCountText.text = count + "/2";
+        }
+    }
+
     void OnPlayerLeft()
     {
         Debug.Log("A player left lobby");
+
+        UpdatePlayerCountText(1);
 
         if (joinNotifyText != null)
         {
@@ -87,6 +110,8 @@ public class LobbyHostWatcher : MonoBehaviour
     void ShowJoinMessage(string playerName)
     {
         Debug.Log(playerName + " joined!");
+
+        UpdatePlayerCountText(2);
 
         if (joinNotifyText != null)
         {
