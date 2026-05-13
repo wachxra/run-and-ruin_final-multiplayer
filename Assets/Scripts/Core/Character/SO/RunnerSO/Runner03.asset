@@ -17,6 +17,6 @@ MonoBehaviour:
   description: 
   cooldown: 12
   duration: 3
-  icon: {fileID: 21300000, guid: 2f42f71b83d000f45bc11841b88c7797, type: 3}
+  icon: {fileID: -7364492422565671792, guid: d3a17561e2df2b046980d111d8b95390, type: 3}
   castVFX: {fileID: 0}
   hitVFX: {fileID: 0}
