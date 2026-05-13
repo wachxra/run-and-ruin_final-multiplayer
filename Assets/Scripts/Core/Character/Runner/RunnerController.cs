@@ -33,6 +33,7 @@ public class RunnerController : NetworkBehaviour
 
     [Header("Skill")]
     public CharacterSkillSO skill;
+    private SkillFeedbackController feedback;
 
     private float lastSkillTime = -999f;
 
@@ -59,6 +60,8 @@ public class RunnerController : NetworkBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+
+        feedback = GetComponent<SkillFeedbackController>();
 
         if (animator == null)
             Debug.LogError("Animator not found on Runner");
@@ -117,11 +120,22 @@ public class RunnerController : NetworkBehaviour
 
         lastSkillTime = Time.time;
 
+        PlayRunnerUltimateClientRpc();
+
         ActivateSkill();
 
         TriggerSkillCooldownClientRpc(
             OwnerClientId,
             skill.cooldown);
+    }
+
+    [ClientRpc]
+    void PlayRunnerUltimateClientRpc()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX("runner_ultimate");
+        }
     }
 
     [ClientRpc]
@@ -144,10 +158,16 @@ public class RunnerController : NetworkBehaviour
         switch (skill.skillType)
         {
             case SkillType.StopTime:
+                if (feedback != null)
+                    feedback.PlayRunnerSkillStart(skill.skillType, skill.duration);
+
                 StartCoroutine(StopTimeRoutine());
                 break;
 
             case SkillType.ScreenBlock:
+                if (feedback != null)
+                    feedback.PlayRunnerSkillStart(skill.skillType, skill.duration);
+
                 BlockRandomLaneClientRpc();
                 break;
 
@@ -155,6 +175,10 @@ public class RunnerController : NetworkBehaviour
                 if (!hasReflect)
                 {
                     hasReflect = true;
+
+                    if (feedback != null)
+                        feedback.PlayRunnerSkillStart(skill.skillType, skill.duration);
+
                     StartCoroutine(ReflectRoutine());
                 }
                 break;
@@ -163,6 +187,10 @@ public class RunnerController : NetworkBehaviour
                 if (!hasShield)
                 {
                     hasShield = true;
+
+                    if (feedback != null)
+                        feedback.PlayRunnerSkillStart(skill.skillType, skill.duration);
+
                     StartCoroutine(ShieldRoutine());
                 }
                 break;
@@ -170,6 +198,9 @@ public class RunnerController : NetworkBehaviour
             case SkillType.Invisible:
                 if (!isInvisible)
                 {
+                    if (feedback != null)
+                        feedback.PlayRunnerSkillStart(skill.skillType, skill.duration);
+
                     StartCoroutine(InvisibleRoutine());
                 }
                 break;
@@ -200,6 +231,9 @@ public class RunnerController : NetworkBehaviour
         yield return new WaitForSeconds(skill.duration);
 
         hasReflect = false;
+
+        if (feedback != null)
+            feedback.PlayRunnerSkillEnd(SkillType.Reflect);
     }
 
     IEnumerator ShieldRoutine()
@@ -207,6 +241,9 @@ public class RunnerController : NetworkBehaviour
         yield return new WaitForSeconds(10f);
 
         hasShield = false;
+
+        if (feedback != null)
+            feedback.PlayRunnerSkillEnd(SkillType.Shield);
     }
 
     IEnumerator InvisibleRoutine()
@@ -220,6 +257,9 @@ public class RunnerController : NetworkBehaviour
         isInvisible = false;
 
         SetInvisibleClientRpc(false);
+
+        if (feedback != null)
+            feedback.PlayRunnerSkillEnd(SkillType.Invisible);
     }
 
     [ClientRpc]
@@ -302,6 +342,11 @@ public class RunnerController : NetworkBehaviour
     {
         if (animator != null)
             animator.SetTrigger("Jump");
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX("jump");
+        }
     }
 
     IEnumerator JumpRoutine()
@@ -444,6 +489,9 @@ public class RunnerController : NetworkBehaviour
 
         actionSpeedMultiplier = 0.5f;
 
+        if (feedback != null)
+            feedback.PlaySlowStart(duration);
+
         ApplySlowVisualClientRpc(true);
 
         yield return new WaitForSeconds(duration);
@@ -451,6 +499,9 @@ public class RunnerController : NetworkBehaviour
         actionSpeedMultiplier = 1f;
 
         ApplySlowVisualClientRpc(false);
+
+        if (feedback != null)
+            feedback.PlaySlowEnd();
 
         isSlowed = false;
     }
@@ -485,12 +536,17 @@ public class RunnerController : NetworkBehaviour
         if (hasShield)
         {
             hasShield = false;
+
+            if (feedback != null)
+                feedback.PlayShieldBreak();
+
             return;
         }
 
         if (NetworkObject == null || !NetworkObject.IsSpawned)
             return;
 
+        PlayGetHitClientRpc();
         currentHP.Value -= dmg;
 
         if (currentHP.Value < 0)
@@ -505,6 +561,15 @@ public class RunnerController : NetworkBehaviour
         if (currentHP.Value <= 0)
         {
             Die();
+        }
+    }
+
+    [ClientRpc]
+    void PlayGetHitClientRpc()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX("get_hit");
         }
     }
 

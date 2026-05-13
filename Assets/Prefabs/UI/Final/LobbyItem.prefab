@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 6081557180378732426}
   - component: {fileID: 8071919405392636280}
   - component: {fileID: 5350508323826090813}
+  - component: {fileID: 266913203981754803}
   m_Layer: 0
   m_Name: JoinButton
   m_TagString: Untagged
@@ -500,6 +501,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &266913203981754803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241032448792556899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11fd0310e8d733f4fa480a570508c4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonClickSound
 --- !u!1 &8551006356583081114
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8735530653707588627}
   - component: {fileID: 2955916223660413696}
   - component: {fileID: 8764614516907414128}
+  - component: {fileID: -3767969695761328151}
   m_Layer: 0
   m_Name: PlayerNetwork
   m_TagString: Untagged
@@ -140,6 +141,7 @@ MonoBehaviour:
   knifePrefab: {fileID: 4756696758205907266, guid: e3d20541e0880254ea8340b3662be426, type: 3}
   glassPrefab: {fileID: 4756696758205907266, guid: 7675a1d065182b44b89d9c67c3bfcc2d, type: 3}
   barrelPrefab: {fileID: 4756696758205907266, guid: d15f10050645dd243ab4453be032bdee, type: 3}
+  bartenderKnifePrefab: {fileID: 0}
   poisonBottlePrefab: {fileID: 4756696758205907266, guid: 7675a1d065182b44b89d9c67c3bfcc2d, type: 3}
   chemicalBombPrefab: {fileID: 4756696758205907266, guid: 073e9e1d397389c4e8c5fee54fb9c972, type: 3}
   poisonNeedlePrefab: {fileID: 4756696758205907266, guid: 12aeed0a85c365e429a6868971d7de95, type: 3}
@@ -160,6 +162,19 @@ MonoBehaviour:
   rapidFireCooldownMultiplier: 0.5
   rapidProjectileSpeedMultiplier: 2
   shadowHideDuration: 3
+--- !u!114 &-3767969695761328151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4010665793402600102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a40e2fbef94404588c61f4f175531b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillFeedbackController
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!1 &4281421959153673157
 GameObject:
   m_ObjectHideFlags: 0

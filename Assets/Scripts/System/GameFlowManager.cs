@@ -295,6 +295,17 @@ public class GameFlowManager : NetworkBehaviour
             else
                 player.currentRole.Value = CharacterRole.Trickster;
         }
+
+        PlaySwitchRoleClientRpc();
+    }
+
+    [ClientRpc]
+    void PlaySwitchRoleClientRpc()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX("switch_role");
+        }
     }
 
     IEnumerator Countdown(int seconds)
@@ -441,6 +452,11 @@ public class GameFlowManager : NetworkBehaviour
 
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX("victory");
+        }
 
         UpdateResultUI();
     }

@@ -3,35 +3,6 @@ using Unity.Netcode;
 
 public class SkillFeedbackController : NetworkBehaviour
 {
-    [Header("Runner VFX")]
-    public GameObject shieldActiveVFX;
-    public GameObject shieldBreakVFX;
-    public GameObject reflectActiveVFX;
-    public GameObject reflectHitVFX;
-    public GameObject slowActiveVFX;
-    public GameObject invisibleStartVFX;
-    public GameObject invisibleEndVFX;
-
-    [Header("General Skill VFX")]
-    public GameObject stopTimeVFX;
-    public GameObject screenBlockVFX;
-
-    [Header("Trickster VFX")]
-    public GameObject cannonCastVFX;
-    public GameObject blurCastVFX;
-    public GameObject rapidFireVFX;
-    public GameObject shadowHideVFX;
-    public GameObject scientistSlowVFX;
-
-    [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip shieldOnSFX;
-    public AudioClip shieldBreakSFX;
-    public AudioClip reflectSFX;
-    public AudioClip slowSFX;
-    public AudioClip invisibleSFX;
-    public AudioClip skillCastSFX;
-
     private GameObject currentShieldVFX;
     private GameObject currentReflectVFX;
     private GameObject currentSlowVFX;
@@ -54,7 +25,9 @@ public class SkillFeedbackController : NetworkBehaviour
 
     public void PlayReflectHit(Vector3 position)
     {
-        PlayOneShotWorldVFXClientRpc(SkillFeedbackType.ReflectHit, position);
+        PlayOneShotWorldVFXClientRpc(
+            SkillFeedbackType.ReflectHit,
+            position);
     }
 
     public void PlaySlowStart(float duration)
@@ -67,44 +40,70 @@ public class SkillFeedbackController : NetworkBehaviour
         PlaySlowEndClientRpc();
     }
 
-    public void PlayTricksterSkillStart(SkillType skillType, float duration)
+    public void PlayTricksterSkillStart(
+        SkillType skillType,
+        float duration)
     {
-        PlayTricksterSkillStartClientRpc(skillType, duration);
+        PlayTricksterSkillStartClientRpc(
+            skillType,
+            duration);
     }
 
     public void PlayProjectileHide(Vector3 position)
     {
-        PlayOneShotWorldVFXClientRpc(SkillFeedbackType.ShadowHide, position);
+        PlayOneShotWorldVFXClientRpc(
+            SkillFeedbackType.ShadowHide,
+            position);
     }
 
     [ClientRpc]
-    void PlayRunnerSkillStartClientRpc(SkillType skillType, float duration)
+    void PlayRunnerSkillStartClientRpc(
+        SkillType skillType,
+        float duration)
     {
+        if (SkillVFXDatabase.Instance == null)
+            return;
+
         switch (skillType)
         {
             case SkillType.StopTime:
-                SpawnOneShot(stopTimeVFX, transform.position);
-                PlaySFX(skillCastSFX);
+
+                SpawnOneShot(
+                    SkillVFXDatabase.Instance.stopTimeVFX,
+                    transform.position);
+
                 break;
 
             case SkillType.ScreenBlock:
-                SpawnOneShot(screenBlockVFX, transform.position);
-                PlaySFX(skillCastSFX);
+
+                SpawnOneShot(
+                    SkillVFXDatabase.Instance.screenBlockVFX,
+                    transform.position);
+
                 break;
 
             case SkillType.Reflect:
-                currentReflectVFX = SpawnLoop(reflectActiveVFX);
-                PlaySFX(reflectSFX);
+
+                currentReflectVFX =
+                    SpawnLoop(
+                        SkillVFXDatabase.Instance.reflectActiveVFX);
+
                 break;
 
             case SkillType.Shield:
-                currentShieldVFX = SpawnLoop(shieldActiveVFX);
-                PlaySFX(shieldOnSFX);
+
+                currentShieldVFX =
+                    SpawnLoop(
+                        SkillVFXDatabase.Instance.shieldActiveVFX);
+
                 break;
 
             case SkillType.Invisible:
-                SpawnOneShot(invisibleStartVFX, transform.position);
-                PlaySFX(invisibleSFX);
+
+                SpawnOneShot(
+                    SkillVFXDatabase.Instance.invisibleStartVFX,
+                    transform.position);
+
                 break;
         }
     }
@@ -112,18 +111,29 @@ public class SkillFeedbackController : NetworkBehaviour
     [ClientRpc]
     void PlayRunnerSkillEndClientRpc(SkillType skillType)
     {
+        if (SkillVFXDatabase.Instance == null)
+            return;
+
         switch (skillType)
         {
             case SkillType.Reflect:
+
                 DestroyCurrent(ref currentReflectVFX);
+
                 break;
 
             case SkillType.Shield:
+
                 DestroyCurrent(ref currentShieldVFX);
+
                 break;
 
             case SkillType.Invisible:
-                SpawnOneShot(invisibleEndVFX, transform.position);
+
+                SpawnOneShot(
+                    SkillVFXDatabase.Instance.invisibleEndVFX,
+                    transform.position);
+
                 break;
         }
     }
@@ -131,21 +141,27 @@ public class SkillFeedbackController : NetworkBehaviour
     [ClientRpc]
     void PlayShieldBreakClientRpc()
     {
+        if (SkillVFXDatabase.Instance == null)
+            return;
+
         DestroyCurrent(ref currentShieldVFX);
 
-        SpawnOneShot(shieldBreakVFX, transform.position);
-
-        PlaySFX(shieldBreakSFX);
+        SpawnOneShot(
+            SkillVFXDatabase.Instance.shieldBreakVFX,
+            transform.position);
     }
 
     [ClientRpc]
     void PlaySlowStartClientRpc(float duration)
     {
+        if (SkillVFXDatabase.Instance == null)
+            return;
+
         DestroyCurrent(ref currentSlowVFX);
 
-        currentSlowVFX = SpawnLoop(slowActiveVFX);
-
-        PlaySFX(slowSFX);
+        currentSlowVFX =
+            SpawnLoop(
+                SkillVFXDatabase.Instance.slowActiveVFX);
     }
 
     [ClientRpc]
@@ -155,34 +171,57 @@ public class SkillFeedbackController : NetworkBehaviour
     }
 
     [ClientRpc]
-    void PlayTricksterSkillStartClientRpc(SkillType skillType, float duration)
+    void PlayTricksterSkillStartClientRpc(
+        SkillType skillType,
+        float duration)
     {
+        if (SkillVFXDatabase.Instance == null)
+            return;
+
         switch (skillType)
         {
             case SkillType.Cannon:
-                SpawnOneShot(cannonCastVFX, transform.position);
-                PlaySFX(skillCastSFX);
+
+                SpawnOneShot(
+                    SkillVFXDatabase.Instance.cannonCastVFX,
+                    transform.position);
+
                 break;
 
             case SkillType.Blur:
-                SpawnOneShot(blurCastVFX, transform.position);
-                PlaySFX(skillCastSFX);
+
+                SpawnOneShot(
+                    SkillVFXDatabase.Instance.blurCastVFX,
+                    transform.position);
+
                 break;
 
             case SkillType.SlowAll:
-                SpawnOneShot(scientistSlowVFX, transform.position);
-                PlaySFX(slowSFX);
+
+                SpawnOneShot(
+                    SkillVFXDatabase.Instance.scientistSlowVFX,
+                    transform.position);
+
                 break;
 
             case SkillType.MultiShot:
-                currentRapidFireVFX = SpawnLoop(rapidFireVFX);
-                PlaySFX(skillCastSFX);
-                Invoke(nameof(StopRapidFireVFX), duration);
+
+                currentRapidFireVFX =
+                    SpawnLoop(
+                        SkillVFXDatabase.Instance.rapidFireVFX);
+
+                Invoke(
+                    nameof(StopRapidFireVFX),
+                    duration);
+
                 break;
 
             case SkillType.Trap:
-                SpawnOneShot(shadowHideVFX, transform.position);
-                PlaySFX(skillCastSFX);
+
+                SpawnOneShot(
+                    SkillVFXDatabase.Instance.shadowHideVFX,
+                    transform.position);
+
                 break;
         }
     }
@@ -193,22 +232,31 @@ public class SkillFeedbackController : NetworkBehaviour
     }
 
     [ClientRpc]
-    void PlayOneShotWorldVFXClientRpc(SkillFeedbackType feedbackType, Vector3 position)
+    void PlayOneShotWorldVFXClientRpc(
+        SkillFeedbackType feedbackType,
+        Vector3 position)
     {
+        if (SkillVFXDatabase.Instance == null)
+            return;
+
         if (feedbackType == SkillFeedbackType.ReflectHit)
         {
-            SpawnOneShot(reflectHitVFX, position);
-            PlaySFX(reflectSFX);
+            SpawnOneShot(
+                SkillVFXDatabase.Instance.reflectHitVFX,
+                position);
         }
         else if (feedbackType == SkillFeedbackType.ShadowHide)
         {
-            SpawnOneShot(shadowHideVFX, position);
+            SpawnOneShot(
+                SkillVFXDatabase.Instance.shadowHideVFX,
+                position);
         }
     }
 
     GameObject SpawnLoop(GameObject prefab)
     {
-        if (prefab == null) return null;
+        if (prefab == null)
+            return null;
 
         GameObject obj = Instantiate(
             prefab,
@@ -219,9 +267,12 @@ public class SkillFeedbackController : NetworkBehaviour
         return obj;
     }
 
-    void SpawnOneShot(GameObject prefab, Vector3 position)
+    void SpawnOneShot(
+        GameObject prefab,
+        Vector3 position)
     {
-        if (prefab == null) return;
+        if (prefab == null)
+            return;
 
         Instantiate(
             prefab,
@@ -231,19 +282,12 @@ public class SkillFeedbackController : NetworkBehaviour
 
     void DestroyCurrent(ref GameObject obj)
     {
-        if (obj == null) return;
+        if (obj == null)
+            return;
 
         Destroy(obj);
 
         obj = null;
-    }
-
-    void PlaySFX(AudioClip clip)
-    {
-        if (audioSource == null) return;
-        if (clip == null) return;
-
-        audioSource.PlayOneShot(clip);
     }
 }
 

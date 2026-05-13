@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 8486240001779614062}
   - component: {fileID: 6075972469338558024}
   - component: {fileID: -9180607355081360894}
-  - component: {fileID: 6478553475001886957}
   - component: {fileID: 2727129567109999502}
   - component: {fileID: 8925314139854967875}
   - component: {fileID: 8643665404352052410}
+  - component: {fileID: 6478553475001886957}
+  - component: {fileID: 7688764749299193313}
   m_Layer: 0
   m_Name: Runner02
   m_TagString: Untagged
@@ -228,34 +229,6 @@ MonoBehaviour:
   currentRole:
     m_InternalValue: 0
   skillDatabase: {fileID: 0}
---- !u!114 &6478553475001886957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7470674958653226765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f24f15e321bfb449903cdd85b59ea92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RunnerController
-  ShowTopMostFoldoutHeaderGroup: 1
-  jumpHeight: 12
-  jumpDuration: 0.7
-  slideOffset: 1
-  slideDuration: 1
-  slideInputUnlockTime: 0.85
-  slideAnimationLength: 1
-  bodyCollider: {fileID: 8925314139854967875}
-  normalColliderSize: {x: 5, y: 5.5}
-  normalColliderOffset: {x: 0, y: 0}
-  slideColliderSize: {x: 5, y: 2}
-  slideColliderOffset: {x: 0, y: -1.7}
-  skill: {fileID: 11400000, guid: 8bc43c648eae3974ea9b8e6148658b8c, type: 2}
-  maxHP: 3
-  currentHP:
-    m_InternalValue: 0
 --- !u!95 &2727129567109999502
 Animator:
   serializedVersion: 7
@@ -351,3 +324,44 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 5
+--- !u!114 &6478553475001886957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470674958653226765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f24f15e321bfb449903cdd85b59ea92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RunnerController
+  ShowTopMostFoldoutHeaderGroup: 1
+  jumpHeight: 12
+  jumpDuration: 0.7
+  slideOffset: 1
+  slideDuration: 1
+  slideInputUnlockTime: 0.85
+  slideAnimationLength: 1
+  bodyCollider: {fileID: 8925314139854967875}
+  normalColliderSize: {x: 5, y: 5.5}
+  normalColliderOffset: {x: 0, y: 0}
+  slideColliderSize: {x: 5, y: 2}
+  slideColliderOffset: {x: 0, y: -1.7}
+  skill: {fileID: 11400000, guid: 8bc43c648eae3974ea9b8e6148658b8c, type: 2}
+  maxHP: 3
+  currentHP:
+    m_InternalValue: 0
+--- !u!114 &7688764749299193313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470674958653226765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a40e2fbef94404588c61f4f175531b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillFeedbackController
+  ShowTopMostFoldoutHeaderGroup: 1

@@ -79,6 +79,13 @@ public class SkillProjectile : NetworkBehaviour
             if (runner.HasReflect())
             {
                 Reflect();
+
+                SkillFeedbackController feedback =
+                    runner.GetComponent<SkillFeedbackController>();
+
+                if (feedback != null)
+                    feedback.PlayReflectHit(transform.position);
+
                 return;
             }
 

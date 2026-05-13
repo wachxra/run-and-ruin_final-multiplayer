@@ -2192,6 +2192,64 @@ Transform:
   - {fileID: 1896737456}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &683689022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 683689024}
+  - component: {fileID: 683689023}
+  m_Layer: 0
+  m_Name: VFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &683689023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683689022}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053fa4b499accb74db932c2a9c5a3316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillVFXDatabase
+  stopTimeVFX: {fileID: 0}
+  screenBlockVFX: {fileID: 0}
+  reflectActiveVFX: {fileID: 0}
+  reflectHitVFX: {fileID: 0}
+  shieldActiveVFX: {fileID: 0}
+  shieldBreakVFX: {fileID: 0}
+  invisibleStartVFX: {fileID: 0}
+  invisibleEndVFX: {fileID: 0}
+  slowActiveVFX: {fileID: 0}
+  cannonCastVFX: {fileID: 0}
+  blurCastVFX: {fileID: 0}
+  scientistSlowVFX: {fileID: 0}
+  rapidFireVFX: {fileID: 0}
+  shadowHideVFX: {fileID: 0}
+--- !u!4 &683689024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683689022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.18926, y: -1.34773, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &684548108
 GameObject:
   m_ObjectHideFlags: 0
@@ -6909,3 +6967,4 @@ SceneRoots:
   - {fileID: 647111567}
   - {fileID: 416495745}
   - {fileID: 6902146745252944031}
+  - {fileID: 683689024}

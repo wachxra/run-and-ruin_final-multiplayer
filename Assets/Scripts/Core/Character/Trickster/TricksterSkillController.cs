@@ -35,6 +35,7 @@ public class TricksterSkillController : NetworkBehaviour
 
     [Header("Skill")]
     public CharacterSkillSO skill;
+    private SkillFeedbackController feedback;
 
     private float lastSkillTime = -999f;
 
@@ -95,6 +96,11 @@ public class TricksterSkillController : NetworkBehaviour
         }
     }
 
+    private void Awake()
+    {
+        feedback = GetComponent<SkillFeedbackController>();
+    }
+
     [ServerRpc]
     void UseSpecialSkillServerRpc()
     {
@@ -104,12 +110,25 @@ public class TricksterSkillController : NetworkBehaviour
             return;
 
         lastSkillTime = Time.time;
+        PlayTricksterUltimateClientRpc();
+
+        if (feedback != null)
+            feedback.PlayTricksterSkillStart(skill.skillType, skill.duration);
 
         ActivateSkill();
 
         TriggerSkillCooldownClientRpc(
             OwnerClientId,
             skill.cooldown);
+    }
+
+    [ClientRpc]
+    void PlayTricksterUltimateClientRpc()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX("trickster_ultimate");
+        }
     }
 
     [ClientRpc]
@@ -190,12 +209,28 @@ public class TricksterSkillController : NetworkBehaviour
 
     IEnumerator HideProjectilesRoutine()
     {
+        SkillProjectile[] projectiles =
+            FindObjectsByType<SkillProjectile>(FindObjectsSortMode.None);
+
+        foreach (SkillProjectile projectile in projectiles)
+        {
+            if (projectile == null) continue;
+
+            if (feedback != null)
+            {
+                feedback.PlayProjectileHide(
+                    projectile.transform.position);
+            }
+        }
+
         SetAllProjectilesFreeze(true);
+
         SetAllProjectilesVisibleClientRpc(false);
 
         yield return new WaitForSeconds(shadowHideDuration);
 
         SetAllProjectilesFreeze(false);
+
         SetAllProjectilesVisibleClientRpc(true);
     }
 
@@ -290,6 +325,15 @@ public class TricksterSkillController : NetworkBehaviour
         SpawnProjectile(skillIndex - 1);
     }
 
+    [ClientRpc]
+    void PlayDeployItemClientRpc()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX("deploy_items");
+        }
+    }
+
     void SpawnProjectile(int lane)
     {
         if (!IsServer) return;
@@ -359,6 +403,8 @@ public class TricksterSkillController : NetworkBehaviour
 
         if (prefabToSpawn == null)
             return;
+
+        PlayDeployItemClientRpc();
 
         var obj = Instantiate(
             prefabToSpawn,
