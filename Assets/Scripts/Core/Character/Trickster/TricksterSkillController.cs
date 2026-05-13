@@ -422,11 +422,6 @@ public class TricksterSkillController : NetworkBehaviour
 
         if (projectile != null)
         {
-            if (skill.skillType == SkillType.SlowAll)
-            {
-                projectile.SetSlow(slowDuration);
-            }
-
             if (skill.skillType == SkillType.MultiShot &&
                 isRapidFireActive)
             {
