@@ -41,11 +41,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: VFX
-    uniqueID: 2303614271
-    locked: 0
   - name: Character
     uniqueID: 2501324059
+    locked: 0
+  - name: VFX
+    uniqueID: 2303614271
     locked: 0
   m_RenderingLayers:
   - Default

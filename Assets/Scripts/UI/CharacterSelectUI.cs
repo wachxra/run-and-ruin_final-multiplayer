@@ -19,6 +19,8 @@ public class CharacterSelectUI : MonoBehaviour
 
     void Awake()
     {
+        ClearAllToggles();
+
         foreach (var t in runnerToggles)
             t.isOn = false;
 
@@ -66,10 +68,16 @@ public class CharacterSelectUI : MonoBehaviour
         {
             int index = i;
 
-            runnerToggles[i].isOn = false;
+            runnerToggles[i].SetIsOnWithoutNotify(false);
 
             runnerToggles[i].onValueChanged.AddListener((isOn) =>
             {
+                if (runnerToggles[index].graphic != null)
+                {
+                    runnerToggles[index].graphic.gameObject.SetActive(isOn);
+                    runnerToggles[index].graphic.enabled = isOn;
+                }
+
                 if (isOn && localPlayer != null)
                     localPlayer.SetRunnerServerRpc(index);
             });
@@ -79,10 +87,16 @@ public class CharacterSelectUI : MonoBehaviour
         {
             int index = i;
 
-            tricksterToggles[i].isOn = false;
+            tricksterToggles[i].SetIsOnWithoutNotify(false);
 
             tricksterToggles[i].onValueChanged.AddListener((isOn) =>
             {
+                if (tricksterToggles[index].graphic != null)
+                {
+                    tricksterToggles[index].graphic.gameObject.SetActive(isOn);
+                    tricksterToggles[index].graphic.enabled = isOn;
+                }
+
                 if (isOn && localPlayer != null)
                     localPlayer.SetTricksterServerRpc(index);
             });
@@ -127,6 +141,28 @@ public class CharacterSelectUI : MonoBehaviour
         okButton.interactable =
             localPlayer.selectedRunnerIndex.Value >= 0 &&
             localPlayer.selectedTricksterIndex.Value >= 0;
+    }
+
+    void ClearAllToggles()
+    {
+        foreach (var t in runnerToggles)
+            ClearToggleVisual(t);
+
+        foreach (var t in tricksterToggles)
+            ClearToggleVisual(t);
+    }
+
+    void ClearToggleVisual(Toggle toggle)
+    {
+        if (toggle == null) return;
+
+        toggle.SetIsOnWithoutNotify(false);
+
+        if (toggle.graphic != null)
+        {
+            toggle.graphic.enabled = false;
+            toggle.graphic.gameObject.SetActive(false);
+        }
     }
 
     void OnDestroy()
