@@ -12,9 +12,19 @@ public class LobbyHostWatcher : MonoBehaviour
     private Lobby currentLobby;
     private HashSet<string> knownPlayerIds = new HashSet<string>();
 
+    private bool isDestroyed = false;
+    private bool isChecking = false;
+
     private async void Start()
     {
         await Task.Delay(1000);
+
+        if (isDestroyed || this == null || gameObject == null)
+            return;
+
+        if (ClientSingleton.Instance == null ||
+            ClientSingleton.Instance.GameManager == null)
+            return;
 
         currentLobby = ClientSingleton.Instance.GameManager.CurrentLobby;
 
@@ -27,17 +37,35 @@ public class LobbyHostWatcher : MonoBehaviour
 
             UpdatePlayerCountText(currentLobby.Players.Count);
 
-            InvokeRepeating(nameof(CheckLobbyUpdate), 2f, 2f);
+            if (!isDestroyed && this != null && gameObject != null)
+            {
+                InvokeRepeating(nameof(CheckLobbyUpdate), 2f, 2f);
+            }
         }
+    }
+
+    private void OnDestroy()
+    {
+        isDestroyed = true;
+        CancelInvoke(nameof(CheckLobbyUpdate));
     }
 
     async void CheckLobbyUpdate()
     {
+        if (isDestroyed || this == null || gameObject == null)
+            return;
+
+        if (isChecking) return;
         if (currentLobby == null) return;
+
+        isChecking = true;
 
         try
         {
             currentLobby = await LobbyService.Instance.GetLobbyAsync(currentLobby.Id);
+
+            if (isDestroyed || this == null || gameObject == null)
+                return;
 
             UpdatePlayerCountText(currentLobby.Players.Count);
 
@@ -83,6 +111,10 @@ public class LobbyHostWatcher : MonoBehaviour
         catch (LobbyServiceException e)
         {
             Debug.Log(e);
+        }
+        finally
+        {
+            isChecking = false;
         }
     }
 
