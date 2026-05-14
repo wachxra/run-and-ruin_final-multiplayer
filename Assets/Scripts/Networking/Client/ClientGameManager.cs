@@ -10,6 +10,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Text;
 using Unity.Services.Lobbies.Models;
+using System.Collections.Generic;
+using Unity.Services.Lobbies;
+using Unity.Services.Authentication;
 
 public class ClientGameManager
 {
@@ -39,14 +42,15 @@ public class ClientGameManager
 
     public async Task StartClientAsync(string joinCode)
     {
+        allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+
         try
         {
-            allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+            await JoinLobbyByRelayCodeAsync(joinCode);
         }
         catch (Exception e)
         {
             Debug.Log(e);
-            return;
         }
 
         UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
@@ -64,5 +68,52 @@ public class ClientGameManager
         NetworkManager.Singleton.NetworkConfig.ConnectionData = payloadBytes;
 
         NetworkManager.Singleton.StartClient();
+    }
+
+    async Task JoinLobbyByRelayCodeAsync(string joinCode)
+    {
+        QueryLobbiesOptions options = new QueryLobbiesOptions
+        {
+            Count = 1,
+            Filters = new List<QueryFilter>
+        {
+            new QueryFilter(
+                field: QueryFilter.FieldOptions.S1,
+                op: QueryFilter.OpOptions.EQ,
+                value: joinCode)
+        }
+        };
+
+        QueryResponse response =
+            await LobbyService.Instance.QueryLobbiesAsync(options);
+
+        if (response.Results == null || response.Results.Count == 0)
+        {
+            Debug.LogWarning("No lobby found with Relay JoinCode: " + joinCode);
+            return;
+        }
+
+        string playerName =
+            PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Player");
+
+        JoinLobbyByIdOptions joinOptions = new JoinLobbyByIdOptions
+        {
+            Player = new Player(
+                id: AuthenticationService.Instance.PlayerId,
+                data: new Dictionary<string, PlayerDataObject>
+                {
+                {
+                    "PlayerName",
+                    new PlayerDataObject(
+                        PlayerDataObject.VisibilityOptions.Public,
+                        playerName)
+                }
+                })
+        };
+
+        CurrentLobby =
+            await LobbyService.Instance.JoinLobbyByIdAsync(
+                response.Results[0].Id,
+                joinOptions);
     }
 }

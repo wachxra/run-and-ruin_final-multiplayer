@@ -65,8 +65,9 @@ public class HostGameManager
             {
                 {
                     "JoinCode", new DataObject(
-                        visibility: DataObject.VisibilityOptions.Member,
-                        value: joinCode
+                        visibility: DataObject.VisibilityOptions.Public,
+                        value: joinCode,
+                        index: DataObject.IndexOptions.S1
                     )
                 }
             };

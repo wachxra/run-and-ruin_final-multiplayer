@@ -17,31 +17,34 @@ public class LobbyHostWatcher : MonoBehaviour
 
     private async void Start()
     {
-        await Task.Delay(1000);
-
-        if (isDestroyed || this == null || gameObject == null)
-            return;
-
-        if (ClientSingleton.Instance == null ||
-            ClientSingleton.Instance.GameManager == null)
-            return;
-
-        currentLobby = ClientSingleton.Instance.GameManager.CurrentLobby;
-
-        if (currentLobby != null)
+        while (!isDestroyed)
         {
-            foreach (var player in currentLobby.Players)
-            {
-                knownPlayerIds.Add(player.Id);
-            }
+            await Task.Delay(300);
 
-            UpdatePlayerCountText(currentLobby.Players.Count);
+            if (isDestroyed || this == null || gameObject == null)
+                return;
 
-            if (!isDestroyed && this != null && gameObject != null)
-            {
-                InvokeRepeating(nameof(CheckLobbyUpdate), 2f, 2f);
-            }
+            if (ClientSingleton.Instance == null ||
+                ClientSingleton.Instance.GameManager == null)
+                continue;
+
+            currentLobby = ClientSingleton.Instance.GameManager.CurrentLobby;
+
+            if (currentLobby != null)
+                break;
         }
+
+        if (currentLobby == null)
+            return;
+
+        foreach (var player in currentLobby.Players)
+        {
+            knownPlayerIds.Add(player.Id);
+        }
+
+        UpdatePlayerCountText(currentLobby.Players.Count);
+
+        InvokeRepeating(nameof(CheckLobbyUpdate), 2f, 2f);
     }
 
     private void OnDestroy()
