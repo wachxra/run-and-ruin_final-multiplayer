@@ -51,6 +51,7 @@ public class RunnerController : NetworkBehaviour
     private SpriteRenderer sprite;
 
     private bool isSlowed = false;
+    private bool isSlowVisualActive = false;
     private float actionSpeedMultiplier = 1f;
 
     [Header("Health")]
@@ -105,19 +106,36 @@ public class RunnerController : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (!isSliding && !isJumping)
-                StartSlideServerRpc();
+            StartSlideServerRpc();
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            if (isSliding)
-                StopSlideServerRpc();
+            StopSlideServerRpc();
         }
 
         if (Input.GetKeyDown(KeyCode.J))
         {
             TryUseSkillServerRpc();
+        }
+    }
+
+    float GetNormalAnimatorSpeed()
+    {
+        return isSlowVisualActive ? 0.5f : 1f;
+    }
+
+    void ApplyAnimatorSpeedByState()
+    {
+        if (animator == null) return;
+
+        if (isSliding && isSlideHeld)
+        {
+            animator.speed = 0f;
+        }
+        else
+        {
+            animator.speed = GetNormalAnimatorSpeed();
         }
     }
 
@@ -338,6 +356,12 @@ public class RunnerController : NetworkBehaviour
     [ClientRpc]
     void StopSlideForJumpClientRpc()
     {
+        isSlideHeld = false;
+        isSliding = false;
+        canJumpDuringSlide = false;
+
+        SetSlideCollider(false);
+
         if (slidePauseRoutine != null)
         {
             StopCoroutine(slidePauseRoutine);
@@ -346,7 +370,7 @@ public class RunnerController : NetworkBehaviour
 
         if (animator != null)
         {
-            animator.speed = 1f;
+            animator.speed = GetNormalAnimatorSpeed();
             animator.ResetTrigger("Slide");
             animator.SetBool("Run", true);
         }
@@ -455,7 +479,7 @@ public class RunnerController : NetworkBehaviour
             slidePauseRoutine = null;
         }
 
-        animator.speed = 1f;
+        animator.speed = GetNormalAnimatorSpeed();
         animator.SetTrigger("Slide");
 
         slidePauseRoutine = StartCoroutine(PauseSlideAnimationRoutine());
@@ -471,7 +495,7 @@ public class RunnerController : NetworkBehaviour
             yield return null;
         }
 
-        if (animator != null)
+        if (animator != null && isSliding && isSlideHeld)
         {
             animator.speed = 0f;
         }
@@ -493,7 +517,7 @@ public class RunnerController : NetworkBehaviour
 
         if (animator != null)
         {
-            animator.speed = 1f;
+            animator.speed = GetNormalAnimatorSpeed();
         }
 
         isSliding = false;
@@ -611,16 +635,9 @@ public class RunnerController : NetworkBehaviour
     [ClientRpc]
     void ApplySlowVisualClientRpc(bool state)
     {
-        if (animator == null) return;
+        isSlowVisualActive = state;
 
-        if (state)
-        {
-            animator.speed = 0.5f;
-        }
-        else
-        {
-            animator.speed = 1f;
-        }
+        ApplyAnimatorSpeedByState();
     }
 
     void OnHPChanged(int oldHP, int newHP)
