@@ -367,6 +367,10 @@ public class TricksterSkillController : NetworkBehaviour
 
         lastProjectileSkillTime = Time.time;
 
+        TriggerProjectileCooldownClientRpc(
+            senderId,
+            currentProjectileCooldown);
+
         SpawnProjectile(skillIndex - 1);
     }
 
@@ -481,5 +485,23 @@ public class TricksterSkillController : NetworkBehaviour
         }
 
         obj.GetComponent<NetworkObject>().Spawn();
+    }
+
+    [ClientRpc]
+    void TriggerProjectileCooldownClientRpc(
+    ulong ownerId,
+    float duration)
+    {
+        if (NetworkManager.Singleton.LocalClientId != ownerId)
+            return;
+
+        ProjectileCooldownUI cooldownUI =
+            FindFirstObjectByType<ProjectileCooldownUI>(
+                FindObjectsInactive.Include);
+
+        if (cooldownUI != null)
+        {
+            cooldownUI.StartCooldown(duration);
+        }
     }
 }
