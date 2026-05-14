@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2710245223
+  GlobalObjectIdHash: 1801948157
   InScenePlacedSourceGlobalObjectIdHash: 1801948157
   DeferredDespawnTick: 0
   Ownership: 1
@@ -369,8 +369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RunnerController
   ShowTopMostFoldoutHeaderGroup: 1
-  jumpHeight: 12
-  jumpDuration: 1
+  jumpHeight: 12.5
+  jumpDuration: 1.2
   slideOffset: 1
   slideDuration: 1
   slideInputUnlockTime: 0.85
