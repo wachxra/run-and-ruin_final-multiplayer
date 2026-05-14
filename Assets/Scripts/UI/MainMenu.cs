@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     {
         if (joinCodeField != null)
         {
+            joinCodeField.text = joinCodeField.text.ToUpper();
             lastJoinCode = joinCodeField.text;
             joinCodeField.onValueChanged.AddListener(OnJoinCodeTyping);
         }
@@ -26,6 +27,15 @@ public class MainMenu : MonoBehaviour
 
     private void OnJoinCodeTyping(string value)
     {
+        string upperValue = value.ToUpper();
+
+        if (value != upperValue)
+        {
+            joinCodeField.SetTextWithoutNotify(upperValue);
+            joinCodeField.caretPosition = upperValue.Length;
+            value = upperValue;
+        }
+
         if (value == lastJoinCode)
             return;
 
@@ -50,6 +60,16 @@ public class MainMenu : MonoBehaviour
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX("click");
 
-        await ClientSingleton.Instance.GameManager.StartClientAsync(joinCodeField.text);
+        if (joinCodeField == null)
+            return;
+
+        string joinCode = joinCodeField.text.Trim().ToUpper();
+
+        if (string.IsNullOrEmpty(joinCode))
+            return;
+
+        joinCodeField.SetTextWithoutNotify(joinCode);
+
+        await ClientSingleton.Instance.GameManager.StartClientAsync(joinCode);
     }
 }

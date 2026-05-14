@@ -24,11 +24,7 @@ public class LobbyHostWatcher : MonoBehaviour
             if (isDestroyed || this == null || gameObject == null)
                 return;
 
-            if (ClientSingleton.Instance == null ||
-                ClientSingleton.Instance.GameManager == null)
-                continue;
-
-            currentLobby = ClientSingleton.Instance.GameManager.CurrentLobby;
+            currentLobby = GetCurrentLobby();
 
             if (currentLobby != null)
                 break;
@@ -36,6 +32,8 @@ public class LobbyHostWatcher : MonoBehaviour
 
         if (currentLobby == null)
             return;
+
+        knownPlayerIds.Clear();
 
         foreach (var player in currentLobby.Players)
         {
@@ -45,6 +43,25 @@ public class LobbyHostWatcher : MonoBehaviour
         UpdatePlayerCountText(currentLobby.Players.Count);
 
         InvokeRepeating(nameof(CheckLobbyUpdate), 2f, 2f);
+    }
+
+    Lobby GetCurrentLobby()
+    {
+        if (HostSingleton.Instance != null &&
+            HostSingleton.Instance.GameManager != null &&
+            HostSingleton.Instance.GameManager.CurrentLobby != null)
+        {
+            return HostSingleton.Instance.GameManager.CurrentLobby;
+        }
+
+        if (ClientSingleton.Instance != null &&
+            ClientSingleton.Instance.GameManager != null &&
+            ClientSingleton.Instance.GameManager.CurrentLobby != null)
+        {
+            return ClientSingleton.Instance.GameManager.CurrentLobby;
+        }
+
+        return null;
     }
 
     private void OnDestroy()

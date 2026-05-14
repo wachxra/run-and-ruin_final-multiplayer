@@ -16,6 +16,8 @@ using UnityEngine.SceneManagement;
 
 public class HostGameManager
 {
+    public Lobby CurrentLobby;
+
     private Allocation allocation;
     private string joinCode;
     private string lobbyId;
@@ -41,8 +43,12 @@ public class HostGameManager
         try
         {
             joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+            joinCode = joinCode.Trim().ToUpper();
+
             Debug.Log(joinCode);
+
             PlayerPrefs.SetString(JoinCodeKey, joinCode);
+            PlayerPrefs.Save();
         }
         catch (Exception e)
         {
@@ -87,9 +93,18 @@ public class HostGameManager
             );
 
             Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(
-                $"{playerName}'s Lobby", MaxConnections, lobbyOptions);
+                $"{playerName}'s Lobby",
+                MaxConnections,
+                lobbyOptions
+            );
 
-            ClientSingleton.Instance.GameManager.CurrentLobby = lobby;
+            CurrentLobby = lobby;
+
+            if (ClientSingleton.Instance != null &&
+                ClientSingleton.Instance.GameManager != null)
+            {
+                ClientSingleton.Instance.GameManager.CurrentLobby = lobby;
+            }
 
             lobbyId = lobby.Id;
 
@@ -107,6 +122,7 @@ public class HostGameManager
         {
             userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Missing Name")
         };
+
         string payload = JsonUtility.ToJson(userData);
         byte[] payloadBytes = Encoding.UTF8.GetBytes(payload);
 
@@ -114,7 +130,10 @@ public class HostGameManager
 
         NetworkManager.Singleton.StartHost();
 
-        NetworkManager.Singleton.SceneManager.LoadScene(GameSceneName, LoadSceneMode.Single);
+        NetworkManager.Singleton.SceneManager.LoadScene(
+            GameSceneName,
+            LoadSceneMode.Single
+        );
     }
 
     private IEnumerator HeartbeatLobby(float waitTimeSeconds)

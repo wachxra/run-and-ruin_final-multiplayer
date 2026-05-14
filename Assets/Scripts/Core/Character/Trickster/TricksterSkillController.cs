@@ -120,18 +120,18 @@ public class TricksterSkillController : NetworkBehaviour
 
     bool HasAnyProjectile()
     {
-        SkillProjectile[] projectiles =
-            FindObjectsByType<SkillProjectile>(FindObjectsSortMode.None);
+        GameObject[] projectileObjects =
+            GameObject.FindGameObjectsWithTag("Projectile");
 
-        foreach (SkillProjectile projectile in projectiles)
+        foreach (GameObject obj in projectileObjects)
         {
-            if (projectile == null) continue;
+            if (obj == null) continue;
 
-            if (projectile.NetworkObject != null &&
-                projectile.NetworkObject.IsSpawned)
-            {
+            NetworkObject netObj =
+                obj.GetComponent<NetworkObject>();
+
+            if (netObj != null && netObj.IsSpawned)
                 return true;
-            }
         }
 
         return false;
@@ -224,16 +224,17 @@ public class TricksterSkillController : NetworkBehaviour
 
     IEnumerator HideProjectilesRoutine()
     {
-        SkillProjectile[] allProjectiles =
-            FindObjectsByType<SkillProjectile>(FindObjectsSortMode.None);
+        GameObject[] projectileObjects =
+            GameObject.FindGameObjectsWithTag("Projectile");
 
         List<ulong> validProjectileIds = new List<ulong>();
 
-        foreach (SkillProjectile projectile in allProjectiles)
+        foreach (GameObject obj in projectileObjects)
         {
-            if (projectile == null) continue;
+            if (obj == null) continue;
 
-            NetworkObject netObj = projectile.GetComponent<NetworkObject>();
+            NetworkObject netObj =
+                obj.GetComponent<NetworkObject>();
 
             if (netObj == null || !netObj.IsSpawned)
                 continue;
@@ -244,10 +245,10 @@ public class TricksterSkillController : NetworkBehaviour
         if (validProjectileIds.Count == 0)
             yield break;
 
-        int randomIndex = Random.Range(0, validProjectileIds.Count);
-        ulong targetId = validProjectileIds[randomIndex];
+        ulong targetId =
+            validProjectileIds[Random.Range(0, validProjectileIds.Count)];
 
-        Debug.Log("Hide Projectile ID: " + targetId);
+        Debug.Log("Shadow Hide Projectile ID: " + targetId);
 
         SetProjectileVisibleClientRpc(targetId, false);
 

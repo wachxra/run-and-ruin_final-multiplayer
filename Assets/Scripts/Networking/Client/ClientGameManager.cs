@@ -20,6 +20,7 @@ public class ClientGameManager
 
     private JoinAllocation allocation;
     private const string MenuSceneName = "Menu";
+    private const string JoinCodeKey = "JoinCode";
 
     public async Task<bool> InitAsync()
     {
@@ -42,16 +43,38 @@ public class ClientGameManager
 
     public async Task StartClientAsync(string joinCode)
     {
-        allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+        joinCode = joinCode.Trim().ToUpper();
+
+        bool joinedLobby = false;
 
         try
         {
-            await JoinLobbyByRelayCodeAsync(joinCode);
+            joinedLobby = await JoinLobbyByRelayCodeAsync(joinCode);
         }
         catch (Exception e)
         {
             Debug.Log(e);
+            return;
         }
+
+        if (!joinedLobby)
+        {
+            Debug.LogWarning("Cannot join. No host lobby found with code: " + joinCode);
+            return;
+        }
+
+        try
+        {
+            allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+            return;
+        }
+
+        PlayerPrefs.SetString(JoinCodeKey, joinCode);
+        PlayerPrefs.Save();
 
         UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
 
@@ -62,6 +85,7 @@ public class ClientGameManager
         {
             userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Missing Name")
         };
+
         string payload = JsonUtility.ToJson(userData);
         byte[] payloadBytes = Encoding.UTF8.GetBytes(payload);
 
@@ -70,18 +94,18 @@ public class ClientGameManager
         NetworkManager.Singleton.StartClient();
     }
 
-    async Task JoinLobbyByRelayCodeAsync(string joinCode)
+    async Task<bool> JoinLobbyByRelayCodeAsync(string joinCode)
     {
         QueryLobbiesOptions options = new QueryLobbiesOptions
         {
             Count = 1,
             Filters = new List<QueryFilter>
-        {
-            new QueryFilter(
-                field: QueryFilter.FieldOptions.S1,
-                op: QueryFilter.OpOptions.EQ,
-                value: joinCode)
-        }
+            {
+                new QueryFilter(
+                    field: QueryFilter.FieldOptions.S1,
+                    op: QueryFilter.OpOptions.EQ,
+                    value: joinCode)
+            }
         };
 
         QueryResponse response =
@@ -90,7 +114,7 @@ public class ClientGameManager
         if (response.Results == null || response.Results.Count == 0)
         {
             Debug.LogWarning("No lobby found with Relay JoinCode: " + joinCode);
-            return;
+            return false;
         }
 
         string playerName =
@@ -102,12 +126,12 @@ public class ClientGameManager
                 id: AuthenticationService.Instance.PlayerId,
                 data: new Dictionary<string, PlayerDataObject>
                 {
-                {
-                    "PlayerName",
-                    new PlayerDataObject(
-                        PlayerDataObject.VisibilityOptions.Public,
-                        playerName)
-                }
+                    {
+                        "PlayerName",
+                        new PlayerDataObject(
+                            PlayerDataObject.VisibilityOptions.Public,
+                            playerName)
+                    }
                 })
         };
 
@@ -115,5 +139,7 @@ public class ClientGameManager
             await LobbyService.Instance.JoinLobbyByIdAsync(
                 response.Results[0].Id,
                 joinOptions);
+
+        return CurrentLobby != null;
     }
 }

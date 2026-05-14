@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7404787057373161272}
   m_Layer: 0
   m_Name: StopTime
-  m_TagString: Untagged
+  m_TagString: VFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

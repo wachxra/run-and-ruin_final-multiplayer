@@ -16,15 +16,21 @@ public class NameSelector : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlayBGM("BGM_Gameplay");
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayBGM("BGM_Gameplay");
+        }
 
         if (SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             return;
         }
-        nameField.text = PlayerPrefs.GetString(PlayerNameKey, string.Empty);
 
+        PlayerPrefs.DeleteKey(PlayerNameKey);
+        PlayerPrefs.Save();
+
+        nameField.text = "";
         lastText = nameField.text;
 
         nameField.onValueChanged.AddListener(OnNameTyping);
@@ -47,9 +53,10 @@ public class NameSelector : MonoBehaviour
         }
 
         PlayerPrefs.SetString(PlayerNameKey, nameField.text);
+        PlayerPrefs.Save();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
 
     void OnNameTyping(string value)
     {
