@@ -318,7 +318,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.9, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -328,7 +328,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5, y: 5.5}
+  m_Size: {x: 3, y: 5.5}
   m_EdgeRadius: 0
 --- !u!50 &9189634375310238535
 Rigidbody2D:
@@ -378,8 +378,8 @@ MonoBehaviour:
   slideAnimationLength: 1
   slidePauseTime: 0.5
   bodyCollider: {fileID: -2646854586351868327}
-  normalColliderSize: {x: 5, y: 5.5}
-  normalColliderOffset: {x: 0, y: 0}
+  normalColliderSize: {x: 3, y: 5.5}
+  normalColliderOffset: {x: 0.9, y: 0}
   slideColliderSize: {x: 5, y: 2}
   slideColliderOffset: {x: 0, y: -1.7}
   skill: {fileID: 11400000, guid: c1a24b0b5a27e3349b8bbb6eadcc9495, type: 2}

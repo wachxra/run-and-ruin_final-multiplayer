@@ -1,8 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
 public class SkillProjectile : NetworkBehaviour
 {
+    public static readonly List<SkillProjectile> ActiveProjectiles =
+        new List<SkillProjectile>();
+
     public float speed = 10f;
     public int damage = 1;
     public float lifeTime = 5f;
@@ -16,6 +20,29 @@ public class SkillProjectile : NetworkBehaviour
 
     private bool applySlow = false;
     private float slowDuration = 3f;
+
+    public bool IsHiddenByShadow { get; private set; }
+
+    public override void OnNetworkSpawn()
+    {
+        if (IsServer && !ActiveProjectiles.Contains(this))
+        {
+            ActiveProjectiles.Add(this);
+        }
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        if (IsServer)
+        {
+            ActiveProjectiles.Remove(this);
+        }
+    }
+
+    public void SetShadowHidden(bool state)
+    {
+        IsHiddenByShadow = state;
+    }
 
     public void SetFreeze(bool state)
     {

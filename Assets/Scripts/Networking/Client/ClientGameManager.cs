@@ -20,7 +20,11 @@ public class ClientGameManager
 
     private JoinAllocation allocation;
     private const string MenuSceneName = "Menu";
+    private const string GameSceneName = "CharacterSelect";
     private const string JoinCodeKey = "JoinCode";
+
+    private string pendingJoinCode = "";
+    private string pendingLobbyId = "";
 
     public async Task<bool> InitAsync()
     {
@@ -28,12 +32,7 @@ public class ClientGameManager
 
         AuthState authState = await AuthenticationWrapper.DoAuth();
 
-        if (authState == AuthState.Authenticated)
-        {
-            return true;
-        }
-
-        return false;
+        return authState == AuthState.Authenticated;
     }
 
     public void GoToMenu()
@@ -45,19 +44,9 @@ public class ClientGameManager
     {
         joinCode = joinCode.Trim().ToUpper();
 
-        bool joinedLobby = false;
+        Lobby targetLobby = await FindLobbyByRelayCodeAsync(joinCode);
 
-        try
-        {
-            joinedLobby = await JoinLobbyByRelayCodeAsync(joinCode);
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-            return;
-        }
-
-        if (!joinedLobby)
+        if (targetLobby == null)
         {
             Debug.LogWarning("Cannot join. No host lobby found with code: " + joinCode);
             return;
@@ -73,12 +62,15 @@ public class ClientGameManager
             return;
         }
 
-        PlayerPrefs.SetString(JoinCodeKey, joinCode);
-        PlayerPrefs.Save();
+        pendingJoinCode = joinCode;
+        pendingLobbyId = targetLobby.Id;
 
-        UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
+        UnityTransport transport =
+            NetworkManager.Singleton.GetComponent<UnityTransport>();
 
-        RelayServerData relayServerData = allocation.ToRelayServerData("dtls");
+        RelayServerData relayServerData =
+            allocation.ToRelayServerData("dtls");
+
         transport.SetRelayServerData(relayServerData);
 
         UserData userData = new UserData
@@ -91,10 +83,55 @@ public class ClientGameManager
 
         NetworkManager.Singleton.NetworkConfig.ConnectionData = payloadBytes;
 
-        NetworkManager.Singleton.StartClient();
+        NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+
+        NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnected;
+        NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
+
+        bool started = NetworkManager.Singleton.StartClient();
+
+        if (!started)
+        {
+            Debug.LogWarning("StartClient failed");
+            return;
+        }
     }
 
-    async Task<bool> JoinLobbyByRelayCodeAsync(string joinCode)
+    private async void OnClientConnected(ulong clientId)
+    {
+        if (clientId != NetworkManager.Singleton.LocalClientId)
+            return;
+
+        NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+
+        try
+        {
+            CurrentLobby = await JoinLobbyByIdAsync(pendingLobbyId);
+
+            PlayerPrefs.SetString(JoinCodeKey, pendingJoinCode);
+            PlayerPrefs.Save();
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+        }
+
+        if (SceneManager.GetActiveScene().name != GameSceneName)
+        {
+            SceneManager.LoadScene(GameSceneName);
+        }
+    }
+
+    private void OnClientDisconnected(ulong clientId)
+    {
+        if (clientId != NetworkManager.Singleton.LocalClientId)
+            return;
+
+        Debug.LogWarning("Client disconnected from host.");
+    }
+
+    async Task<Lobby> FindLobbyByRelayCodeAsync(string joinCode)
     {
         QueryLobbiesOptions options = new QueryLobbiesOptions
         {
@@ -112,11 +149,13 @@ public class ClientGameManager
             await LobbyService.Instance.QueryLobbiesAsync(options);
 
         if (response.Results == null || response.Results.Count == 0)
-        {
-            Debug.LogWarning("No lobby found with Relay JoinCode: " + joinCode);
-            return false;
-        }
+            return null;
 
+        return response.Results[0];
+    }
+
+    async Task<Lobby> JoinLobbyByIdAsync(string lobbyId)
+    {
         string playerName =
             PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Player");
 
@@ -135,11 +174,8 @@ public class ClientGameManager
                 })
         };
 
-        CurrentLobby =
-            await LobbyService.Instance.JoinLobbyByIdAsync(
-                response.Results[0].Id,
-                joinOptions);
-
-        return CurrentLobby != null;
+        return await LobbyService.Instance.JoinLobbyByIdAsync(
+            lobbyId,
+            joinOptions);
     }
 }

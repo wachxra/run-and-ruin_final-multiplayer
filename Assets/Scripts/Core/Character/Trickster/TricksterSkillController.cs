@@ -120,18 +120,16 @@ public class TricksterSkillController : NetworkBehaviour
 
     bool HasAnyProjectile()
     {
-        GameObject[] projectileObjects =
-            GameObject.FindGameObjectsWithTag("Projectile");
-
-        foreach (GameObject obj in projectileObjects)
+        foreach (SkillProjectile projectile in SkillProjectile.ActiveProjectiles)
         {
-            if (obj == null) continue;
+            if (projectile == null) continue;
 
-            NetworkObject netObj =
-                obj.GetComponent<NetworkObject>();
-
-            if (netObj != null && netObj.IsSpawned)
+            if (projectile.NetworkObject != null &&
+                projectile.NetworkObject.IsSpawned &&
+                !projectile.IsHiddenByShadow)
+            {
                 return true;
+            }
         }
 
         return false;
@@ -224,39 +222,48 @@ public class TricksterSkillController : NetworkBehaviour
 
     IEnumerator HideProjectilesRoutine()
     {
-        GameObject[] projectileObjects =
-            GameObject.FindGameObjectsWithTag("Projectile");
+        List<SkillProjectile> validProjectiles =
+            new List<SkillProjectile>();
 
-        List<ulong> validProjectileIds = new List<ulong>();
-
-        foreach (GameObject obj in projectileObjects)
+        foreach (SkillProjectile projectile in SkillProjectile.ActiveProjectiles)
         {
-            if (obj == null) continue;
+            if (projectile == null) continue;
 
-            NetworkObject netObj =
-                obj.GetComponent<NetworkObject>();
-
-            if (netObj == null || !netObj.IsSpawned)
+            if (projectile.NetworkObject == null ||
+                !projectile.NetworkObject.IsSpawned)
                 continue;
 
-            validProjectileIds.Add(netObj.NetworkObjectId);
+            if (projectile.IsHiddenByShadow)
+                continue;
+
+            validProjectiles.Add(projectile);
         }
 
-        if (validProjectileIds.Count == 0)
+        if (validProjectiles.Count == 0)
             yield break;
 
-        ulong targetId =
-            validProjectileIds[Random.Range(0, validProjectileIds.Count)];
+        SkillProjectile target =
+            validProjectiles[Random.Range(0, validProjectiles.Count)];
+
+        if (target == null ||
+            target.NetworkObject == null ||
+            !target.NetworkObject.IsSpawned)
+            yield break;
+
+        ulong targetId = target.NetworkObjectId;
 
         Debug.Log("Shadow Hide Projectile ID: " + targetId);
 
+        target.SetShadowHidden(true);
         SetProjectileVisibleClientRpc(targetId, false);
 
         yield return new WaitForSeconds(skill.duration);
 
-        if (NetworkManager.Singleton != null &&
-            NetworkManager.Singleton.SpawnManager.SpawnedObjects.ContainsKey(targetId))
+        if (target != null &&
+            target.NetworkObject != null &&
+            target.NetworkObject.IsSpawned)
         {
+            target.SetShadowHidden(false);
             SetProjectileVisibleClientRpc(targetId, true);
         }
     }
@@ -282,10 +289,7 @@ public class TricksterSkillController : NetworkBehaviour
 
     void SetAllProjectilesFreeze(bool state)
     {
-        SkillProjectile[] projectiles =
-            FindObjectsByType<SkillProjectile>(FindObjectsSortMode.None);
-
-        foreach (SkillProjectile projectile in projectiles)
+        foreach (SkillProjectile projectile in SkillProjectile.ActiveProjectiles)
         {
             if (projectile != null)
             {
@@ -297,19 +301,16 @@ public class TricksterSkillController : NetworkBehaviour
     [ClientRpc]
     void SetAllProjectilesVisibleClientRpc(bool state)
     {
-        SkillProjectile[] projectiles =
-            FindObjectsByType<SkillProjectile>(FindObjectsSortMode.None);
-
-        foreach (SkillProjectile projectile in projectiles)
+        foreach (SkillProjectile projectile in SkillProjectile.ActiveProjectiles)
         {
             if (projectile == null) continue;
 
-            SpriteRenderer sprite =
-                projectile.GetComponentInChildren<SpriteRenderer>();
+            Renderer[] renderers =
+                projectile.GetComponentsInChildren<Renderer>(true);
 
-            if (sprite != null)
+            foreach (Renderer renderer in renderers)
             {
-                sprite.enabled = state;
+                renderer.enabled = state;
             }
         }
     }
@@ -399,10 +400,8 @@ public class TricksterSkillController : NetworkBehaviour
         {
             if (lane == 0)
                 prefabToSpawn = cannonBallPrefab;
-
             else if (lane == 1)
                 prefabToSpawn = bombPrefab;
-
             else
                 prefabToSpawn = knifePrefab;
         }
@@ -410,10 +409,8 @@ public class TricksterSkillController : NetworkBehaviour
         {
             if (lane == 0)
                 prefabToSpawn = glassPrefab;
-
             else if (lane == 1)
                 prefabToSpawn = barrelPrefab;
-
             else
                 prefabToSpawn = bartenderKnifePrefab;
         }
@@ -421,10 +418,8 @@ public class TricksterSkillController : NetworkBehaviour
         {
             if (lane == 0)
                 prefabToSpawn = poisonBottlePrefab;
-
             else if (lane == 1)
                 prefabToSpawn = chemicalBombPrefab;
-
             else
                 prefabToSpawn = poisonNeedlePrefab;
         }
@@ -432,10 +427,8 @@ public class TricksterSkillController : NetworkBehaviour
         {
             if (lane == 0)
                 prefabToSpawn = fastStarPrefab;
-
             else if (lane == 1)
                 prefabToSpawn = fastEnergyPrefab;
-
             else
                 prefabToSpawn = fastKnifePrefab;
         }
@@ -443,10 +436,8 @@ public class TricksterSkillController : NetworkBehaviour
         {
             if (lane == 0)
                 prefabToSpawn = shadowBallPrefab;
-
             else if (lane == 1)
                 prefabToSpawn = shadowTrapPrefab;
-
             else
                 prefabToSpawn = shadowKnifePrefab;
         }
@@ -490,8 +481,8 @@ public class TricksterSkillController : NetworkBehaviour
 
     [ClientRpc]
     void TriggerProjectileCooldownClientRpc(
-    ulong ownerId,
-    float duration)
+        ulong ownerId,
+        float duration)
     {
         if (NetworkManager.Singleton.LocalClientId != ownerId)
             return;
