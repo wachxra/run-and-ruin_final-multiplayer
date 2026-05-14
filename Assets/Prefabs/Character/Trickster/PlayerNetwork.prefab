@@ -155,7 +155,7 @@ MonoBehaviour:
   - {fileID: 17829204850095064}
   - {fileID: 7604014169384264962}
   skill: {fileID: 0}
-  projectileCooldown: 1
+  projectileCooldown: 2
   slowDuration: 3
   rapidFireDuration: 5
   rapidFireCooldownMultiplier: 0.5

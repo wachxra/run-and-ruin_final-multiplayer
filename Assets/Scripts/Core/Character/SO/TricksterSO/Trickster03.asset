@@ -15,8 +15,10 @@ MonoBehaviour:
   skillName: Trickster_Shadow
   skillType: 9
   description: 
-  cooldown: 5
-  duration: 5
+  cooldown: 15
+  duration: 1
   icon: {fileID: -6927522303167332670, guid: a6d6762ee388d534b818adf8cec095f7, type: 3}
   castVFX: {fileID: 0}
   hitVFX: {fileID: 0}
+  useSkillDurationForVFX: 1
+  customVFXDuration: 1

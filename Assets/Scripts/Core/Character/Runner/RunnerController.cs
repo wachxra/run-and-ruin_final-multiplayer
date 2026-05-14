@@ -232,7 +232,7 @@ public class RunnerController : NetworkBehaviour
             p.SetFreeze(true);
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(skill.duration);
 
         foreach (var p in allProjectiles)
         {

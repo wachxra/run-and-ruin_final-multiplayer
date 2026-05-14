@@ -11,9 +11,6 @@ public class SkillFeedbackController : NetworkBehaviour
     private GameObject currentSlowVFX;
     private GameObject currentScreenBlockLaneVFX;
 
-    private const float HitVFXDuration = 0.5f;
-    private const float BreakVFXDuration = 0.5f;
-
     Vector3 RunnerCenterPosition
     {
         get
@@ -84,15 +81,13 @@ public class SkillFeedbackController : NetworkBehaviour
             case SkillType.StopTime:
                 SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.stopTimeVFX,
-                    SkillVFXDatabase.Instance.stopTimeScale,
-                    duration);
+                    SkillVFXDatabase.Instance.stopTimeScale);
                 break;
 
             case SkillType.ScreenBlock:
                 SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.screenBlockVFX,
-                    SkillVFXDatabase.Instance.screenBlockScale,
-                    duration);
+                    SkillVFXDatabase.Instance.screenBlockScale);
                 break;
 
             case SkillType.Reflect:
@@ -116,8 +111,7 @@ public class SkillFeedbackController : NetworkBehaviour
             case SkillType.Invisible:
                 SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.invisibleStartVFX,
-                    SkillVFXDatabase.Instance.invisibleScale,
-                    duration);
+                    SkillVFXDatabase.Instance.invisibleScale);
                 break;
         }
     }
@@ -141,8 +135,7 @@ public class SkillFeedbackController : NetworkBehaviour
             case SkillType.Invisible:
                 SpawnOneShotAtRunner(
                     SkillVFXDatabase.Instance.invisibleEndVFX,
-                    SkillVFXDatabase.Instance.invisibleScale,
-                    HitVFXDuration);
+                    SkillVFXDatabase.Instance.invisibleScale);
                 break;
         }
     }
@@ -157,8 +150,7 @@ public class SkillFeedbackController : NetworkBehaviour
 
         SpawnOneShotAtRunner(
             SkillVFXDatabase.Instance.shieldBreakVFX,
-            SkillVFXDatabase.Instance.shieldBreakScale,
-            BreakVFXDuration);
+            SkillVFXDatabase.Instance.shieldBreakScale);
     }
 
     [ClientRpc]
@@ -189,8 +181,7 @@ public class SkillFeedbackController : NetworkBehaviour
 
         SpawnOneShotAtRunner(
             SkillVFXDatabase.Instance.reflectHitVFX,
-            SkillVFXDatabase.Instance.reflectHitScale,
-            HitVFXDuration);
+            SkillVFXDatabase.Instance.reflectHitScale);
     }
 
     [ClientRpc]
@@ -253,8 +244,7 @@ public class SkillFeedbackController : NetworkBehaviour
 
     void SpawnOneShotAtRunner(
         GameObject prefab,
-        float scaleMultiplier,
-        float duration)
+        float scaleMultiplier)
     {
         if (prefab == null)
             return;
@@ -265,14 +255,6 @@ public class SkillFeedbackController : NetworkBehaviour
             Quaternion.identity);
 
         obj.transform.localScale *= scaleMultiplier;
-
-        DestroyAfterAnimation destroyer =
-            obj.GetComponent<DestroyAfterAnimation>();
-
-        if (destroyer != null)
-        {
-            destroyer.SetDestroyTime(duration);
-        }
     }
 
     void DestroyCurrent(ref GameObject obj)

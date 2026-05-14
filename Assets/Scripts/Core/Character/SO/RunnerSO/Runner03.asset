@@ -15,8 +15,10 @@ MonoBehaviour:
   skillName: Runner_3_Reflect
   skillType: 2
   description: 
-  cooldown: 12
+  cooldown: 20
   duration: 3
   icon: {fileID: -7364492422565671792, guid: d3a17561e2df2b046980d111d8b95390, type: 3}
   castVFX: {fileID: 0}
   hitVFX: {fileID: 0}
+  useSkillDurationForVFX: 1
+  customVFXDuration: 1

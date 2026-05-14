@@ -15,8 +15,10 @@ MonoBehaviour:
   skillName: Trickster_Scientist
   skillType: 7
   description: 
-  cooldown: 5
+  cooldown: 17
   duration: 5
   icon: {fileID: 7778197737187452907, guid: 4a92f7187759cc14d90820c128fd0a2b, type: 3}
   castVFX: {fileID: 0}
   hitVFX: {fileID: 0}
+  useSkillDurationForVFX: 1
+  customVFXDuration: 1

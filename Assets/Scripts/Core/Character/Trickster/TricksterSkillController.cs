@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Unity.Netcode;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TricksterSkillController : NetworkBehaviour
 {
@@ -44,17 +45,9 @@ public class TricksterSkillController : NetworkBehaviour
 
     private float lastProjectileSkillTime = -999f;
 
-    [Header("Scientist Skill")]
-    public float slowDuration = 3f;
-
     [Header("Speedster Skill")]
-    public float rapidFireDuration = 5f;
     public float rapidFireCooldownMultiplier = 0.5f;
     public float rapidProjectileSpeedMultiplier = 2f;
-
-    [Header("Shadow Skill")]
-    public float shadowHideDuration = 3f;
-
     private bool isRapidFireActive = false;
 
     void Update()
@@ -109,17 +102,39 @@ public class TricksterSkillController : NetworkBehaviour
         if (Time.time - lastSkillTime < skill.cooldown)
             return;
 
+        if (skill.skillType == SkillType.Trap)
+        {
+            if (!HasAnyProjectile())
+                return;
+        }
+
         lastSkillTime = Time.time;
         PlayTricksterUltimateClientRpc();
-
-        /*if (feedback != null)
-            feedback.PlayTricksterSkillStart(skill.skillType, skill.duration);*/
 
         ActivateSkill();
 
         TriggerSkillCooldownClientRpc(
             OwnerClientId,
             skill.cooldown);
+    }
+
+    bool HasAnyProjectile()
+    {
+        SkillProjectile[] projectiles =
+            FindObjectsByType<SkillProjectile>(FindObjectsSortMode.None);
+
+        foreach (SkillProjectile projectile in projectiles)
+        {
+            if (projectile == null) continue;
+
+            if (projectile.NetworkObject != null &&
+                projectile.NetworkObject.IsSpawned)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     [ClientRpc]
@@ -155,7 +170,7 @@ public class TricksterSkillController : NetworkBehaviour
                 break;
 
             case SkillType.Blur:
-                BlurAllRunnerClientRpc();
+                BlurAllRunnerClientRpc(skill.duration);
                 break;
 
             case SkillType.SlowAll:
@@ -193,7 +208,7 @@ public class TricksterSkillController : NetworkBehaviour
 
             if (runner != null)
             {
-                runner.ApplySlow(slowDuration);
+                runner.ApplySlow(skill.duration);
             }
         }
     }
@@ -202,30 +217,66 @@ public class TricksterSkillController : NetworkBehaviour
     {
         isRapidFireActive = true;
 
-        yield return new WaitForSeconds(rapidFireDuration);
+        yield return new WaitForSeconds(skill.duration);
 
         isRapidFireActive = false;
     }
 
     IEnumerator HideProjectilesRoutine()
     {
-        SkillProjectile[] projectiles =
+        SkillProjectile[] allProjectiles =
             FindObjectsByType<SkillProjectile>(FindObjectsSortMode.None);
 
-        foreach (SkillProjectile projectile in projectiles)
+        List<ulong> validProjectileIds = new List<ulong>();
+
+        foreach (SkillProjectile projectile in allProjectiles)
         {
             if (projectile == null) continue;
+
+            NetworkObject netObj = projectile.GetComponent<NetworkObject>();
+
+            if (netObj == null || !netObj.IsSpawned)
+                continue;
+
+            validProjectileIds.Add(netObj.NetworkObjectId);
         }
 
-        SetAllProjectilesFreeze(true);
+        if (validProjectileIds.Count == 0)
+            yield break;
 
-        SetAllProjectilesVisibleClientRpc(false);
+        int randomIndex = Random.Range(0, validProjectileIds.Count);
+        ulong targetId = validProjectileIds[randomIndex];
 
-        yield return new WaitForSeconds(shadowHideDuration);
+        Debug.Log("Hide Projectile ID: " + targetId);
 
-        SetAllProjectilesFreeze(false);
+        SetProjectileVisibleClientRpc(targetId, false);
 
-        SetAllProjectilesVisibleClientRpc(true);
+        yield return new WaitForSeconds(skill.duration);
+
+        if (NetworkManager.Singleton != null &&
+            NetworkManager.Singleton.SpawnManager.SpawnedObjects.ContainsKey(targetId))
+        {
+            SetProjectileVisibleClientRpc(targetId, true);
+        }
+    }
+
+    [ClientRpc]
+    void SetProjectileVisibleClientRpc(ulong projectileNetworkObjectId, bool state)
+    {
+        if (NetworkManager.Singleton == null)
+            return;
+
+        if (!NetworkManager.Singleton.SpawnManager.SpawnedObjects
+            .TryGetValue(projectileNetworkObjectId, out NetworkObject networkObject))
+            return;
+
+        Renderer[] renderers =
+            networkObject.GetComponentsInChildren<Renderer>(true);
+
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.enabled = state;
+        }
     }
 
     void SetAllProjectilesFreeze(bool state)
@@ -263,13 +314,13 @@ public class TricksterSkillController : NetworkBehaviour
     }
 
     [ClientRpc]
-    void BlurAllRunnerClientRpc()
+    void BlurAllRunnerClientRpc(float duration)
     {
         var blur = FindFirstObjectByType<ScreenBlurEffect>();
 
         if (blur != null)
         {
-            blur.PlayBlur(5f);
+            blur.PlayBlur(duration);
         }
     }
 
